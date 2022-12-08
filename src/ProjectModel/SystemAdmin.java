@@ -7,15 +7,15 @@ import java.util.Map;
 
 public class SystemAdmin {
 
-    private List<Network> listOfNetwork;
+    private List<Franchise> listOfNetwork;
     private CustomerDirectory customerDirec;
     private Map<String, String> mapType;
     private Map<String, String> userNamePasswordMap;
 
     public SystemAdmin(String userName, String password) {
         listOfNetwork = new ArrayList<>();
-        listOfNetwork.add(new Network("Seattle"));
-        listOfNetwork.add(new Network("Boston"));
+        listOfNetwork.add(new Franchise("Seattle"));
+        listOfNetwork.add(new Franchise("Boston"));
         customerDirec = new CustomerDirectory();
         mapType = new HashMap<>();
         userNamePasswordMap = new HashMap<>();
@@ -39,11 +39,11 @@ public class SystemAdmin {
         this.mapType = mapType;
     }
 
-    public List<Network> getListOfNetwork() {
+    public List<Franchise> getListOfNetwork() {
         return listOfNetwork;
     }
 
-    public void setListOfNetwork(List<Network> listOfNetwork) {
+    public void setListOfNetwork(List<Franchise> listOfNetwork) {
         this.listOfNetwork = listOfNetwork;
     }
 
@@ -56,12 +56,12 @@ public class SystemAdmin {
     }
 
     public void addNetwork(String name) {
-        Network network = new Network(name);
+        Franchise network = new Franchise(name);
         listOfNetwork.add(network);
     }
 
-    public Network findNetwork(String networkName) {
-        for (Network network : listOfNetwork) {
+    public Franchise findNetwork(String networkName) {
+        for (Franchise network : listOfNetwork) {
             if (listOfNetwork != null && network.getName().equals(networkName)) {
                 return network;
             }
