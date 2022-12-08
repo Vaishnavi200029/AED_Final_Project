@@ -56,14 +56,14 @@ public class SystemAdmin {
     }
 
     public void addNetwork(String name) {
-        Franchise network = new Franchise(name);
-        listOfNetwork.add(network);
+        Franchise franchise = new Franchise(name);
+        listOfNetwork.add(franchise);
     }
 
-    public Franchise findNetwork(String networkName) {
-        for (Franchise network : listOfNetwork) {
-            if (listOfNetwork != null && network.getName().equals(networkName)) {
-                return network;
+    public Franchise findNetwork(String franchiseName) {
+        for (Franchise franchise : listOfNetwork) {
+            if (listOfNetwork != null && franchise.getName().equals(franchiseName)) {
+                return franchise;
             }
         }
         return null;

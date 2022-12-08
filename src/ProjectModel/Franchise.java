@@ -3,11 +3,11 @@ package ProjectModel;
 public class Franchise {
 
     private String name;
-    private ServicesDirectory enterpriseDirectory;
+    private ServicesDirectory serviceDirectory;
 
     public Franchise(String name) {
         this.name = name;
-        enterpriseDirectory = new ServicesDirectory();
+        serviceDirectory = new ServicesDirectory();
     }
 
     public String getName() {
@@ -18,12 +18,12 @@ public class Franchise {
         this.name = name;
     }
 
-    public ServicesDirectory getEnterpriseDirectory() {
-        return enterpriseDirectory;
+    public ServicesDirectory getServiceDirectory() {
+        return serviceDirectory;
     }
 
-    public void setEnterpriseDirectory(ServicesDirectory enterpriseDirectory) {
-        this.enterpriseDirectory = enterpriseDirectory;
+    public void setServiceDirectory(ServicesDirectory serviceDirectory) {
+        this.serviceDirectory = serviceDirectory;
     }
    
 

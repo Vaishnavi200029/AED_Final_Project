@@ -25,8 +25,8 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="381" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="enterpriseBtn" alignment="0" pref="247" max="32767" attributes="0"/>
-                          <Component id="btnmanagenetworks" alignment="0" pref="247" max="32767" attributes="0"/>
+                          <Component id="servicesBtn" alignment="0" pref="247" max="32767" attributes="0"/>
+                          <Component id="franchisesBtn" alignment="0" pref="247" max="32767" attributes="0"/>
                           <Component id="btnmanagemanagers" alignment="0" pref="247" max="32767" attributes="0"/>
                           <Component id="btnmanagecustomers" alignment="0" max="32767" attributes="0"/>
                       </Group>
@@ -42,9 +42,9 @@
               <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
               <Component id="lblsysadmin" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-              <Component id="btnmanagenetworks" min="-2" pref="42" max="-2" attributes="0"/>
+              <Component id="franchisesBtn" min="-2" pref="42" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-              <Component id="enterpriseBtn" min="-2" pref="48" max="-2" attributes="0"/>
+              <Component id="servicesBtn" min="-2" pref="48" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
               <Component id="btnmanagemanagers" min="-2" pref="45" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
@@ -55,26 +55,26 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="btnmanagenetworks">
+    <Component class="javax.swing.JButton" name="franchisesBtn">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="MANAGE NETWORKS"/>
+        <Property name="text" type="java.lang.String" value="MANAGE FRANCHISES"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnmanagenetworksActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="franchisesBtnActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="enterpriseBtn">
+    <Component class="javax.swing.JButton" name="servicesBtn">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="MANAGE ENTERPRICES"/>
+        <Property name="text" type="java.lang.String" value="MANAGE SERVICES"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="enterpriseBtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="servicesBtnActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnmanagecustomers">

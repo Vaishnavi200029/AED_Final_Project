@@ -97,7 +97,9 @@ public class ManageCustomersJPanel extends javax.swing.JPanel {
         usernameField = new javax.swing.JTextField();
         cityField = new javax.swing.JTextField();
 
+        backButton.setBackground(new java.awt.Color(0, 0, 0));
         backButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        backButton.setForeground(new java.awt.Color(255, 255, 255));
         backButton.setText("BACK");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,7 +107,7 @@ public class ManageCustomersJPanel extends javax.swing.JPanel {
             }
         });
 
-        lblsysadmin.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        lblsysadmin.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         lblsysadmin.setText("MANAGE CUSTOMERS");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -224,7 +226,7 @@ public class ManageCustomersJPanel extends javax.swing.JPanel {
                                 .addComponent(backButton))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(316, 316, 316)
-                                .addComponent(lblsysadmin, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(lblsysadmin)))
                         .addGap(0, 173, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -266,7 +268,7 @@ public class ManageCustomersJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

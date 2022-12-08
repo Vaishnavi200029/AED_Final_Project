@@ -9,7 +9,7 @@ public class SystemAdministrationJPanel extends javax.swing.JPanel {
 //    private Runnable callOnCreateMethod1;
 //    private Runnable callOnCreateMethod2;
 //    private Runnable callOnCreateMethod3;
-//    private Runnable callOnCreateMethod4;
+    private Runnable callOnCreateMethod4;
 
     public SystemAdministrationJPanel(SystemAdmin systems) {
         initComponents();
@@ -17,42 +17,42 @@ public class SystemAdministrationJPanel extends javax.swing.JPanel {
 //        this.callOnCreateMethod1 = callOnCreateMethod1;
 //        this.callOnCreateMethod2 = callOnCreateMethod2;
 //        this.callOnCreateMethod3 = callOnCreateMethod3;
-//        this.callOnCreateMethod4 = callOnCreateMethod4;
+        this.callOnCreateMethod4 = callOnCreateMethod4;
         setBackground(new java.awt.Color(255, 204, 204));
 
-        btnmanagenetworks.setBackground(new java.awt.Color(244, 120, 140));
-        btnmanagenetworks.setOpaque(true);
+        franchisesBtn.setBackground(new java.awt.Color(244, 120, 140));
+        franchisesBtn.setOpaque(true);
         btnmanagecustomers.setBackground(new java.awt.Color(244, 120, 140));
         btnmanagecustomers.setOpaque(true);
         btnmanagemanagers.setBackground(new java.awt.Color(244, 120, 140));
         btnmanagemanagers.setOpaque(true);
-        enterpriseBtn.setBackground(new java.awt.Color(244, 120, 140));
-        enterpriseBtn.setOpaque(true);
+        servicesBtn.setBackground(new java.awt.Color(244, 120, 140));
+        servicesBtn.setOpaque(true);
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnmanagenetworks = new javax.swing.JButton();
-        enterpriseBtn = new javax.swing.JButton();
+        franchisesBtn = new javax.swing.JButton();
+        servicesBtn = new javax.swing.JButton();
         btnmanagecustomers = new javax.swing.JButton();
         lblsysadmin = new javax.swing.JLabel();
         btnmanagemanagers = new javax.swing.JButton();
 
-        btnmanagenetworks.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnmanagenetworks.setText("MANAGE NETWORKS");
-        btnmanagenetworks.addActionListener(new java.awt.event.ActionListener() {
+        franchisesBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        franchisesBtn.setText("MANAGE FRANCHISES");
+        franchisesBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnmanagenetworksActionPerformed(evt);
+                franchisesBtnActionPerformed(evt);
             }
         });
 
-        enterpriseBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        enterpriseBtn.setText("MANAGE ENTERPRICES");
-        enterpriseBtn.addActionListener(new java.awt.event.ActionListener() {
+        servicesBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        servicesBtn.setText("MANAGE SERVICES");
+        servicesBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enterpriseBtnActionPerformed(evt);
+                servicesBtnActionPerformed(evt);
             }
         });
 
@@ -87,8 +87,8 @@ public class SystemAdministrationJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(381, 381, 381)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(enterpriseBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
-                            .addComponent(btnmanagenetworks, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+                            .addComponent(servicesBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+                            .addComponent(franchisesBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
                             .addComponent(btnmanagemanagers, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
                             .addComponent(btnmanagecustomers, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(303, Short.MAX_VALUE))
@@ -99,9 +99,9 @@ public class SystemAdministrationJPanel extends javax.swing.JPanel {
                 .addGap(81, 81, 81)
                 .addComponent(lblsysadmin)
                 .addGap(76, 76, 76)
-                .addComponent(btnmanagenetworks, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(franchisesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
-                .addComponent(enterpriseBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(servicesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addComponent(btnmanagemanagers, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
@@ -110,17 +110,17 @@ public class SystemAdministrationJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void enterpriseBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterpriseBtnActionPerformed
+    private void servicesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_servicesBtnActionPerformed
 //        callOnCreateMethod2.run();
 
-    }//GEN-LAST:event_enterpriseBtnActionPerformed
+    }//GEN-LAST:event_servicesBtnActionPerformed
 
-    private void btnmanagenetworksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmanagenetworksActionPerformed
+    private void franchisesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_franchisesBtnActionPerformed
 //        callOnCreateMethod1.run();
-    }//GEN-LAST:event_btnmanagenetworksActionPerformed
+    }//GEN-LAST:event_franchisesBtnActionPerformed
 
     private void btnmanagecustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmanagecustomersActionPerformed
-//        callOnCreateMethod4.run();
+        callOnCreateMethod4.run();
     }//GEN-LAST:event_btnmanagecustomersActionPerformed
 
     private void btnmanagemanagersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmanagemanagersActionPerformed
@@ -131,8 +131,8 @@ public class SystemAdministrationJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnmanagecustomers;
     private javax.swing.JButton btnmanagemanagers;
-    private javax.swing.JButton btnmanagenetworks;
-    private javax.swing.JButton enterpriseBtn;
+    private javax.swing.JButton franchisesBtn;
     private javax.swing.JLabel lblsysadmin;
+    private javax.swing.JButton servicesBtn;
     // End of variables declaration//GEN-END:variables
 }
