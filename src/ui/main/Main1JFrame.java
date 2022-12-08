@@ -35,19 +35,6 @@ public class Main1JFrame extends javax.swing.JFrame {
         logoutBtn = new javax.swing.JButton();
         passwordField = new javax.swing.JPasswordField();
         WorkArea = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -125,70 +112,6 @@ public class Main1JFrame extends javax.swing.JFrame {
 
         WorkArea.setBackground(new java.awt.Color(255, 204, 204));
         WorkArea.setLayout(null);
-
-        jLabel3.setBackground(new java.awt.Color(0, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Algerian", 1, 48)); // NOI18N
-        jLabel3.setText("WELCOME TO FEEL-HOME SERVICES");
-        WorkArea.add(jLabel3);
-        jLabel3.setBounds(85, 62, 892, 58);
-
-        jLabel6.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
-        jLabel6.setText("ABOUT US");
-        WorkArea.add(jLabel6);
-        jLabel6.setBounds(470, 144, 93, 22);
-
-        jLabel4.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
-        jLabel4.setText("we provide different types of services other than booking rooms ");
-        WorkArea.add(jLabel4);
-        jLabel4.setBounds(284, 195, 566, 22);
-
-        jLabel7.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
-        jLabel7.setText("customers can book for any kind of BUSINESS EVENTS");
-        WorkArea.add(jLabel7);
-        jLabel7.setBounds(305, 232, 469, 22);
-
-        jLabel8.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
-        jLabel8.setText("customers can also join our HEALTH CLUB");
-        WorkArea.add(jLabel8);
-        jLabel8.setBounds(349, 274, 365, 22);
-
-        jLabel9.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
-        jLabel9.setText("customers can have food and beverages fom our RESTAURANT");
-        WorkArea.add(jLabel9);
-        jLabel9.setBounds(284, 316, 544, 22);
-
-        jLabel10.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
-        jLabel10.setText("customers can also add services like LAUNDRY, TRANSPORTATION");
-        WorkArea.add(jLabel10);
-        jLabel10.setBounds(255, 358, 574, 22);
-
-        jLabel11.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
-        jLabel11.setText("we also provide MEDICAL ASSISTANCE in case of emergency");
-        WorkArea.add(jLabel11);
-        jLabel11.setBounds(300, 400, 520, 22);
-
-        jLabel5.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
-        jLabel5.setText("CONTACT US");
-        WorkArea.add(jLabel5);
-        jLabel5.setBounds(477, 465, 121, 22);
-
-        jLabel14.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
-        jLabel14.setText("+1 234-638-9566");
-        WorkArea.add(jLabel14);
-        jLabel14.setBounds(477, 507, 136, 22);
-
-        jLabel13.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
-        jLabel13.setText("feelhome@hotmail.com");
-        WorkArea.add(jLabel13);
-        jLabel13.setBounds(459, 538, 205, 22);
-
-        jLabel12.setFont(new java.awt.Font("Sylfaen", 0, 36)); // NOI18N
-        jLabel12.setText("HAVE A WONDERFULL TIME WITH US");
-        WorkArea.add(jLabel12);
-        jLabel12.setBounds(288, 688, 543, 43);
-        WorkArea.add(jLabel16);
-        jLabel16.setBounds(910, 340, 0, 150);
-
         jSplitPane.setRightComponent(WorkArea);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -261,20 +184,7 @@ public class Main1JFrame extends javax.swing.JFrame {
     private javax.swing.JPanel ControlPanel;
     private javax.swing.JPanel WorkArea;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JSplitPane jSplitPane;
     private javax.swing.JButton loginBtn;
     private javax.swing.JButton logoutBtn;
