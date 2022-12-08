@@ -1,15 +1,15 @@
 package ProjectModel;
 
-public class Enterprise {
+public class Services {
 
     protected String name;
     protected String contact;
 
-    public Enterprise() {
+    public Services() {
         
     }
     
-    public Enterprise(String name, String contact) {
+    public Services(String name, String contact) {
         this.name = name;
         this.contact = contact;
     }
