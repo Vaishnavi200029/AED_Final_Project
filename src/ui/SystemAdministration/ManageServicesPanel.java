@@ -138,7 +138,7 @@ public class ManageServicesPanel extends javax.swing.JPanel {
         jLabel1.setText("SERVICE TYPE");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("NETWORK");
+        jLabel2.setText("FRANCHISE");
 
         franchiseType.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         franchiseType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select any one" }));
