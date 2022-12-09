@@ -8,13 +8,13 @@ public class ServicesDirectory {
 
     private List<Hotel> listOfHotel;
     private List<BusinessEvent> listOfEvents;
-//    private List<HealthClub> listOfHealthClub;
+    private List<HealthClub> listOfHealthClub;
     private List<Restaurant> listOfRestaurants;
 
     public ServicesDirectory() {
         listOfHotel = new ArrayList<>();
         listOfEvents = new ArrayList<>();
-//        listOfHealthClub = new ArrayList<>();
+        listOfHealthClub = new ArrayList<>();
         listOfRestaurants = new ArrayList<>();
     }
 
@@ -34,13 +34,13 @@ public class ServicesDirectory {
         this.listOfEvents = listOfEvents;
     }
 
-//    public List<HealthClub> getListOfHealthClub() {
-//        return listOfHealthClub;
-//    }
+    public List<HealthClub> getListOfHealthClub() {
+        return listOfHealthClub;
+    }
 
-//    public void setListOfHealthClub(List<HealthClub> listOfHealthClub) {
-//        this.listOfHealthClub = listOfHealthClub;
-//    }
+    public void setListOfHealthClub(List<HealthClub> listOfHealthClub) {
+        this.listOfHealthClub = listOfHealthClub;
+    }
 
     public List<Restaurant> getListOfRestaurants() {
         return listOfRestaurants;
@@ -50,10 +50,10 @@ public class ServicesDirectory {
         this.listOfRestaurants = listOfRestaurants;
     }
 
-//    public void addHealthClub(String name, String contact) {
-//        HealthClub healthClub = new HealthClub(name, contact);
-//        listOfHealthClub.add(healthClub);
-//    }
+    public void addHealthClub(String name, String contact) {
+        HealthClub healthClub = new HealthClub(name, contact);
+        listOfHealthClub.add(healthClub);
+    }
 
     public void addRestaurant(String name, String contact) {
         Restaurant restaurant = new Restaurant(name, contact);
@@ -79,14 +79,14 @@ public class ServicesDirectory {
         return null;
     }
 
-//    public HealthClub findHealthClub(String clubName) {
-//        for (HealthClub club : listOfHealthClub) {
-//            if (club.getName().equals(clubName)) {
-//                return club;
-//            }
-//        }
-//        return null;
-//    }
+    public HealthClub findHealthClub(String clubName) {
+        for (HealthClub club : listOfHealthClub) {
+            if (club.getName().equals(clubName)) {
+                return club;
+            }
+        }
+        return null;
+    }
 
     public Restaurant findRestaurant(String name) {
         for (Restaurant restaurant : listOfRestaurants) {
@@ -110,14 +110,14 @@ public class ServicesDirectory {
         listOfEvents.remove(event);
     }
 
-//    public void deleteServiceHealthClub(HealthClub health) {
-//        listOfHealthClub.remove(health);
-//    }
-//
+    public void deleteServiceHealthClub(HealthClub health) {
+        listOfHealthClub.remove(health);
+    }
+
     public void deleteServiceRestaurant(Restaurant res) {
         listOfRestaurants.remove(res);
     }
-//
+
     public void deleteServiceHotel(Hotel hotel) {
         listOfHotel.remove(hotel);
     }

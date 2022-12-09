@@ -6,7 +6,7 @@ import javax.swing.table.DefaultTableModel;
 import ProjectModel.BusinessEvent;
 import ProjectModel.Services;
 import ProjectModel.ServicesDirectory;
-//import ProjectModel.HealthClub;
+import ProjectModel.HealthClub;
 import ProjectModel.Hotel;
 import ProjectModel.Franchise;
 import ProjectModel.Restaurant;
@@ -313,16 +313,15 @@ public class ManageServicesPanel extends javax.swing.JPanel {
                         populateTable();
                 }
             }
+        } else if (serviceType.equals("Health Club") && serviceDirec.getListOfHealthClub() != null) {
+            for (HealthClub club : serviceDirec.getListOfHealthClub()) {
+                if (club.getName().equals(serviceName)) {
+                    serviceDirec.deleteServiceHealthClub(club);
+                    JOptionPane.showMessageDialog(this, "Service deleted successfully");
+                    populateTable();
+                }
+            }
         } 
-//              else if (serviceType.equals("Health Club") && serviceDirec.getListOfHealthClub() != null) {
-//            for (HealthClub club : serviceDirec.getListOfHealthClub()) {
-//                if (club.getName().equals(serviceName)) {
-//                    serviceDirec.deleteServiceHealthClub(club);
-//                    JOptionPane.showMessageDialog(this, "Service deleted successfully");
-//                    populateTable();
-//                }
-//            }
-//        } 
         else {
             JOptionPane.showMessageDialog(this, "not found");
         }
@@ -351,12 +350,11 @@ public class ManageServicesPanel extends javax.swing.JPanel {
         }
 
         ServicesDirectory serviceDirec = franchise.getServiceDirectory();
-//        if (serviceType1.equals("Health Club") && serviceDirec != null) {
-//            serviceDirec.addHealthClub(name, contact);
-//            JOptionPane.showMessageDialog(this, "Service added successfully");
-//            return;
-//        } else
-            if (serviceType1.equals("Restaurant") && serviceDirec != null) {
+        if (serviceType1.equals("Health Club") && serviceDirec != null) {
+            serviceDirec.addHealthClub(name, contact);
+            JOptionPane.showMessageDialog(this, "Service added successfully");
+            return;
+        } else if (serviceType1.equals("Restaurant") && serviceDirec != null) {
             serviceDirec.addRestaurant(name, contact);
             JOptionPane.showMessageDialog(this, "Service added successfully");
 
@@ -400,17 +398,16 @@ public class ManageServicesPanel extends javax.swing.JPanel {
         ServicesDirectory serviceDirec = franchise.getServiceDirectory();
 
         Services serviceToUpdate = null;
-//        if (serviceType1.equals("Health Club") && serviceDirec != null) {
-//
-//            for (HealthClub list : serviceDirec.getListOfHealthClub()) {
-//                if (list.getName().equals(serviceName)) {  //if service name matches 
-//                    serviceToUpdate = list;
-//                }
-//            }
-//            JOptionPane.showMessageDialog(this, "Service updated successfully");
-//            return;
-//        } else 
-            if (serviceType1.equals("Business Event") && serviceDirec != null) {
+        if (serviceType1.equals("Health Club") && serviceDirec != null) {
+
+            for (HealthClub list : serviceDirec.getListOfHealthClub()) {
+                if (list.getName().equals(serviceName)) {  //if service name matches 
+                    serviceToUpdate = list;
+                }
+            }
+            JOptionPane.showMessageDialog(this, "Service updated successfully");
+            return;
+        } else if (serviceType1.equals("Business Event") && serviceDirec != null) {
             for (BusinessEvent list : serviceDirec.getListOfEvents()) {
                 if (list.getName().equals(serviceName)) {
                     serviceToUpdate = list;
@@ -422,14 +419,13 @@ public class ManageServicesPanel extends javax.swing.JPanel {
                     serviceToUpdate = list;
                 }
             }
-        } 
-//            else if (serviceType1.equals("Business Event") && serviceDirec != null) {
-//            for (Restaurant list : serviceDirec.getListOfRestaurants()) {
-//                if (list.getName().equals(serviceName)) {           //if service name matches 
-//                    serviceToUpdate = list;
-//                }
-//            }
-//        }
+        } else if (serviceType1.equals("Business Event") && serviceDirec != null) {
+            for (Restaurant list : serviceDirec.getListOfRestaurants()) {
+                if (list.getName().equals(serviceName)) {           //if service name matches 
+                    serviceToUpdate = list;
+                }
+            }
+        }
 
         if (serviceToUpdate == null) {
             JOptionPane.showMessageDialog(this, "Unknown service.");
@@ -510,18 +506,18 @@ public class ManageServicesPanel extends javax.swing.JPanel {
                 model.addRow(row);
             }
         }
-//
-//        List<HealthClub> healthclubList = franchise.getServiceDirectory().getListOfHealthClub();
-//        if (healthclubList != null) {
-//            for (int i = 0; i < healthclubList.size(); i++) {
-//                row[0] = franchiseItem;
-//                row[1] = healthclubList.get(i).getName();
-//                row[2] = "Health Club";
-//                row[3] = healthclubList.get(i).getContact();
-//                model.addRow(row);
-//            }
-//        }
-//
+
+        List<HealthClub> healthclubList = franchise.getServiceDirectory().getListOfHealthClub();
+        if (healthclubList != null) {
+            for (int i = 0; i < healthclubList.size(); i++) {
+                row[0] = franchiseItem;
+                row[1] = healthclubList.get(i).getName();
+                row[2] = "Health Club";
+                row[3] = healthclubList.get(i).getContact();
+                model.addRow(row);
+            }
+        }
+
         List<Hotel> hotelList = franchise.getServiceDirectory().getListOfHotel();
         if (hotelList != null) {
             for (int i = 0; i < hotelList.size(); i++) {
