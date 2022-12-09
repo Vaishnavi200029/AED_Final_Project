@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author vaishnavi <your.name at your.org>
  */
-class LaundaryOg extends Organization{
+public class LaundaryOg extends Organization{
 
     private List<LaundaryService> listOfLaundaryMan;
 

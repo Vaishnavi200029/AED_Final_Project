@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author vaishnavi <your.name at your.org>
  */
-class TransportationOg extends Organization {
+public class TransportationOg extends Organization {
 
     private List<Transportation> listOfTransportation;
 
