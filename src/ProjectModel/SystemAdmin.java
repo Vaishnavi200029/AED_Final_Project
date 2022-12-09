@@ -7,15 +7,15 @@ import java.util.Map;
 
 public class SystemAdmin {
 
-    private List<Franchise> listOfNetwork;
+    private List<Franchise> listOfFranchise;
     private CustomerDirectory customerDirec;
     private Map<String, String> mapType;
     private Map<String, String> userNamePasswordMap;
 
     public SystemAdmin(String userName, String password) {
-        listOfNetwork = new ArrayList<>();
-        listOfNetwork.add(new Franchise("Seattle"));
-        listOfNetwork.add(new Franchise("Boston"));
+        listOfFranchise = new ArrayList<>();
+        listOfFranchise.add(new Franchise("Seattle"));
+        listOfFranchise.add(new Franchise("Boston"));
         customerDirec = new CustomerDirectory();
         mapType = new HashMap<>();
         userNamePasswordMap = new HashMap<>();
@@ -39,12 +39,12 @@ public class SystemAdmin {
         this.mapType = mapType;
     }
 
-    public List<Franchise> getListOfNetwork() {
-        return listOfNetwork;
+    public List<Franchise> getListOfFranchise() {
+        return listOfFranchise;
     }
 
-    public void setListOfNetwork(List<Franchise> listOfNetwork) {
-        this.listOfNetwork = listOfNetwork;
+    public void setListOfFranchise(List<Franchise> listOfFranchise) {
+        this.listOfFranchise = listOfFranchise;
     }
 
     public CustomerDirectory getCustomerDirec() {
@@ -55,14 +55,14 @@ public class SystemAdmin {
         this.customerDirec = customerDirec;
     }
 
-    public void addNetwork(String name) {
+    public void addFranchise(String name) {
         Franchise franchise = new Franchise(name);
-        listOfNetwork.add(franchise);
+        listOfFranchise.add(franchise);
     }
 
-    public Franchise findNetwork(String franchiseName) {
-        for (Franchise franchise : listOfNetwork) {
-            if (listOfNetwork != null && franchise.getName().equals(franchiseName)) {
+    public Franchise findFranchise(String franchiseName) {
+        for (Franchise franchise : listOfFranchise) {
+            if (listOfFranchise != null && franchise.getName().equals(franchiseName)) {
                 return franchise;
             }
         }
