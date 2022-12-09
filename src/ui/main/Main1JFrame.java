@@ -1,11 +1,18 @@
 package ui.main;
 
+import ProjectModel.BusinessEvent;
 import db.DbUtils;
 import java.util.List;
 import javax.swing.JOptionPane;
 import ProjectModel.Customer;
 import ProjectModel.Services;
+import ProjectModel.Franchise;
+import ProjectModel.Manager;
 import ProjectModel.SystemAdmin;
+import ui.EventManagerRole.EventManagerPanel;
+import ui.EventManagerRole.ManageOrganisationAdminForEvent;
+import ui.EventManagerRole.ManageOrganisationForEvents;
+import ui.EventManagerRole.ViewTaskPanelForEvent;
 import ui.SystemAdministration.SystemAdministrationJPanel;
 
 public class Main1JFrame extends javax.swing.JFrame {
@@ -142,7 +149,9 @@ public class Main1JFrame extends javax.swing.JFrame {
                     SystemAdministrationJPanel systemAdministration = new SystemAdministrationJPanel(systemAdmin);
                     jSplitPane.setRightComponent(systemAdministration);
                     break;
-
+                case "Business Event":
+                    eventManagerPanel();
+                    break;
                 
                 default:
                     JOptionPane.showMessageDialog(this, "Type not supported.");
@@ -194,5 +203,62 @@ public class Main1JFrame extends javax.swing.JFrame {
     private javax.swing.JTextField usernameField;
     // End of variables declaration//GEN-END:variables
 
+    private void eventManagerPanel() {
+        jSplitPane.setRightComponent(new EventManagerPanel(systemAdmin,this::renderViewTask3, this::renderEventOrg, this::renderEventAdmin));
+
+    }
+
+    private void renderViewTask3() {     // view Business Event manager panel
+        String type = systemAdmin.findUserType(userName);
+        BusinessEvent event = (BusinessEvent) findUserEnterprise();
+        ViewTaskPanelForEvent eventPanel = new ViewTaskPanelForEvent(systemAdmin, this::eventManagerPanel, userName, type, event);
+        jSplitPane.setRightComponent(eventPanel);
+    }
+
+    private void renderEventOrg() {     // add an organisation for event
+        String type = systemAdmin.findUserType(userName);
+        Franchise network = findUserFranchiseForEvents();
+        ManageOrganisationForEvents org = new ManageOrganisationForEvents(systemAdmin, this::eventManagerPanel, userName, type, network);
+        jSplitPane.setRightComponent(org);
+    }
+
+    private void renderEventAdmin() { //create organisation admin under event
+        String type = systemAdmin.findUserType(userName);
+        Franchise network = findUserFranchiseForEvents();
+        ManageOrganisationAdminForEvent orgAdmin = new ManageOrganisationAdminForEvent(systemAdmin, this::eventManagerPanel, userName, type, network);
+        jSplitPane.setRightComponent(orgAdmin);
+    }
     
+        private Franchise findUserFranchiseForEvents() {
+        List<Franchise> network = systemAdmin.getListOfFranchise();
+        for (int i = 0; i < network.size(); i++) {
+            List<BusinessEvent> event = network.get(i).getServiceDirectory().getListOfEvents();
+            for (int j = 0; j < event.size(); j++) {
+                List<Manager> manager = event.get(j).getListOfManager();
+                for (int k = 0; k < manager.size(); k++) {
+                    if (manager.get(k).getUsername().equals(userName)) {
+                        return network.get(i);
+
+                    }
+                }
+            }
+        }
+        return null;
+    }
+        
+    private Services findUserEnterprise() {
+        List<Franchise> network = systemAdmin.getListOfFranchise();
+        for (int i = 0; i < network.size(); i++) {
+            List<BusinessEvent> event = network.get(i).getServiceDirectory().getListOfEvents();
+            for (int j = 0; j < event.size(); j++) {
+                List<Manager> manager = event.get(j).getListOfManager();
+                for (int k = 0; k < manager.size(); k++) {
+                    if (manager.get(k).getUsername().equals(userName)) {
+                        return event.get(j);
+                    }
+                }
+            }
+        }
+        return null;
+    }
 }
