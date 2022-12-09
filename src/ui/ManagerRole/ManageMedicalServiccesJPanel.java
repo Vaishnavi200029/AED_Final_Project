@@ -32,7 +32,7 @@ public class ManageMedicalServiccesJPanel extends javax.swing.JPanel {
         jButton3 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<String>();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jButton4 = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -57,7 +57,7 @@ public class ManageMedicalServiccesJPanel extends javax.swing.JPanel {
         jLabel6.setText("PHONE NUMBER");
 
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<String>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton4.setText("DELETE");
@@ -92,7 +92,7 @@ public class ManageMedicalServiccesJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "ENTERPRISE", "HOSPITAL", "PHONE NUMBER", "USERNAME", "PASSWORD"
+                "SERVICE", "HOSPITAL", "PHONE NUMBER", "USERNAME", "PASSWORD"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
