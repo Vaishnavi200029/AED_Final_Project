@@ -6,19 +6,18 @@ import ProjectModel.SystemAdmin;
 public class SystemAdministrationJPanel extends javax.swing.JPanel {
 
     SystemAdmin systems;
-//    private Runnable callOnCreateMethod1;
+    private Runnable callOnCreateMethod1;
     private Runnable callOnCreateMethod2;
-//    private Runnable callOnCreateMethod3;
+    private Runnable callOnCreateMethod3;
     private Runnable callOnCreateMethod4;
 
-    public SystemAdministrationJPanel(SystemAdmin systems,Runnable callOnCreateMethod2,Runnable callOnCreateMethod4) {
+    public SystemAdministrationJPanel(SystemAdmin systems,Runnable callOnCreateMethod1,Runnable callOnCreateMethod2,Runnable callOnCreateMethod3,Runnable callOnCreateMethod4) {
         initComponents();
         this.systems = systems;
-//        this.callOnCreateMethod1 = callOnCreateMethod1;
+        this.callOnCreateMethod1 = callOnCreateMethod1;
         this.callOnCreateMethod2 = callOnCreateMethod2;
-//        this.callOnCreateMethod3 = callOnCreateMethod3;
+        this.callOnCreateMethod3 = callOnCreateMethod3;
         this.callOnCreateMethod4 = callOnCreateMethod4;
-        setBackground(new java.awt.Color(255, 204, 204));
 
         franchisesBtn.setBackground(new java.awt.Color(244, 120, 140));
         franchisesBtn.setOpaque(true);
@@ -116,7 +115,7 @@ public class SystemAdministrationJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_servicesBtnActionPerformed
 
     private void franchisesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_franchisesBtnActionPerformed
-//        callOnCreateMethod1.run();
+        callOnCreateMethod1.run();
     }//GEN-LAST:event_franchisesBtnActionPerformed
 
     private void btnmanagecustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmanagecustomersActionPerformed
@@ -124,7 +123,7 @@ public class SystemAdministrationJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnmanagecustomersActionPerformed
 
     private void btnmanagemanagersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmanagemanagersActionPerformed
-//        callOnCreateMethod3.run();
+        callOnCreateMethod3.run();
     }//GEN-LAST:event_btnmanagemanagersActionPerformed
 
 

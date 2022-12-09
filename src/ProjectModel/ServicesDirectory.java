@@ -6,25 +6,25 @@ import java.util.Map;
 
 public class ServicesDirectory {
 
-//    private List<Hotel> listOfHotel;
+    private List<Hotel> listOfHotel;
     private List<BusinessEvent> listOfEvents;
 //    private List<HealthClub> listOfHealthClub;
     private List<Restaurant> listOfRestaurants;
 
     public ServicesDirectory() {
-//        listOfHotel = new ArrayList<>();
+        listOfHotel = new ArrayList<>();
         listOfEvents = new ArrayList<>();
 //        listOfHealthClub = new ArrayList<>();
         listOfRestaurants = new ArrayList<>();
     }
 
-//    public List<Hotel> getListOfHotel() {
-//        return listOfHotel;
-//    }
+    public List<Hotel> getListOfHotel() {
+        return listOfHotel;
+    }
 
-//    public void setListOfHotel(List<Hotel> listOfHotel) {
-//        this.listOfHotel = listOfHotel;
-//    }
+    public void setListOfHotel(List<Hotel> listOfHotel) {
+        this.listOfHotel = listOfHotel;
+    }
 
     public List<BusinessEvent> getListOfEvents() {
         return listOfEvents;
@@ -65,19 +65,19 @@ public class ServicesDirectory {
         listOfEvents.add(event);
     }
 
-//    public void addHotel(String name, String contact) {
-//        Hotel hotel = new Hotel(name, contact);
-//        listOfHotel.add(hotel);
-//    }
+    public void addHotel(String name, String contact) {
+        Hotel hotel = new Hotel(name, contact);
+        listOfHotel.add(hotel);
+    }
 
-//    public Hotel findHotel(String hotelName) {
-//        for (Hotel hotel : listOfHotel) {
-//            if (hotel.getName().equals(hotelName)) {
-//                return hotel;
-//            }
-//        }
-//        return null;
-//    }
+    public Hotel findHotel(String hotelName) {
+        for (Hotel hotel : listOfHotel) {
+            if (hotel.getName().equals(hotelName)) {
+                return hotel;
+            }
+        }
+        return null;
+    }
 
 //    public HealthClub findHealthClub(String clubName) {
 //        for (HealthClub club : listOfHealthClub) {
@@ -118,7 +118,7 @@ public class ServicesDirectory {
         listOfRestaurants.remove(res);
     }
 //
-//    public void deleteServiceHotel(Hotel hotel) {
-//        listOfHotel.remove(hotel);
-//    }
+    public void deleteServiceHotel(Hotel hotel) {
+        listOfHotel.remove(hotel);
+    }
 }
