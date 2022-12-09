@@ -11,11 +11,11 @@ public class Customer {
     private String city;
     private String password;
     private String userName;
-//    private List<Booking> bookingList;
+    private List<Booking> bookingList;
 
-//    public Customer() {
-//        bookingList = new ArrayList<>();
-//    }
+    public Customer() {
+        bookingList = new ArrayList<>();
+    }
 
     public String getPassword() {
         return password;
@@ -53,13 +53,13 @@ public class Customer {
         return contact;
     }
 
-//    public List<Booking> getBookingList() {
-//        return bookingList;
-//    }
-//
-//    public void setBookingList(List<Booking> bookingList) {
-//        this.bookingList = bookingList;
-//    }
+    public List<Booking> getBookingList() {
+        return bookingList;
+    }
+
+    public void setBookingList(List<Booking> bookingList) {
+        this.bookingList = bookingList;
+    }
 
     public void setContact(String contact) {
         this.contact = contact;
@@ -73,11 +73,11 @@ public class Customer {
         this.address = address;
     }
 
-//    public Booking addBooking(Hotel hotel, Network network) {
-//        Booking booking = new Booking(hotel, network);
-//        bookingList.add(booking);
-//        return booking;
-//    }
+    public Booking addBooking(Hotel hotel, Franchise franchise) {
+        Booking booking = new Booking(hotel, franchise);
+        bookingList.add(booking);
+        return booking;
+    }
 
     public String toString() {
         return userName;

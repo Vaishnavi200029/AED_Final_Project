@@ -21,10 +21,10 @@ public class ManageServicesPanel extends javax.swing.JPanel {
         initComponents();
         this.systemAdmin = systemAdmin;
         this.callOnCreateMethod = callOnCreateMethod;
-        for (Franchise franchise : systemAdmin.getListOfNetwork()) {      //populate items in franchise combobox
+        for (Franchise franchise : systemAdmin.getListOfFranchise()) {      //populate items in franchise combobox
             franchiseType.addItem(franchise.getName());
         }
-        for (Franchise franchise : systemAdmin.getListOfNetwork()) {
+        for (Franchise franchise : systemAdmin.getListOfFranchise()) {
             franchiseCombo.addItem(franchise.getName());
         }
         setBackground(new java.awt.Color(255, 204, 204));
@@ -287,7 +287,7 @@ public class ManageServicesPanel extends javax.swing.JPanel {
         String franchiseName = (String) model.getValueAt(selectedRowIndex, 0);
         String serviceType = (String) model.getValueAt(selectedRowIndex, 2);
         String serviceName = (String) model.getValueAt(selectedRowIndex, 1);
-        Franchise franchise = systemAdmin.findNetwork(franchiseName);
+        Franchise franchise = systemAdmin.findFranchise(franchiseName);
         ServicesDirectory serviceDirec = franchise.getServiceDirectory();
         if (serviceType.equals("Business Event") && serviceDirec.getListOfEvents() != null) {
             for (BusinessEvent event : serviceDirec.getListOfEvents()) {
@@ -343,7 +343,7 @@ public class ManageServicesPanel extends javax.swing.JPanel {
         String name = nameField.getText();
         String franchiseName = franchiseType.getSelectedItem().toString();
         String serviceType1 = serviceType.getSelectedItem().toString();
-        Franchise franchise = systemAdmin.findNetwork(franchiseName);
+        Franchise franchise = systemAdmin.findFranchise(franchiseName);
 
         if (name == null || name.length() < 2) {
             JOptionPane.showMessageDialog(this, "Invalid input: Service name should be atleast 2 characters long.");
@@ -395,7 +395,7 @@ public class ManageServicesPanel extends javax.swing.JPanel {
         String serviceType1 = serviceType.getSelectedItem().toString();
         String serviceName = model.getValueAt(jTable1.getSelectedRow(), 1).toString();
 
-        Franchise franchise = systemAdmin.findNetwork(franchiseName);
+        Franchise franchise = systemAdmin.findFranchise(franchiseName);
         ServicesDirectory serviceDirec = franchise.getServiceDirectory();
 
         Services serviceToUpdate = null;
@@ -486,7 +486,7 @@ public class ManageServicesPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         Object row[] = new Object[10];
         String franchiseItem = franchiseCombo.getSelectedItem().toString();
-        Franchise franchise = systemAdmin.findNetwork(franchiseItem);
+        Franchise franchise = systemAdmin.findFranchise(franchiseItem);
 
         List<BusinessEvent> eventList = franchise.getServiceDirectory().getListOfEvents();
         if (eventList != null) {
