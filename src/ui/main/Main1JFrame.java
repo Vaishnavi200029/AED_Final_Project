@@ -14,8 +14,11 @@ import ui.EventManagerRole.ManageOrganisationAdminForEvent;
 import ui.EventManagerRole.ManageOrganisationForEvents;
 import ui.EventManagerRole.ViewTaskPanelForEvent;
 import ui.SystemAdministration.ManageCustomersJPanel;
+import ui.SystemAdministration.ManageFranchisePanel;
+import ui.SystemAdministration.ManageManagersPanel;
 import ui.SystemAdministration.ManageServicesPanel;
 import ui.SystemAdministration.SystemAdministrationJPanel;
+import CustomerRoleUi.CustomerStartingPanel;
 
 public class Main1JFrame extends javax.swing.JFrame {
 
@@ -148,8 +151,11 @@ public class Main1JFrame extends javax.swing.JFrame {
 
             switch (type) {
                 case "admin":
-                    SystemAdministrationJPanel systemAdministration = new SystemAdministrationJPanel(systemAdmin,this::renderServicesPanel,this::renderCustomerPanel);
+                    SystemAdministrationJPanel systemAdministration = new SystemAdministrationJPanel(systemAdmin,this::renderFranchisePanel,this::renderServicesPanel,this::renderManagerPanel,this::renderCustomerPanel);
                     jSplitPane.setRightComponent(systemAdministration);
+                    break;
+                case "Customer":
+                    renderCustomer(userName);
                     break;
                 case "Business Event":
                     eventManagerPanel();
@@ -275,6 +281,30 @@ public class Main1JFrame extends javax.swing.JFrame {
     }
     
     private void renderSystemAdminPanel() {
-        jSplitPane.setRightComponent(new SystemAdministrationJPanel(systemAdmin, this::renderServicesPanel, this::renderCustomerPanel));
+        jSplitPane.setRightComponent(new SystemAdministrationJPanel(systemAdmin,this::renderFranchisePanel, this::renderServicesPanel,this::renderManagerPanel, this::renderCustomerPanel));
+    }
+    
+    private void renderFranchisePanel() {
+        ManageFranchisePanel fPanel = new ManageFranchisePanel(systemAdmin, this::renderSystemAdminPanel);
+        jSplitPane.setRightComponent(fPanel);
+    }
+        
+    private void renderManagerPanel() {
+        ManageManagersPanel manager = new ManageManagersPanel(systemAdmin, this::renderSystemAdminPanel);
+        jSplitPane.setRightComponent(manager);
+    }
+
+    private void renderCustomer(String username) {
+        Customer customer = systemAdmin.getCustomerDirec().findCustomerUsername(username);
+        CustomerStartingPanel customerPanel = new CustomerStartingPanel(systemAdmin, this::renderBookRoomPanel, this::manageBooking);
+        jSplitPane.setRightComponent(customerPanel);
+    }
+    
+    private void renderBookRoomPanel() {
+
+    }
+
+    private void manageBooking() {
+
     }
 }

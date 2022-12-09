@@ -7,7 +7,7 @@ import ProjectModel.BusinessEvent;
 import ProjectModel.Services;
 import ProjectModel.ServicesDirectory;
 //import ProjectModel.HealthClub;
-//import ProjectModel.Hotel;
+import ProjectModel.Hotel;
 import ProjectModel.Franchise;
 //import ProjectModel.Restaurant;
 import ProjectModel.SystemAdmin;
@@ -297,16 +297,16 @@ public class ManageServicesPanel extends javax.swing.JPanel {
                     populateTable();
                 }
             }
+        } else if (serviceType.equals("Hotel") && serviceDirec.getListOfHotel() != null) {
+            for (Hotel hotel : serviceDirec.getListOfHotel()) {
+                if (hotel.getName().equals(serviceName)) {
+                    serviceDirec.deleteServiceHotel(hotel);
+                    JOptionPane.showMessageDialog(this, "Service deleted successfully");
+                    populateTable();
+                }
+            }
         } 
-//        else if (serviceType.equals("Hotel") && serviceDirec.getListOfHotel() != null) {
-//            for (Hotel hotel : serviceDirec.getListOfHotel()) {
-//                if (hotel.getName().equals(serviceName)) {
-//                    serviceDirec.deleteServiceHotel(hotel);
-//                    JOptionPane.showMessageDialog(this, "Service deleted successfully");
-//                    populateTable();
-//                }
-//            }
-//        } else if (serviceType.equals("Restaurant") && serviceDirec.getListOfRestaurants() != null) {
+//        else if (serviceType.equals("Restaurant") && serviceDirec.getListOfRestaurants() != null) {
 //            for (Restaurant res : serviceDirec.getListOfRestaurants()) {
 //                if (res.getName().equals(serviceName)) {
 //                    serviceDirec.deleteServiceRestaurant(res);
@@ -366,12 +366,11 @@ public class ManageServicesPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Service added successfully");
 
             return;
-        } 
-//            else if (serviceType1.equals("Hotel") && serviceDirec != null) {
-//            serviceDirec.addHotel(name, contact);
-//            JOptionPane.showMessageDialog(this, "Service added successfully");
-//            return;
-//        }
+        } else if (serviceType1.equals("Hotel") && serviceDirec != null) {
+            serviceDirec.addHotel(name, contact);
+            JOptionPane.showMessageDialog(this, "Service added successfully");
+            return;
+        }
         nameField.setText("");
         contactField.setText("");
     }//GEN-LAST:event_addBtnActionPerformed
@@ -415,14 +414,14 @@ public class ManageServicesPanel extends javax.swing.JPanel {
                     serviceToUpdate = list;
                 }
             }
+        } else if (serviceType1.equals("Hotel") && serviceDirec != null) {
+            for (Hotel list : serviceDirec.getListOfHotel()) {
+                if (list.getName().equals(serviceName)) {           //if service name matches 
+                    serviceToUpdate = list;
+                }
+            }
         } 
-//            else if (serviceType1.equals("Hotel") && serviceDirec != null) {
-//            for (Hotel list : serviceDirec.getListOfHotel()) {
-//                if (list.getName().equals(serviceName)) {           //if service name matches 
-//                    serviceToUpdate = list;
-//                }
-//            }
-//        } else if (serviceType1.equals("Business Event") && serviceDirec != null) {
+//            else if (serviceType1.equals("Business Event") && serviceDirec != null) {
 //            for (Restaurant list : serviceDirec.getListOfRestaurants()) {
 //                if (list.getName().equals(serviceName)) {           //if service name matches 
 //                    serviceToUpdate = list;
@@ -521,16 +520,16 @@ public class ManageServicesPanel extends javax.swing.JPanel {
 //            }
 //        }
 //
-//        List<Hotel> hotelList = franchise.getServiceDirectory().getListOfHotel();
-//        if (hotelList != null) {
-//            for (int i = 0; i < hotelList.size(); i++) {
-//                row[0] = franchiseItem;
-//                row[1] = hotelList.get(i).getName();
-//                row[2] = "Hotel";
-//                row[3] = hotelList.get(i).getContact();
-//                model.addRow(row);
-//            }
-//        }
+        List<Hotel> hotelList = franchise.getServiceDirectory().getListOfHotel();
+        if (hotelList != null) {
+            for (int i = 0; i < hotelList.size(); i++) {
+                row[0] = franchiseItem;
+                row[1] = hotelList.get(i).getName();
+                row[2] = "Hotel";
+                row[3] = hotelList.get(i).getContact();
+                model.addRow(row);
+            }
+        }
 
     }
 }
