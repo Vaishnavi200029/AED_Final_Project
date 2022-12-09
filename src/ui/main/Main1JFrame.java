@@ -13,6 +13,8 @@ import ui.EventManagerRole.EventManagerPanel;
 import ui.EventManagerRole.ManageOrganisationAdminForEvent;
 import ui.EventManagerRole.ManageOrganisationForEvents;
 import ui.EventManagerRole.ViewTaskPanelForEvent;
+import ui.SystemAdministration.ManageCustomersJPanel;
+import ui.SystemAdministration.ManageServicesPanel;
 import ui.SystemAdministration.SystemAdministrationJPanel;
 
 public class Main1JFrame extends javax.swing.JFrame {
@@ -146,7 +148,7 @@ public class Main1JFrame extends javax.swing.JFrame {
 
             switch (type) {
                 case "admin":
-                    SystemAdministrationJPanel systemAdministration = new SystemAdministrationJPanel(systemAdmin);
+                    SystemAdministrationJPanel systemAdministration = new SystemAdministrationJPanel(systemAdmin,this::renderServicesPanel,this::renderCustomerPanel);
                     jSplitPane.setRightComponent(systemAdministration);
                     break;
                 case "Business Event":
@@ -260,5 +262,19 @@ public class Main1JFrame extends javax.swing.JFrame {
             }
         }
         return null;
+    }
+
+    private void renderServicesPanel() {
+        ManageServicesPanel enterprise = new ManageServicesPanel(systemAdmin, this::renderSystemAdminPanel);
+        jSplitPane.setRightComponent(enterprise);
+    }
+
+    private void renderCustomerPanel() {
+        ManageCustomersJPanel customer = new ManageCustomersJPanel(systemAdmin, this::renderSystemAdminPanel);
+        jSplitPane.setRightComponent(customer);
+    }
+    
+    private void renderSystemAdminPanel() {
+        jSplitPane.setRightComponent(new SystemAdministrationJPanel(systemAdmin, this::renderServicesPanel, this::renderCustomerPanel));
     }
 }

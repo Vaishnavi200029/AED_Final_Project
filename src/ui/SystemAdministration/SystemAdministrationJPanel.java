@@ -7,15 +7,15 @@ public class SystemAdministrationJPanel extends javax.swing.JPanel {
 
     SystemAdmin systems;
 //    private Runnable callOnCreateMethod1;
-//    private Runnable callOnCreateMethod2;
+    private Runnable callOnCreateMethod2;
 //    private Runnable callOnCreateMethod3;
     private Runnable callOnCreateMethod4;
 
-    public SystemAdministrationJPanel(SystemAdmin systems) {
+    public SystemAdministrationJPanel(SystemAdmin systems,Runnable callOnCreateMethod2,Runnable callOnCreateMethod4) {
         initComponents();
         this.systems = systems;
 //        this.callOnCreateMethod1 = callOnCreateMethod1;
-//        this.callOnCreateMethod2 = callOnCreateMethod2;
+        this.callOnCreateMethod2 = callOnCreateMethod2;
 //        this.callOnCreateMethod3 = callOnCreateMethod3;
         this.callOnCreateMethod4 = callOnCreateMethod4;
         setBackground(new java.awt.Color(255, 204, 204));
@@ -111,7 +111,7 @@ public class SystemAdministrationJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void servicesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_servicesBtnActionPerformed
-//        callOnCreateMethod2.run();
+        callOnCreateMethod2.run();
 
     }//GEN-LAST:event_servicesBtnActionPerformed
 
