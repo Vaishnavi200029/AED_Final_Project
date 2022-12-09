@@ -9,7 +9,7 @@ import ProjectModel.ServicesDirectory;
 //import ProjectModel.HealthClub;
 //import ProjectModel.Hotel;
 import ProjectModel.Franchise;
-//import ProjectModel.Restaurant;
+import ProjectModel.Restaurant;
 import ProjectModel.SystemAdmin;
 
 public class ManageServicesPanel extends javax.swing.JPanel {
@@ -306,15 +306,17 @@ public class ManageServicesPanel extends javax.swing.JPanel {
 //                    populateTable();
 //                }
 //            }
-//        } else if (serviceType.equals("Restaurant") && serviceDirec.getListOfRestaurants() != null) {
-//            for (Restaurant res : serviceDirec.getListOfRestaurants()) {
-//                if (res.getName().equals(serviceName)) {
-//                    serviceDirec.deleteServiceRestaurant(res);
-//                    JOptionPane.showMessageDialog(this, "Service deleted successfully");
-//                    populateTable();
-//                }
-//            }
-//        } else if (serviceType.equals("Health Club") && serviceDirec.getListOfHealthClub() != null) {
+//        } else 
+                if (serviceType.equals("Restaurant") && serviceDirec.getListOfRestaurants() != null) {
+                for (Restaurant res : serviceDirec.getListOfRestaurants()) {
+                    if (res.getName().equals(serviceName)) {
+                        serviceDirec.deleteServiceRestaurant(res);
+                        JOptionPane.showMessageDialog(this, "Service deleted successfully");
+                        populateTable();
+                }
+            }
+        } 
+//              else if (serviceType.equals("Health Club") && serviceDirec.getListOfHealthClub() != null) {
 //            for (HealthClub club : serviceDirec.getListOfHealthClub()) {
 //                if (club.getName().equals(serviceName)) {
 //                    serviceDirec.deleteServiceHealthClub(club);
@@ -355,12 +357,14 @@ public class ManageServicesPanel extends javax.swing.JPanel {
 //            serviceDirec.addHealthClub(name, contact);
 //            JOptionPane.showMessageDialog(this, "Service added successfully");
 //            return;
-//        } else if (serviceType1.equals("Restaurant") && serviceDirec != null) {
-//            serviceDirec.addRestaurant(name, contact);
-//            JOptionPane.showMessageDialog(this, "Service added successfully");
-//
-//            return;
 //        } else
+            if (serviceType1.equals("Restaurant") && serviceDirec != null) {
+            serviceDirec.addRestaurant(name, contact);
+            JOptionPane.showMessageDialog(this, "Service added successfully");
+
+            return;
+        } 
+          else
             if (serviceType1.equals("Business Event") && serviceDirec != null) {
             serviceDirec.addBusinessEvent(name, contact);
             JOptionPane.showMessageDialog(this, "Service added successfully");
@@ -499,16 +503,16 @@ public class ManageServicesPanel extends javax.swing.JPanel {
             }
         }
 
-//        List<Restaurant> restaurantList = franchise.getServiceDirectory().getListOfRestaurants();
-//        if (restaurantList != null) {
-//            for (int i = 0; i < restaurantList.size(); i++) {
-//                row[0] = franchiseItem;
-//                row[1] = restaurantList.get(i).getName();
-//                row[2] = "Restaurant";
-//                row[3] = restaurantList.get(i).getContact();
-//                model.addRow(row);
-//            }
-//        }
+        List<Restaurant> restaurantList = franchise.getServiceDirectory().getListOfRestaurants();
+        if (restaurantList != null) {
+            for (int i = 0; i < restaurantList.size(); i++) {
+                row[0] = franchiseItem;
+                row[1] = restaurantList.get(i).getName();
+                row[2] = "Restaurant";
+                row[3] = restaurantList.get(i).getContact();
+                model.addRow(row);
+            }
+        }
 //
 //        List<HealthClub> healthclubList = franchise.getServiceDirectory().getListOfHealthClub();
 //        if (healthclubList != null) {

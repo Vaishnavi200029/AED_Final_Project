@@ -30,7 +30,7 @@ public class ManagingHealthClubJPanel extends javax.swing.JPanel {
         jTextField9 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<String>();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
@@ -53,7 +53,7 @@ public class ManagingHealthClubJPanel extends javax.swing.JPanel {
         jLabel6.setText("PHONE NUMBER");
 
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<String>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("MANAGER ID");
@@ -106,7 +106,7 @@ public class ManagingHealthClubJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "ENTERPRISE", "MANAGER", "MANAGER ID", "PHONE NUMBER", "USERNAME", "PASSWORD"
+                "SERVICE", "MANAGER", "MANAGER ID", "PHONE NUMBER", "USERNAME", "PASSWORD"
             }
         ));
         jScrollPane1.setViewportView(jTable1);

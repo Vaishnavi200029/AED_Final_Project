@@ -44,7 +44,7 @@ public class ManageEventJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<String>();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("PASSWORD");
@@ -106,7 +106,7 @@ public class ManageEventJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "ENTERPRISE", "MANAGER", "MANAGER ID", "PHONE NUMBER", "USERNAME", "PASSWORD"
+                "SERVICE", "MANAGER", "MANAGER ID", "PHONE NUMBER", "USERNAME", "PASSWORD"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -115,7 +115,7 @@ public class ManageEventJPanel extends javax.swing.JPanel {
         jButton2.setText("BACK");
 
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<String>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
