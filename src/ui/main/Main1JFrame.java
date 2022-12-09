@@ -18,7 +18,7 @@ import ui.SystemAdministration.ManageFranchisePanel;
 import ui.SystemAdministration.ManageManagersPanel;
 import ui.SystemAdministration.ManageServicesPanel;
 import ui.SystemAdministration.SystemAdministrationJPanel;
-import CustomerRoleUi.CustomerStartingPanel;
+import ui.CustomerRole.CustomerStartingPanel;
 
 public class Main1JFrame extends javax.swing.JFrame {
 
