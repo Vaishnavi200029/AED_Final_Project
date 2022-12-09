@@ -9,13 +9,13 @@ public class ServicesDirectory {
     private List<Hotel> listOfHotel;
     private List<BusinessEvent> listOfEvents;
 //    private List<HealthClub> listOfHealthClub;
-//    private List<Restaurant> listOfRestaurants;
+    private List<Restaurant> listOfRestaurants;
 
     public ServicesDirectory() {
         listOfHotel = new ArrayList<>();
         listOfEvents = new ArrayList<>();
 //        listOfHealthClub = new ArrayList<>();
-//        listOfRestaurants = new ArrayList<>();
+        listOfRestaurants = new ArrayList<>();
     }
 
     public List<Hotel> getListOfHotel() {
@@ -42,23 +42,23 @@ public class ServicesDirectory {
 //        this.listOfHealthClub = listOfHealthClub;
 //    }
 
-//    public List<Restaurant> getListOfRestaurants() {
-//        return listOfRestaurants;
-//    }
+    public List<Restaurant> getListOfRestaurants() {
+        return listOfRestaurants;
+    }
 
-//    public void setListOfRestaurants(List<Restaurant> listOfRestaurants) {
-//        this.listOfRestaurants = listOfRestaurants;
-//    }
+    public void setListOfRestaurants(List<Restaurant> listOfRestaurants) {
+        this.listOfRestaurants = listOfRestaurants;
+    }
 
 //    public void addHealthClub(String name, String contact) {
 //        HealthClub healthClub = new HealthClub(name, contact);
 //        listOfHealthClub.add(healthClub);
 //    }
 
-//    public void addRestaurant(String name, String contact) {
-//        Restaurant restaurant = new Restaurant(name, contact);
-//        listOfRestaurants.add(restaurant);
-//    }
+    public void addRestaurant(String name, String contact) {
+        Restaurant restaurant = new Restaurant(name, contact);
+        listOfRestaurants.add(restaurant);
+    }
 
     public void addBusinessEvent(String name, String contact) {
         BusinessEvent event = new BusinessEvent(name, contact);
@@ -88,14 +88,14 @@ public class ServicesDirectory {
 //        return null;
 //    }
 
-//    public Restaurant findRestaurant(String name) {
-//        for (Restaurant restaurant : listOfRestaurants) {
-//            if (restaurant.getName().equals(name)) {
-//                return restaurant;
-//            }
-//        }
-//        return null;
-//    }
+    public Restaurant findRestaurant(String name) {
+        for (Restaurant restaurant : listOfRestaurants) {
+            if (restaurant.getName().equals(name)) {
+                return restaurant;
+            }
+        }
+        return null;
+    }
 
     public BusinessEvent findEvent(String name) {
         for (BusinessEvent event : listOfEvents) {
@@ -114,9 +114,9 @@ public class ServicesDirectory {
 //        listOfHealthClub.remove(health);
 //    }
 //
-//    public void deleteServiceRestaurant(Restaurant res) {
-//        listOfRestaurants.remove(res);
-//    }
+    public void deleteServiceRestaurant(Restaurant res) {
+        listOfRestaurants.remove(res);
+    }
 //
     public void deleteServiceHotel(Hotel hotel) {
         listOfHotel.remove(hotel);
