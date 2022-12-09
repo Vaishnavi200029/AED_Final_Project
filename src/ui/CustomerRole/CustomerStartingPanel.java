@@ -1,4 +1,4 @@
-package CustomerRoleUi;
+package ui.CustomerRole;
 
 import ProjectModel.SystemAdmin;
 

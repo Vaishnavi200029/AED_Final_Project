@@ -1,4 +1,4 @@
-package CustomerRoleUi;
+package ui.CustomerRole;
 
 import java.util.function.Consumer;
 import ProjectModel.Booking;
