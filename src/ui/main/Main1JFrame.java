@@ -1,5 +1,6 @@
 package ui.main;
 
+import ProjectModel.Booking;
 import ProjectModel.BusinessEvent;
 import db.DbUtils;
 import java.util.List;
@@ -7,8 +8,15 @@ import javax.swing.JOptionPane;
 import ProjectModel.Customer;
 import ProjectModel.Services;
 import ProjectModel.Franchise;
+import ProjectModel.HealthClub;
+import ProjectModel.Hotel;
 import ProjectModel.Manager;
+import ProjectModel.Restaurant;
 import ProjectModel.SystemAdmin;
+import ui.ConfirmRequest.ConfirmWorkRequestsForEventPanel;
+import ui.CustomerRole.AddServicePanel;
+import ui.CustomerRole.BookEventsJPanel;
+import ui.CustomerRole.BookRoomServicesJPanel;
 import ui.EventManagerRole.EventManagerPanel;
 import ui.EventManagerRole.ManageOrganisationAdminForEvent;
 import ui.EventManagerRole.ManageOrganisationForEvents;
@@ -19,6 +27,21 @@ import ui.SystemAdministration.ManageManagersPanel;
 import ui.SystemAdministration.ManageServicesPanel;
 import ui.SystemAdministration.SystemAdministrationJPanel;
 import ui.CustomerRole.CustomerStartingPanel;
+import ui.CustomerRole.HealthClubServicesJPanel;
+import ui.CustomerRole.HotelServicePanel;
+import ui.CustomerRole.ManageBooking;
+import ui.CustomerRole.RestuarantServicePanel;
+import ui.CustomerRole.ViewServiceDetailsPanel;
+import ui.HotelManagerRole.HotelManagerPanel;
+import ui.HotelManagerRole.ManageOrganisationAdminForHotel;
+import ui.HotelManagerRole.ManageOrganisationForHotel;
+import ui.HotelManagerRole.ManageRoomPanel;
+import ui.HotelManagerRole.ViewTaskForHotel;
+import ui.RestaurantManagerRole.AddOrderPanel;
+import ui.RestaurantManagerRole.ManageOrgAdminForRestauarant;
+import ui.RestaurantManagerRole.ManageOrganisationPanelForRestaurant;
+import ui.RestaurantManagerRole.RestaurantManagerPanel;
+import ui.RestaurantManagerRole.ViewTaskPanelRestaurant;
 
 public class Main1JFrame extends javax.swing.JFrame {
 
@@ -160,6 +183,44 @@ public class Main1JFrame extends javax.swing.JFrame {
                 case "Business Event":
                     eventManagerPanel();
                     break;
+//                case "Health Club":
+//                    renderHealthClubManager(userName);
+//                    break;
+
+                case "Restaurant":
+                    renderRestaurantManager(userName);
+                    break;
+
+                case "Hotel":
+                    hotelManagerPanel();
+                    break;
+                case "Catering":
+                    confirmWorkRequestForEvent();
+                    break;
+                case "Decor":
+                    confirmWorkRequestForEvent();
+                    break;
+                case "Photography":
+                    confirmWorkRequestForEvent();
+                    break;
+                case "Deliveryman":
+                    confirmWorkRequestForEvent();
+                    break;
+                case "Laundary":
+                    confirmWorkRequestForEvent();
+                    break;
+                case "Transportation":
+                    confirmWorkRequestForEvent();
+                    break;
+                case "Physician":
+                    confirmWorkRequestForEvent();
+                    break;
+                case "Therapist":
+                    confirmWorkRequestForEvent();
+                    break;
+                case "Trainer":
+                    confirmWorkRequestForEvent();
+                    break;
                 
                 default:
                     JOptionPane.showMessageDialog(this, "Type not supported.");
@@ -215,6 +276,71 @@ public class Main1JFrame extends javax.swing.JFrame {
         jSplitPane.setRightComponent(new EventManagerPanel(systemAdmin,this::renderViewTask3, this::renderEventOrg, this::renderEventAdmin));
 
     }
+    
+    private void hotelManagerPanel() {
+        jSplitPane.setRightComponent(new HotelManagerPanel(systemAdmin, this::renderViewTask2, this::renderHotelOrg, this::renderHotelAdmin, this::renderRoomPanel));
+    }
+    
+    private void renderViewTask2() {
+        String type = systemAdmin.findUserType(userName);
+        Hotel hotel = (Hotel) findManagerHotel();
+        ViewTaskForHotel hotelPanel = new ViewTaskForHotel(systemAdmin, this::hotelManagerPanel, userName, type, hotel);
+        jSplitPane.setRightComponent(hotelPanel);
+    }
+    
+    private Services findManagerHotel() {
+        List<Franchise> network = systemAdmin.getListOfFranchise();
+        for (int i = 0; i < network.size(); i++) {
+            List<Hotel> hotel = network.get(i).getServiceDirectory().getListOfHotel();
+            for (int j = 0; j < hotel.size(); j++) {
+                List<Manager> manager = hotel.get(j).getListOfManager();
+                for (int k = 0; k < manager.size(); k++) {
+                    if (manager.get(k).getUsername().equals(userName)) {
+                        return hotel.get(j);
+                    }
+                }
+            }
+        }
+        return null;
+    }
+    
+    private Franchise findUserFranchiseForHotel() {
+        List<Franchise> network = systemAdmin.getListOfFranchise();
+        for (int i = 0; i < network.size(); i++) {
+            List<Hotel> hotel = network.get(i).getServiceDirectory().getListOfHotel();
+            for (int j = 0; j < hotel.size(); j++) {
+                List<Manager> manager = hotel.get(j).getListOfManager();
+                for (int k = 0; k < manager.size(); k++) {
+                    if (manager.get(k).getUsername().equals(userName)) {
+                        System.out.println("manager found is " + manager.get(k).getUsername() + " and city is " + network.get(i));
+                        return network.get(i);
+                    }
+                }
+            }
+        }
+        return null;
+    }
+    
+
+    private void renderHotelOrg() {
+        String type = systemAdmin.findUserType(userName);
+        Franchise network1 = findUserFranchiseForHotel();
+        ManageOrganisationForHotel org = new ManageOrganisationForHotel(systemAdmin, this::hotelManagerPanel, userName, type, network1);
+        jSplitPane.setRightComponent(org);
+    }
+
+    private void renderHotelAdmin() {
+        String type = systemAdmin.findUserType(userName);
+        Franchise network1 = findUserFranchiseForHotel();
+        ManageOrganisationAdminForHotel orgAdmin = new ManageOrganisationAdminForHotel(systemAdmin, this::hotelManagerPanel, userName, type, network1);
+        jSplitPane.setRightComponent(orgAdmin);
+    }
+    
+    private void renderRoomPanel() {
+        Franchise network = findUserFranchiseForHotel();
+        ManageRoomPanel room = new ManageRoomPanel(systemAdmin, this::hotelManagerPanel, network, userName);
+        jSplitPane.setRightComponent(room);
+    }
 
     private void renderViewTask3() {     // view Business Event manager panel
         String type = systemAdmin.findUserType(userName);
@@ -225,27 +351,27 @@ public class Main1JFrame extends javax.swing.JFrame {
 
     private void renderEventOrg() {     // add an organisation for event
         String type = systemAdmin.findUserType(userName);
-        Franchise network = findUserFranchiseForEvents();
-        ManageOrganisationForEvents org = new ManageOrganisationForEvents(systemAdmin, this::eventManagerPanel, userName, type, network);
+        Franchise franchise = findUserFranchiseForEvents();
+        ManageOrganisationForEvents org = new ManageOrganisationForEvents(systemAdmin, this::eventManagerPanel, userName, type, franchise);
         jSplitPane.setRightComponent(org);
     }
 
     private void renderEventAdmin() { //create organisation admin under event
         String type = systemAdmin.findUserType(userName);
-        Franchise network = findUserFranchiseForEvents();
-        ManageOrganisationAdminForEvent orgAdmin = new ManageOrganisationAdminForEvent(systemAdmin, this::eventManagerPanel, userName, type, network);
+        Franchise franchise = findUserFranchiseForEvents();
+        ManageOrganisationAdminForEvent orgAdmin = new ManageOrganisationAdminForEvent(systemAdmin, this::eventManagerPanel, userName, type, franchise);
         jSplitPane.setRightComponent(orgAdmin);
     }
     
         private Franchise findUserFranchiseForEvents() {
-        List<Franchise> network = systemAdmin.getListOfFranchise();
-        for (int i = 0; i < network.size(); i++) {
-            List<BusinessEvent> event = network.get(i).getServiceDirectory().getListOfEvents();
+        List<Franchise> franchise = systemAdmin.getListOfFranchise();
+        for (int i = 0; i < franchise.size(); i++) {
+            List<BusinessEvent> event = franchise.get(i).getServiceDirectory().getListOfEvents();
             for (int j = 0; j < event.size(); j++) {
                 List<Manager> manager = event.get(j).getListOfManager();
                 for (int k = 0; k < manager.size(); k++) {
                     if (manager.get(k).getUsername().equals(userName)) {
-                        return network.get(i);
+                        return franchise.get(i);
 
                     }
                 }
@@ -255,9 +381,9 @@ public class Main1JFrame extends javax.swing.JFrame {
     }
         
     private Services findUserEnterprise() {
-        List<Franchise> network = systemAdmin.getListOfFranchise();
-        for (int i = 0; i < network.size(); i++) {
-            List<BusinessEvent> event = network.get(i).getServiceDirectory().getListOfEvents();
+        List<Franchise> franchise = systemAdmin.getListOfFranchise();
+        for (int i = 0; i < franchise.size(); i++) {
+            List<BusinessEvent> event = franchise.get(i).getServiceDirectory().getListOfEvents();
             for (int j = 0; j < event.size(); j++) {
                 List<Manager> manager = event.get(j).getListOfManager();
                 for (int k = 0; k < manager.size(); k++) {
@@ -301,10 +427,173 @@ public class Main1JFrame extends javax.swing.JFrame {
     }
     
     private void renderBookRoomPanel() {
-
+        BookRoomServicesJPanel bookroomPanel = new BookRoomServicesJPanel(systemAdmin, this::manageCustomerPanel, userName);
+        jSplitPane.setRightComponent(bookroomPanel);
     }
 
     private void manageBooking() {
+        ManageBooking manageBookingPanel = new ManageBooking(systemAdmin, this::manageCustomerPanel, this::addServices, this::viewService, userName);
+        jSplitPane.setRightComponent(manageBookingPanel);
+    }
+    
+    private void manageCustomerPanel() {
+        jSplitPane.setRightComponent(new CustomerStartingPanel(systemAdmin, this::renderBookRoomPanel, this::manageBooking));
+    }
 
+    private void addServices(Booking booking) {
+        AddServicePanel service = new AddServicePanel(systemAdmin, this::bookEvent, this::placeOrder, this::healthPanel,
+                this::hotelService, this::manageBooking, userName, booking);
+        jSplitPane.setRightComponent(service);
+    }
+    
+    private void bookEvent(Booking booking) {
+        BookEventsJPanel event = new BookEventsJPanel(systemAdmin, this::addServices, userName, booking);
+        jSplitPane.setRightComponent(event);
+    }
+
+    private void placeOrder(Booking booking) {           //customer order from restaurant
+        RestuarantServicePanel order = new RestuarantServicePanel(systemAdmin, this::addServices, userName, booking);
+        jSplitPane.setRightComponent(order);
+    }
+
+    private void healthPanel(Booking booking) {             // healthclub panel for customer
+        HealthClubServicesJPanel healthClub = new HealthClubServicesJPanel(systemAdmin, this::addServices, userName, booking);
+        jSplitPane.setRightComponent(healthClub);
+    }
+
+    private void hotelService(Booking booking) {    //laundary and transport service panel fpr customer
+        HotelServicePanel hotelPanel = new HotelServicePanel(systemAdmin, this::addServices, userName, booking);
+        jSplitPane.setRightComponent(hotelPanel);
+    }
+
+    private void viewService(Booking booking) {
+        ViewServiceDetailsPanel viewService = new ViewServiceDetailsPanel(systemAdmin, this::manageBooking, userName, booking);
+        jSplitPane.setRightComponent(viewService);
+    }
+    
+//    private void createOrganization() {
+//        Franchise franchise = findUserFranchiseForHealthClub();
+//        ManageOrganizationPanel org = new ManageOrganizationPanel(systemAdmin, this::healthClubManagerPanel, userName, franchise);
+//        jSplitPane.setRightComponent(org);
+//    }
+
+//    private void organizationAdminPanel() {   //create org admin for health club
+//        String type = systemAdmin.findUserType(userName);
+//        Franchise franchise = findUserFranchiseForHealthClub();
+//        OrganizationAdminPanel orgAdmin = new OrganizationAdminPanel(systemAdmin, this::healthClubManagerPanel, userName, type, franchise);
+//        jSplitPane.setRightComponent(orgAdmin);
+//    }
+
+//    private void healthClubManagerPanel() {   //go back to healthclub
+//        jSplitPane.setRightComponent(new HealthClubManagerPanel(systemAdmin, this::viewTaskPanel, this::createOrganization, this::organizationAdminPanel));
+//    }
+    
+//    private void renderHealthClubManager(String username) {
+//        List<Franchise> franchise = systemAdmin.getListOfFranchise();
+//        for (int i = 0; i < franchise.size(); i++) {
+//            List<HealthClub> healthClubs = franchise.get(i).getServiceDirectory().getListOfHealthClub();
+//            for (int j = 0; j < healthClubs.size(); j++) {
+//                List<Manager> manager = healthClubs.get(j).getListOfManager();
+//                for (int k = 0; k < manager.size(); k++) {
+//                    if (manager.get(k).getUsername().equals(username)) {
+//                        HealthClubManagerPanel healthManagerPanel = new HealthClubManagerPanel(systemAdmin, this::viewTaskPanel, this::createOrganization,
+//                                this::organizationAdminPanel);
+//                        jSplitPane.setRightComponent(healthManagerPanel);
+//
+//                    }
+//                }
+//            }
+//        }
+//    }
+      private void renderRestaurantManager(String username) {
+        List<Franchise> network = systemAdmin.getListOfFranchise();
+        for (int i = 0; i < network.size(); i++) {
+            List<Restaurant> restaurants = network.get(i).getServiceDirectory().getListOfRestaurants();
+            for (int j = 0; j < restaurants.size(); j++) {
+                List<Manager> manager = restaurants.get(j).getListOfManager();
+                for (int k = 0; k < manager.size(); k++) {
+                    if (manager.get(k).getUsername().equals(username)) {
+                        RestaurantManagerPanel restaurantAssign = new RestaurantManagerPanel(systemAdmin, this::renderViewTask1, this::renderRestaurantOrg, this::renderRestaurantAdmin, this::addOrderPanel);
+                        jSplitPane.setRightComponent(restaurantAssign);
+                    }
+                }
+            }
+        }
+    }
+
+    private Franchise findUserFranchiseForRestaurant() {
+        List<Franchise> network = systemAdmin.getListOfFranchise();
+        for (int i = 0; i < network.size(); i++) {
+            List<Restaurant> restaurant = network.get(i).getServiceDirectory().getListOfRestaurants();
+            for (int j = 0; j < restaurant.size(); j++) {
+                List<Manager> manager = restaurant.get(j).getListOfManager();
+                for (int k = 0; k < manager.size(); k++) {
+                    if (manager.get(k).getUsername().equals(userName)) {
+                        return network.get(i);
+
+                    }
+                }
+            }
+        }
+        return null;
+    }
+    
+    private void renderViewTask1() {
+        String type = systemAdmin.findUserType(userName);
+        Restaurant restaurant = (Restaurant) findUserRestaurant();
+        ViewTaskPanelRestaurant resMan = new ViewTaskPanelRestaurant(systemAdmin, this::restaurantManagerPanel, userName, type, restaurant);
+        jSplitPane.setRightComponent(resMan);
+    }
+    
+    private Services findUserRestaurant() {
+        List<Franchise> network = systemAdmin.getListOfFranchise();
+        for (int i = 0; i < network.size(); i++) {
+            List<Restaurant> restaurant = network.get(i).getServiceDirectory().getListOfRestaurants();
+            for (int j = 0; j < restaurant.size(); j++) {
+                List<Manager> manager = restaurant.get(j).getListOfManager();
+                for (int k = 0; k < manager.size(); k++) {
+                    if (manager.get(k).getUsername().equals(userName)) {
+                        return restaurant.get(j);
+                    }
+                }
+            }
+        }
+        return null;
+    }
+    
+    private void restaurantManagerPanel() {
+        jSplitPane.setRightComponent(new RestaurantManagerPanel(systemAdmin, this::renderViewTask1, this::renderRestaurantOrg,
+                this::renderRestaurantAdmin, this::addOrderPanel));
+    }
+
+    private void renderRestaurantOrg() {
+        String type = systemAdmin.findUserType(userName);
+        Franchise network = findUserFranchiseForRestaurant();
+        ManageOrganisationPanelForRestaurant org = new ManageOrganisationPanelForRestaurant(systemAdmin, this::restaurantManagerPanel, userName, type, network
+        );
+        jSplitPane.setRightComponent(org);
+    }
+
+    private void renderRestaurantAdmin() { //create organisation admin under restauarant
+        String type = systemAdmin.findUserType(userName);
+        Franchise network = findUserFranchiseForRestaurant();
+        ManageOrgAdminForRestauarant orgAdmin = new ManageOrgAdminForRestauarant(systemAdmin, this::restaurantManagerPanel, userName, type, network);
+        jSplitPane.setRightComponent(orgAdmin);
+    }
+
+    private void addOrderPanel() {
+        String type = systemAdmin.findUserType(userName);
+        Franchise network = findUserFranchiseForRestaurant();
+        AddOrderPanel order = new AddOrderPanel(systemAdmin, this::restaurantManagerPanel, userName, type, network);
+        jSplitPane.setRightComponent(order);
+    }
+    
+    private void confirmWorkRequestForEvent() {
+        List<Franchise> network = systemAdmin.getListOfFranchise();
+        String type = systemAdmin.findUserType(userName);
+        for (int i = 0; i < network.size(); i++) {
+            ConfirmWorkRequestsForEventPanel workRequest = new ConfirmWorkRequestsForEventPanel(systemAdmin, userName, type);
+            jSplitPane.setRightComponent(workRequest);
+        }
     }
 }
