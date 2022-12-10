@@ -16,6 +16,7 @@ public class SystemAdmin {
         listOfFranchise = new ArrayList<>();
         listOfFranchise.add(new Franchise("Seattle"));
         listOfFranchise.add(new Franchise("Boston"));
+        System.out.println(listOfFranchise);
         customerDirec = new CustomerDirectory();
         mapType = new HashMap<>();
         userNamePasswordMap = new HashMap<>();
