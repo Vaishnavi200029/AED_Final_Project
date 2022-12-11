@@ -4,17 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import ProjectModel.Booking;
-import ProjectModel.BusinessEvent;
-import ProjectModel.CateringService;
-import ProjectModel.Customer;
-import ProjectModel.CustomerDirectory;
-import ProjectModel.DecorationServices;
-import ProjectModel.Organization;
-import ProjectModel.PhotographyService;
-import ProjectModel.SystemAdmin;
-import MServices.BusinessEventService;
-import MServices.Service;
+import ProjModel.Booking;
+import ProjModel.BusinessEvent;
+import ProjModel.CateringService;
+import ProjModel.Customer;
+import ProjModel.CustomerDirectory;
+import ProjModel.DecorServices;
+import ProjModel.Organization;
+import ProjModel.PhotographyService;
+import ProjModel.SystemAdmin;
+import ProjectModel.services.BusinessEventService;
+import ProjectModel.services.Service;
+import javax.swing.ImageIcon;
 
 public class ViewTaskPanelForEvent extends javax.swing.JPanel {
 
@@ -33,13 +34,8 @@ public class ViewTaskPanelForEvent extends javax.swing.JPanel {
         this.businessEvent = businessEvent;
         populateComboBox();
         populateTable();
-        setBackground(new java.awt.Color(255, 204, 204));
-           backBtn.setBackground(new java.awt.Color(244, 120, 140));
         backBtn.setOpaque(true);
-       confirmBtn.setBackground(new java.awt.Color(244, 120, 140));
-       confirmBtn.setOpaque(true);
-       denyButton.setBackground(new java.awt.Color(244, 120, 140));
-       confirmBtn.setOpaque(true);
+        backBtn.setIcon(new ImageIcon(ClassLoader.getSystemResource("icons/back.png")));
     }
 
     @SuppressWarnings("unchecked")
@@ -58,19 +54,26 @@ public class ViewTaskPanelForEvent extends javax.swing.JPanel {
         photographyOrg = new javax.swing.JComboBox<>();
         confirmBtn = new javax.swing.JButton();
         denyButton = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+
+        setLayout(null);
 
         backBtn.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        backBtn.setText("BACK");
         backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backBtnActionPerformed(evt);
             }
         });
+        add(backBtn);
+        backBtn.setBounds(27, 17, 89, 50);
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("VIEW ORDER DETAILS FOR EVENTS");
+        add(jLabel1);
+        jLabel1.setBounds(470, 114, 457, 32);
 
-        jTable1.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        jTable1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -89,11 +92,32 @@ public class ViewTaskPanelForEvent extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        add(jScrollPane1);
+        jScrollPane1.setBounds(196, 164, 1055, 261);
+
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("SELECT A CATERING ORG");
+        add(jLabel2);
+        jLabel2.setBounds(310, 468, 212, 25);
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("SELECT A DECOR ORG");
+        add(jLabel3);
+        jLabel3.setBounds(584, 471, 207, 25);
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("SELECT A PHOTOGRAPHY ORG");
+        add(jLabel4);
+        jLabel4.setBounds(879, 468, 248, 25);
+
+        add(cateringOrg);
+        cateringOrg.setBounds(310, 514, 202, 35);
+
+        add(decorOrg);
+        decorOrg.setBounds(584, 514, 196, 35);
+
+        add(photographyOrg);
+        photographyOrg.setBounds(879, 514, 193, 35);
 
         confirmBtn.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         confirmBtn.setText("CONFIRM REQUEST");
@@ -102,6 +126,8 @@ public class ViewTaskPanelForEvent extends javax.swing.JPanel {
                 confirmBtnActionPerformed(evt);
             }
         });
+        add(confirmBtn);
+        confirmBtn.setBounds(146, 779, 210, 41);
 
         denyButton.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         denyButton.setText("DENY REQUEST");
@@ -110,78 +136,13 @@ public class ViewTaskPanelForEvent extends javax.swing.JPanel {
                 denyButtonActionPerformed(evt);
             }
         });
+        add(denyButton);
+        denyButton.setBounds(438, 779, 189, 41);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 830, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(40, 40, 40)
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(80, 80, 80)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(31, 31, 31)
-                                        .addComponent(cateringOrg, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(72, 72, 72)
-                                        .addComponent(decorOrg, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(70, 70, 70)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(photographyOrg, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(27, 27, 27)
-                                .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(146, 146, 146)
-                                .addComponent(confirmBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(82, 82, 82)
-                                .addComponent(denyButton))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(199, 199, 199)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(29, 29, 29)))
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(backBtn)
-                .addGap(19, 19, 19)
-                .addComponent(jLabel1)
-                .addGap(30, 30, 30)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(71, 71, 71)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(117, 117, 117)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(decorOrg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(photographyOrg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cateringOrg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 198, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(denyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(confirmBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(180, 180, 180))))
-        );
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/EventManagerRole/vector-jan-2021-19_generated.jpg"))); // NOI18N
+        jLabel5.setText("jLabel5");
+        add(jLabel5);
+        jLabel5.setBounds(0, 0, 1610, 1020);
     }// </editor-fold>//GEN-END:initComponents
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
@@ -200,7 +161,7 @@ public class ViewTaskPanelForEvent extends javax.swing.JPanel {
 
         BusinessEventService eventService = null;
         for (Service service : booking.getServices()) {
-            if (businessEvent.getName().equals(service.getServices().getName())) {
+            if (businessEvent.getName().equals(service.getEnterprise().getName())) {
                 eventService = (BusinessEventService) service;
                 break;
             }
@@ -219,7 +180,7 @@ public class ViewTaskPanelForEvent extends javax.swing.JPanel {
 
         CateringService cateringService = (CateringService) cateringOrg.getSelectedItem();
         PhotographyService photographyService = (PhotographyService) photographyOrg.getSelectedItem();
-        DecorationServices decorService = (DecorationServices) decorOrg.getSelectedItem();
+        DecorServices decorService = (DecorServices) decorOrg.getSelectedItem();
 
         List<Organization> organizations = new ArrayList<>();
         for (BusinessEventService.BusinessEventServiceType type : eventService.getBusinessEventServiceTypes().keySet()) {
@@ -271,7 +232,7 @@ public class ViewTaskPanelForEvent extends javax.swing.JPanel {
 
         BusinessEventService eventService = null;
         for (Service service : booking.getServices()) {
-            if (businessEvent.getName().equals(service.getServices().getName())) {
+            if (businessEvent.getName().equals(service.getEnterprise().getName())) {
                 eventService = (BusinessEventService) service;
                 break;
             }
@@ -303,7 +264,7 @@ public class ViewTaskPanelForEvent extends javax.swing.JPanel {
             for (Booking booking : customer.getBookingList()) {      //get booking details each customer
                 for (Service service : booking.getServices()) {       //get services under booking
 
-                    if (service.getServices().getName().equals(businessEvent.getName())) {
+                    if (service.getEnterprise().getName().equals(businessEvent.getName())) {
 
                         BusinessEventService businessEventService = (BusinessEventService) service;
                         Object row[] = new Object[10];
@@ -349,7 +310,7 @@ public class ViewTaskPanelForEvent extends javax.swing.JPanel {
                 cateringOrg.addItem(catering);
             }
         }
-        for (DecorationServices decor : businessEvent.getListOfDecors()) {
+        for (DecorServices decor : businessEvent.getListOfDecors()) {
             if (decor != null) {
                 decorOrg.addItem(decor);
             }
@@ -365,14 +326,15 @@ public class ViewTaskPanelForEvent extends javax.swing.JPanel {
     private javax.swing.JButton backBtn;
     private javax.swing.JComboBox<CateringService> cateringOrg;
     private javax.swing.JButton confirmBtn;
-    private javax.swing.JComboBox<ProjectModel.DecorationServices> decorOrg;
+    private javax.swing.JComboBox<ProjModel.DecorServices> decorOrg;
     private javax.swing.JButton denyButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JComboBox<ProjectModel.PhotographyService> photographyOrg;
+    private javax.swing.JComboBox<ProjModel.PhotographyService> photographyOrg;
     // End of variables declaration//GEN-END:variables
 }

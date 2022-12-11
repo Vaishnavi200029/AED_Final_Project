@@ -2,12 +2,13 @@ package ui.SystemAdministration;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import ProjectModel.BusinessEvent;
-import ProjectModel.Services;
-import ProjectModel.ServicesDirectory;
-import ProjectModel.Manager;
-import ProjectModel.Franchise;
-import ProjectModel.SystemAdmin;
+import ProjModel.BusinessEvent;
+import ProjModel.Services;
+import ProjModel.ServicesDirectory;
+import ProjModel.Manager;
+import ProjModel.Franchise;
+import ProjModel.SystemAdmin;
+import javax.swing.ImageIcon;
 
 public class ManageFranchisePanel extends javax.swing.JPanel {
 
@@ -19,103 +20,80 @@ public class ManageFranchisePanel extends javax.swing.JPanel {
         this.systemAdmin = systemAdmin;
         initComponents();
         populateTable();
+        backButton.setOpaque(true);
+        backButton.setIcon(new ImageIcon(ClassLoader.getSystemResource("icons/back.png")));
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        backButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTabel = new javax.swing.JTable();
         addButton = new javax.swing.JButton();
         lblsysadmin = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         nameField = new javax.swing.JTextField();
+        backButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
-        backButton.setBackground(new java.awt.Color(0, 0, 0));
-        backButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        backButton.setForeground(new java.awt.Color(255, 255, 255));
-        backButton.setText("BACK");
-        backButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backButtonActionPerformed(evt);
-            }
-        });
+        setLayout(null);
 
-        jTabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTabel.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "NETWORK NAME"
+                "FRANCHISE NAME"
             }
         ));
         jScrollPane1.setViewportView(jTabel);
 
-        addButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        add(jScrollPane1);
+        jScrollPane1.setBounds(330, 200, 810, 208);
+
+        addButton.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         addButton.setText("ADD");
-        addButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addButtonActionPerformed(evt);
             }
         });
+        add(addButton);
+        addButton.setBounds(760, 460, 147, 39);
 
         lblsysadmin.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        lblsysadmin.setForeground(new java.awt.Color(255, 255, 255));
         lblsysadmin.setText("MANAGE FRANCHISES");
+        add(lblsysadmin);
+        lblsysadmin.setBounds(510, 110, 407, 44);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Franchise :");
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("FRANCHISE");
+        add(jLabel1);
+        jLabel1.setBounds(350, 470, 121, 22);
 
         nameField.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        add(nameField);
+        nameField.setBounds(490, 470, 190, 30);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(backButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(281, 281, 281)
-                        .addComponent(lblsysadmin))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(219, 219, 219)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 513, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(227, 227, 227)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(314, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addComponent(lblsysadmin)
-                .addGap(36, 36, 36)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(333, Short.MAX_VALUE))
-        );
+        backButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        backButton.setForeground(new java.awt.Color(255, 255, 255));
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+        add(backButton);
+        backButton.setBounds(40, 23, 108, 50);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/SystemAdministration/vector-OCT-2020-116_generated.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2);
+        jLabel2.setBounds(0, -10, 1981, 1358);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        callOnCreateMethod.run();
-    }//GEN-LAST:event_backButtonActionPerformed
     public boolean validateName() {
         if (nameField.getText().matches("[a-zA-Z]{2,19}")) {
             return true;
@@ -129,18 +107,23 @@ public class ManageFranchisePanel extends javax.swing.JPanel {
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         String name = nameField.getText();
         if (validateName()) {
-            systemAdmin.addFranchise(name);
-            JOptionPane.showMessageDialog(this, "Franchise added successfully");
+            systemAdmin.addNetwork(name);
+            JOptionPane.showMessageDialog(this, "Network added successfully");
             nameField.setText("");
             populateTable();
         }
     }//GEN-LAST:event_addButtonActionPerformed
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        callOnCreateMethod.run();
+    }//GEN-LAST:event_backButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JButton backButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTabel;
     private javax.swing.JLabel lblsysadmin;
@@ -151,8 +134,8 @@ public class ManageFranchisePanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) jTabel.getModel();
         model.setRowCount(0);
         Object row[] = new Object[10];
-        for (Franchise franchise : systemAdmin.getListOfFranchise()) {
-            row[0] = franchise.getName();
+        for (Franchise network : systemAdmin.getListOfNetwork()) {        //populate network
+            row[0] = network.getName();
             model.addRow(row);
         }
     }

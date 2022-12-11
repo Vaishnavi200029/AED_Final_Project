@@ -3,17 +3,18 @@ package ui.HotelManagerRole;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import ProjectModel.BusinessEvent;
-import ProjectModel.CateringService;
-import ProjectModel.DecorationServices;
-import ProjectModel.ServicesDirectory;
-import ProjectModel.Hotel;
-import ProjectModel.LaundaryOg;
-import ProjectModel.Manager;
-import ProjectModel.Franchise;
-import ProjectModel.PhotographyService;
-import ProjectModel.SystemAdmin;
-import ProjectModel.TransportationOg;
+import ProjModel.BusinessEvent;
+import ProjModel.CateringService;
+import ProjModel.DecorServices;
+import ProjModel.ServicesDirectory;
+import ProjModel.Hotel;
+import ProjModel.LaundaryOrg;
+import ProjModel.Manager;
+import ProjModel.Franchise;
+import ProjModel.PhotographyService;
+import ProjModel.SystemAdmin;
+import ProjModel.TransportationOrg;
+import javax.swing.ImageIcon;
 import ui.main.Validator;
 
 public class ManageOrganisationAdminForHotel extends javax.swing.JPanel {
@@ -22,25 +23,19 @@ public class ManageOrganisationAdminForHotel extends javax.swing.JPanel {
     private Runnable callOnCreateMethod;
     private String user;
     private String type;
-    private Franchise franchise;
+    private Franchise network;
 
-    public ManageOrganisationAdminForHotel(SystemAdmin systemAdmin, Runnable callOnCreateMethod, String user, String type, Franchise franchise) {
+    public ManageOrganisationAdminForHotel(SystemAdmin systemAdmin, Runnable callOnCreateMethod, String user, String type, Franchise network) {
         initComponents();
         this.systemAdmin = systemAdmin;
         this.callOnCreateMethod = callOnCreateMethod;
         this.user = user;
         this.type = type;
-        this.franchise = franchise;
-        franchiseName.setText(franchise.getName());
+        this.network = network;
+        networkName.setText(network.getName());
         populateTable();
-        deleteButton.setBackground(new java.awt.Color(244, 120, 140));
-        deleteButton.setOpaque(true);
-        addButton.setBackground(new java.awt.Color(244, 120, 140));
-        addButton.setOpaque(true);
-        updateButton.setBackground(new java.awt.Color(244, 120, 140));
-        updateButton.setOpaque(true);
-        backButton.setBackground(new java.awt.Color(244, 120, 140));
         backButton.setOpaque(true);
+        backButton.setIcon(new ImageIcon(ClassLoader.getSystemResource("icons/back.png")));
     }
 
     @SuppressWarnings("unchecked")
@@ -65,21 +60,28 @@ public class ManageOrganisationAdminForHotel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         orgName = new javax.swing.JComboBox<>();
-        franchiseName = new javax.swing.JTextField();
+        networkName = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
 
-        addButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        setLayout(null);
+
+        addButton.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         addButton.setText("ADD");
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addButtonActionPerformed(evt);
             }
         });
+        add(addButton);
+        addButton.setBounds(380, 750, 132, 39);
 
         nameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameFieldActionPerformed(evt);
             }
         });
+        add(nameField);
+        nameField.setBounds(900, 480, 144, 35);
 
         orgCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laundary", "Transportation" }));
         orgCombo.addActionListener(new java.awt.event.ActionListener() {
@@ -87,59 +89,91 @@ public class ManageOrganisationAdminForHotel extends javax.swing.JPanel {
                 orgComboActionPerformed(evt);
             }
         });
+        add(orgCombo);
+        orgCombo.setBounds(480, 550, 187, 35);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("ORGANIZATION TYPE");
+        add(jLabel1);
+        jLabel1.setBounds(240, 560, 177, 22);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("NAME");
+        add(jLabel6);
+        jLabel6.setBounds(750, 490, 47, 22);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("FRANCHISE");
+        add(jLabel2);
+        jLabel2.setBounds(250, 480, 102, 22);
 
-        updateButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        updateButton.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         updateButton.setText("UPDATE");
         updateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateButtonActionPerformed(evt);
             }
         });
+        add(updateButton);
+        updateButton.setBounds(580, 750, 113, 39);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("ORGANIZATION NAME");
+        add(jLabel3);
+        jLabel3.setBounds(240, 630, 194, 22);
+        add(usernameField);
+        usernameField.setBounds(900, 550, 144, 35);
+        add(passwordField);
+        passwordField.setBounds(900, 630, 144, 35);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("USERNAME");
+        add(jLabel4);
+        jLabel4.setBounds(750, 560, 102, 22);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("PASSWORD");
+        add(jLabel5);
+        jLabel5.setBounds(750, 630, 102, 22);
 
         backButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        backButton.setText("BACK");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
+        add(backButton);
+        backButton.setBounds(50, 30, 100, 50);
 
-        lblsysadmin.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblsysadmin.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        lblsysadmin.setForeground(new java.awt.Color(255, 255, 255));
         lblsysadmin.setText("MANAGE HOTEL ORGANISATION ADMIN");
+        add(lblsysadmin);
+        lblsysadmin.setBounds(300, 100, 736, 44);
 
-        deleteButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        deleteButton.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         deleteButton.setText("DELETE");
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteButtonActionPerformed(evt);
             }
         });
+        add(deleteButton);
+        deleteButton.setBounds(760, 750, 109, 40);
 
-        jTable1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTable1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "NETWORK NAME", "ORGANIZATION TYPE", "ORGANIZATION NAME", "NAME", "USERNAME", "PASSWORD"
+                "FRANCHISE NAME", "ORGANIZATION TYPE", "ORGANIZATION NAME", "NAME", "USERNAME", "PASSWORD"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -157,105 +191,24 @@ public class ManageOrganisationAdminForHotel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        add(jScrollPane1);
+        jScrollPane1.setBounds(220, 210, 876, 204);
+
         orgName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 orgNameActionPerformed(evt);
             }
         });
+        add(orgName);
+        orgName.setBounds(480, 630, 187, 35);
+        add(networkName);
+        networkName.setBounds(480, 470, 180, 35);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(deleteButton)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 876, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(32, 32, 32)
-                                .addComponent(backButton))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(51, 51, 51)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(49, 49, 49)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(franchiseName, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(orgCombo, 0, 187, Short.MAX_VALUE)
-                                    .addComponent(orgName, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(83, 83, 83)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(42, 42, 42)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(nameField, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
-                                    .addComponent(usernameField)
-                                    .addComponent(passwordField)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(59, 59, 59)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(206, 206, 206)
-                        .addComponent(lblsysadmin))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(330, 330, 330)
-                        .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(58, 58, 58)
-                        .addComponent(updateButton)))
-                .addContainerGap(138, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(backButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblsysadmin)
-                .addGap(30, 30, 30)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addComponent(deleteButton)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel6)
-                            .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(franchiseName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(orgCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel1)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jLabel4)))
-                .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(orgName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(71, 71, 71)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(125, Short.MAX_VALUE))
-        );
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/HotelManagerRole/vector-jan-2021-19_generated.jpg"))); // NOI18N
+        jLabel7.setText("jLabel7");
+        add(jLabel7);
+        jLabel7.setBounds(0, -10, 1600, 1100);
     }// </editor-fold>//GEN-END:initComponents
 
     private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
@@ -272,11 +225,11 @@ public class ManageOrganisationAdminForHotel extends javax.swing.JPanel {
         String orgType = (String) model.getValueAt(selectedRowIndex, 1);
         String OrgName = (String) model.getValueAt(selectedRowIndex, 2);
         String selectedUser = (String) model.getValueAt(selectedRowIndex, 4);
-        ServicesDirectory enterpriseDirec = franchise.getServiceDirectory();
+        ServicesDirectory enterpriseDirec = network.getEnterpriseDirectory();
         for (Hotel hotel : enterpriseDirec.getListOfHotel()) {
             if (hotel.findManager(user) != null) {
-                if (orgType.equals("Laundary") && hotel.getLaundaryOg()!= null) {
-                    for (LaundaryOg laundary : hotel.getLaundaryOg()) {
+                if (orgType.equals("Laundary") && hotel.getLaundaryOrg() != null) {
+                    for (LaundaryOrg laundary : hotel.getLaundaryOrg()) {
                         if (laundary.getName().equals(OrgName)) {
                             for (Manager man : laundary.getListOfManager()) {
                                 if (man.getUsername().equals(selectedUser)) {
@@ -288,8 +241,8 @@ public class ManageOrganisationAdminForHotel extends javax.swing.JPanel {
                             }
                         }
                     }
-                } else if (orgType.equals("Transportation") && hotel.getTransportationOgList() != null) {
-                    for (TransportationOg transportation : hotel.getTransportationOgList()) {
+                } else if (orgType.equals("Transportation") && hotel.getTransportationOrgList() != null) {
+                    for (TransportationOrg transportation : hotel.getTransportationOrgList()) {
                         if (transportation.getName().equals(OrgName)) {
                             for (Manager man : transportation.getListOfManager()) {
                                 if (man.getUsername().equals(selectedUser)) {
@@ -326,16 +279,16 @@ public class ManageOrganisationAdminForHotel extends javax.swing.JPanel {
 
         if (!systemAdmin.userExistsInSystem(username)) {
 
-            ServicesDirectory enterpriseDirec = franchise.getServiceDirectory();
+            ServicesDirectory enterpriseDirec = network.getEnterpriseDirectory();
             List<Hotel> list = enterpriseDirec.getListOfHotel();
             for (int i = 0; i < list.size(); i++) {
                 if (list.get(i).findManager(user) != null) {    //if manager found for hotel enterprise
                     if (orgType.equals("Laundary")) {
-                        List<LaundaryOg> org1 = list.get(i).getLaundaryOg();
+                        List<LaundaryOrg> org1 = list.get(i).getLaundaryOrg();
                         for (int j = 0; j < org1.size(); j++) {
                             if (org1.get(j).getName().equals(orgName1)) {
-                                org1.get(j).addManager(name, franchise.getName(), username, password); // add managers for each org
-                                row[0] = franchise.getName();
+                                org1.get(j).addManager(name, network.getName(), username, password); // add managers for each org
+                                row[0] = network.getName();
                                 row[1] = orgType;
                                 row[2] = orgName1;
                                 row[3] = name;
@@ -348,11 +301,11 @@ public class ManageOrganisationAdminForHotel extends javax.swing.JPanel {
                             }
                         }
                     } else if (orgType.equals("Transportation")) {
-                        List<TransportationOg> org2 = list.get(i).getTransportationOgList();
+                        List<TransportationOrg> org2 = list.get(i).getTransportationOrgList();
                         for (int j = 0; j < org2.size(); j++) {
                             if (org2.get(j).getName().equals(orgName1)) {
-                                org2.get(j).addManager(name, franchise.getName(), username, password);
-                                row[0] = franchise.getName();
+                                org2.get(j).addManager(name, network.getName(), username, password);
+                                row[0] = network.getName();
                                 row[1] = orgType;
                                 row[2] = orgName1;
                                 row[3] = name;
@@ -376,18 +329,18 @@ public class ManageOrganisationAdminForHotel extends javax.swing.JPanel {
         String orgType = orgCombo.getSelectedItem().toString();
         orgName.removeAllItems();
 
-        ServicesDirectory enterpriseDirec = franchise.getServiceDirectory();
+        ServicesDirectory enterpriseDirec = network.getEnterpriseDirectory();
         List<Hotel> list = enterpriseDirec.getListOfHotel();
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).findManager(user) != null) {
                 if (orgType.equals("Laundary")) {
-                    List<LaundaryOg> org1 = list.get(i).getLaundaryOg();
+                    List<LaundaryOrg> org1 = list.get(i).getLaundaryOrg();
                     for (int j = 0; j < org1.size(); j++) {
                         orgName.addItem(org1.get(j).getName());
                         return;
                     }
                 } else {
-                    List<TransportationOg> org3 = list.get(i).getTransportationOgList();
+                    List<TransportationOrg> org3 = list.get(i).getTransportationOrgList();
                     for (int j = 0; j < org3.size(); j++) {
                         orgName.addItem(org3.get(j).getName());
                     }
@@ -412,10 +365,10 @@ public class ManageOrganisationAdminForHotel extends javax.swing.JPanel {
             String userName = usernameField.getText();
             String password = passwordField.getText();
 
-            ServicesDirectory enterpriseDirec = franchise.getServiceDirectory();
+            ServicesDirectory enterpriseDirec = network.getEnterpriseDirectory();
             for (Hotel hotel : enterpriseDirec.getListOfHotel()) {
-                if (orgType.equals("Laundary") && hotel.getLaundaryOg() != null) {
-                    for (LaundaryOg laundary : hotel.getLaundaryOg()) {
+                if (orgType.equals("Laundary") && hotel.getLaundaryOrg() != null) {
+                    for (LaundaryOrg laundary : hotel.getLaundaryOrg()) {
                         for (Manager man : laundary.getListOfManager()) {
                             if (man.getUsername().equals(usernameField.getText())) {
                                 man.setName(nameField.getText());
@@ -427,8 +380,8 @@ public class ManageOrganisationAdminForHotel extends javax.swing.JPanel {
                             }
                         }
                     }
-                } else if (orgType.equals("Transportation") && hotel.getTransportationOgList() != null) {
-                    for (TransportationOg trans : hotel.getTransportationOgList()) {
+                } else if (orgType.equals("Transportation") && hotel.getTransportationOrgList() != null) {
+                    for (TransportationOrg trans : hotel.getTransportationOrgList()) {
                         for (Manager man : trans.getListOfManager()) {
                             if (man.getUsername().equals(usernameField.getText())) {
                                 man.setName(nameField.getText());
@@ -474,17 +427,18 @@ public class ManageOrganisationAdminForHotel extends javax.swing.JPanel {
     private javax.swing.JButton addButton;
     private javax.swing.JButton backButton;
     private javax.swing.JButton deleteButton;
-    private javax.swing.JTextField franchiseName;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblsysadmin;
     private javax.swing.JTextField nameField;
+    private javax.swing.JTextField networkName;
     private javax.swing.JComboBox<String> orgCombo;
     private javax.swing.JComboBox<String> orgName;
     private javax.swing.JTextField passwordField;
@@ -497,18 +451,18 @@ public class ManageOrganisationAdminForHotel extends javax.swing.JPanel {
         model.setRowCount(0);
         Object row[] = new Object[10];
 
-        Franchise franchise1 = systemAdmin.findFranchise(franchise.getName());
-        ServicesDirectory enterpriseDirec = franchise.getServiceDirectory();
+        Franchise network1 = systemAdmin.findNetwork(network.getName());
+        ServicesDirectory enterpriseDirec = network.getEnterpriseDirectory();
         if (enterpriseDirec == null) {
             return;
         }
         for (Hotel hotel : enterpriseDirec.getListOfHotel()) {
             if (hotel.findManager(user) != null) {
-                if (hotel.getLaundaryOg() != null) {
+                if (hotel.getLaundaryOrg() != null) {
                     row[0] = "Laundary";
-                    for (LaundaryOg laundary : hotel.getLaundaryOg()) {
+                    for (LaundaryOrg laundary : hotel.getLaundaryOrg()) {
                         for (Manager manager : laundary.getListOfManager()) {       //add manager 
-                            row[0] = franchise1.getName();
+                            row[0] = network1.getName();
                             row[1] = "Laundary";
                             row[2] = laundary.getName();
                             row[3] = manager.getName();
@@ -518,11 +472,11 @@ public class ManageOrganisationAdminForHotel extends javax.swing.JPanel {
                         }
                     }
                 }
-                if (hotel.getTransportationOgList() != null) {
+                if (hotel.getTransportationOrgList() != null) {
                     row[0] = "Transportation";
-                    for (TransportationOg transportation : hotel.getTransportationOgList()) {
+                    for (TransportationOrg transportation : hotel.getTransportationOrgList()) {
                         for (Manager manager : transportation.getListOfManager()) {       //add manager 
-                            row[0] = franchise1.getName();
+                            row[0] = network1.getName();
                             row[1] = "Transportation";
                             row[2] = transportation.getName();
                             row[3] = manager.getName();

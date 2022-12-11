@@ -3,13 +3,14 @@ package ui.EventManagerRole;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import ProjectModel.BusinessEvent;
-import ProjectModel.CateringService;
-import ProjectModel.DecorationServices;
-import ProjectModel.ServicesDirectory;
-import ProjectModel.Franchise;
-import ProjectModel.PhotographyService;
-import ProjectModel.SystemAdmin;
+import ProjModel.BusinessEvent;
+import ProjModel.CateringService;
+import ProjModel.DecorServices;
+import ProjModel.ServicesDirectory;
+import ProjModel.Franchise;
+import ProjModel.PhotographyService;
+import ProjModel.SystemAdmin;
+import javax.swing.ImageIcon;
 
 public class ManageOrganisationForEvents extends javax.swing.JPanel {
 
@@ -17,29 +18,22 @@ public class ManageOrganisationForEvents extends javax.swing.JPanel {
     private Runnable callOnCreateMethod;
     private String type;
     private String user;
-    private Franchise franchise;
+    private Franchise network;
 
-    public ManageOrganisationForEvents(SystemAdmin systemAdmin, Runnable callOnCreateMethod, String user, String type, Franchise franchise) {
+    public ManageOrganisationForEvents(SystemAdmin systemAdmin, Runnable callOnCreateMethod, String user, String type, Franchise network) {
         initComponents();
         this.systemAdmin = systemAdmin;
         this.callOnCreateMethod = callOnCreateMethod;
         this.user = user;
         this.type = type;
-        this.franchise = franchise;
+        this.network = network;
 
-        cityNameTextField.setText(franchise.getName());
+        cityNameTextField.setText(network.getName());
         cityNameTextField.setEditable(false);
 
         populateTable();
-        setBackground(new java.awt.Color(255, 204, 204));
-        deleteBtn.setBackground(new java.awt.Color(244, 120, 140));
-        deleteBtn.setOpaque(true);
-        addBtn.setBackground(new java.awt.Color(244, 120, 140));
-        addBtn.setOpaque(true);
-        updateBtn.setBackground(new java.awt.Color(244, 120, 140));
-        updateBtn.setOpaque(true);
-        backButton.setBackground(new java.awt.Color(244, 120, 140));
         backButton.setOpaque(true);
+        backButton.setIcon(new ImageIcon(ClassLoader.getSystemResource("icons/back.png")));
     }
 
     @SuppressWarnings("unchecked")
@@ -61,7 +55,11 @@ public class ManageOrganisationForEvents extends javax.swing.JPanel {
         deleteBtn = new javax.swing.JButton();
         updateBtn = new javax.swing.JButton();
         cityNameTextField = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
 
+        setLayout(null);
+
+        jTable1.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -85,30 +83,55 @@ public class ManageOrganisationForEvents extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        add(jScrollPane1);
+        jScrollPane1.setBounds(190, 220, 1116, 290);
+
         backButton.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        backButton.setText("BACK");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
+        add(backButton);
+        backButton.setBounds(31, 19, 108, 40);
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("MANAGE ORGANISATION FOR EVENTS ");
+        add(jLabel1);
+        jLabel1.setBounds(540, 140, 591, 32);
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("ORGANISATION TYPE");
+        add(jLabel2);
+        jLabel2.setBounds(590, 620, 196, 24);
 
         orgCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select a organisation", "Decor", "Catering", "Photography" }));
+        add(orgCombo);
+        orgCombo.setBounds(830, 610, 210, 35);
 
         jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("NAME");
+        add(jLabel3);
+        jLabel3.setBounds(590, 680, 119, 24);
+        add(nameField);
+        nameField.setBounds(830, 680, 210, 35);
 
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("CONTACT");
+        add(jLabel4);
+        jLabel4.setBounds(590, 750, 119, 24);
+        add(contactField);
+        contactField.setBounds(830, 750, 210, 35);
 
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("CITY");
+        add(jLabel5);
+        jLabel5.setBounds(590, 820, 98, 24);
 
         addBtn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         addBtn.setText("ADD");
@@ -117,6 +140,8 @@ public class ManageOrganisationForEvents extends javax.swing.JPanel {
                 addBtnActionPerformed(evt);
             }
         });
+        add(addBtn);
+        addBtn.setBounds(590, 910, 107, 37);
 
         deleteBtn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         deleteBtn.setText("DELETE");
@@ -125,6 +150,8 @@ public class ManageOrganisationForEvents extends javax.swing.JPanel {
                 deleteBtnActionPerformed(evt);
             }
         });
+        add(deleteBtn);
+        deleteBtn.setBounds(920, 910, 117, 39);
 
         updateBtn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         updateBtn.setText("UPDATE");
@@ -133,93 +160,27 @@ public class ManageOrganisationForEvents extends javax.swing.JPanel {
                 updateBtnActionPerformed(evt);
             }
         });
+        add(updateBtn);
+        updateBtn.setBounds(750, 910, 119, 37);
 
         cityNameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cityNameTextFieldActionPerformed(evt);
             }
         });
+        add(cityNameTextField);
+        cityNameTextField.setBounds(830, 810, 210, 35);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(backButton)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(49, 49, 49)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(orgCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(contactField, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cityNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(282, 282, 282)
-                        .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(72, 72, 72)
-                        .addComponent(updateBtn)))
-                .addContainerGap(22, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(deleteBtn)
-                        .addGap(32, 32, 32))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(117, 117, 117))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(backButton)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(orgCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(contactField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(cityNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(58, 58, 58)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(66, Short.MAX_VALUE))
-        );
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/EventManagerRole/vector-jan-2021-19_generated.jpg"))); // NOI18N
+        jLabel6.setText("jLabel6");
+        add(jLabel6);
+        jLabel6.setBounds(-10, -80, 1630, 1140);
     }// </editor-fold>//GEN-END:initComponents
 
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         Object row[] = new Object[20];
-        String franchiseName = franchise.getName();
+        String networkName = network.getName();
         String name = nameField.getText();
         String contact = contactField.getText();
 
@@ -229,34 +190,34 @@ public class ManageOrganisationForEvents extends javax.swing.JPanel {
         }
 
         String orgType1 = orgCombo.getSelectedItem().toString();      // org-type (physician org)     
-        ServicesDirectory enterpriseDirc = franchise.getServiceDirectory();
+        ServicesDirectory enterpriseDirc = network.getEnterpriseDirectory();
         List<BusinessEvent> events = enterpriseDirc.getListOfEvents();
         for (int i = 0; i < events.size(); i++) {
             events.get(i).findManager(user);      //find healthclub for which manager is working for
             if (orgType1.equals("Catering")) {
-                events.get(i).addCateringService(name, contact, franchiseName);
+                events.get(i).addCateringService(name, contact, networkName);
                 row[0] = orgType1;
                 row[1] = name;
                 row[2] = contact;
-                row[3] = franchiseName;
+                row[3] = networkName;
                 model.addRow(row);
                 JOptionPane.showMessageDialog(this, "Catering Organisation added successfully");
                 return;
             } else if (orgType1.equals("Decor")) {
-                events.get(i).addDecorService(name, contact, franchiseName);
+                events.get(i).addDecorService(name, contact, networkName);
                 row[0] = orgType1;
                 row[1] = name;
                 row[2] = contact;
-                row[3] = franchiseName;
+                row[3] = networkName;
                 model.addRow(row);
                 JOptionPane.showMessageDialog(this, "Decor Organisation successfully");
                 return;
             } else {
-                events.get(i).addPhotographyService(name, contact, franchiseName);
+                events.get(i).addPhotographyService(name, contact, networkName);
                 row[0] = orgType1;
                 row[1] = name;
                 row[2] = contact;
-                row[3] = franchiseName;
+                row[3] = networkName;
                 model.addRow(row);
                 JOptionPane.showMessageDialog(this, "Photography Organisation added successfully");
                 return;
@@ -281,7 +242,7 @@ public class ManageOrganisationForEvents extends javax.swing.JPanel {
         }
         String OrgType = (String) model.getValueAt(selectedRowIndex, 0);
         String OrgName = (String) model.getValueAt(selectedRowIndex, 1);
-        ServicesDirectory enterpriseDirec = franchise.getServiceDirectory();
+        ServicesDirectory enterpriseDirec = network.getEnterpriseDirectory();
         for (BusinessEvent event : enterpriseDirec.getListOfEvents()) {
             if (event.findManager(user) != null) {
                 if (OrgType.equals("Catering") && event.getListOfCatering() != null) {
@@ -301,7 +262,7 @@ public class ManageOrganisationForEvents extends javax.swing.JPanel {
                         }
                     }
                 } else if (OrgType.equals("Decor") && event.getListOfDecors() != null) {
-                    for (DecorationServices decor : event.getListOfDecors()) {
+                    for (DecorServices decor : event.getListOfDecors()) {
                         if (decor.getName().equals(OrgName)) {
                             event.deleteDecor(decor);
                             JOptionPane.showMessageDialog(this, "Deleted successfully");
@@ -347,7 +308,7 @@ public class ManageOrganisationForEvents extends javax.swing.JPanel {
         String orgType = orgCombo.getSelectedItem().toString();
         String orgname = model.getValueAt(jTable1.getSelectedRow(), 1).toString();
 
-        ServicesDirectory enterpriseDirec = franchise.getServiceDirectory();
+        ServicesDirectory enterpriseDirec = network.getEnterpriseDirectory();
         for (BusinessEvent event : enterpriseDirec.getListOfEvents()) {
             if (orgType.equals("Catering") && event.getListOfCatering() != null) {
                 for (CateringService catering : event.getListOfCatering()) {
@@ -360,7 +321,7 @@ public class ManageOrganisationForEvents extends javax.swing.JPanel {
                     }
                 }
             } else if (orgType.equals("Decor") && event.getListOfDecors() != null) {
-                for (DecorationServices decor : event.getListOfDecors()) {
+                for (DecorServices decor : event.getListOfDecors()) {
                     if (decor.getName().equals(orgname)) {
                         decor.setName(nameField.getText());
                         decor.setContact(contactField.getText());
@@ -396,6 +357,7 @@ public class ManageOrganisationForEvents extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField nameField;
@@ -408,8 +370,8 @@ public class ManageOrganisationForEvents extends javax.swing.JPanel {
         model.setRowCount(0);
         Object row[] = new Object[10];
         String orgType1 = orgCombo.getSelectedItem().toString();
-        Franchise franchise1 = systemAdmin.findFranchise(franchise.getName());
-        ServicesDirectory enterpriseDirec = franchise1.getServiceDirectory();
+        Franchise network1 = systemAdmin.findNetwork(network.getName());
+        ServicesDirectory enterpriseDirec = network1.getEnterpriseDirectory();
         if (enterpriseDirec == null) {
             return;
         }
@@ -421,17 +383,17 @@ public class ManageOrganisationForEvents extends javax.swing.JPanel {
                         row[0] = "Catering";
                         row[1] = catering.getName();
                         row[2] = catering.getContact();
-                        row[3] = franchise1.getName();
+                        row[3] = network1.getName();
                         model.addRow(row);
                     }
                 }
                 if (event.getListOfDecors() != null) {
                     row[0] = "Decor";
-                    for (DecorationServices decor : event.getListOfDecors()) {
+                    for (DecorServices decor : event.getListOfDecors()) {
                         row[0] = "Decor";
                         row[1] = decor.getName();
                         row[2] = decor.getContact();
-                        row[3] = franchise.getName();
+                        row[3] = network.getName();
                         model.addRow(row);
                     }
                 }
@@ -441,7 +403,7 @@ public class ManageOrganisationForEvents extends javax.swing.JPanel {
                         row[0] = "Photography";
                         row[1] = photo.getName();
                         row[2] = photo.getContact();
-                        row[3] = franchise.getName();
+                        row[3] = network.getName();
                         model.addRow(row);
                     }
                 }

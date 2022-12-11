@@ -1,8 +1,9 @@
 package ui.CustomerRole;
 
 import java.util.function.Consumer;
-import ProjectModel.Booking;
-import ProjectModel.SystemAdmin;
+import ProjModel.Booking;
+import ProjModel.SystemAdmin;
+import javax.swing.ImageIcon;
 
 public class AddServicePanel extends javax.swing.JPanel {
 
@@ -27,17 +28,9 @@ public class AddServicePanel extends javax.swing.JPanel {
         this.backButton4 = backButton;
         this.username = username;
         this.booking = booking;
-        setBackground(new java.awt.Color(255, 204, 204));
-        backBtn.setBackground(new java.awt.Color(244, 120, 140));
         backBtn.setOpaque(true);
-        eventBtn.setBackground(new java.awt.Color(244, 120, 140));
-        eventBtn.setOpaque(true);
-        orderBtn.setBackground(new java.awt.Color(244, 120, 140));
-        orderBtn.setOpaque(true);
-        healthClubBtn.setBackground(new java.awt.Color(244, 120, 140));
-        healthClubBtn.setOpaque(true);
-        otherService.setBackground(new java.awt.Color(244, 120, 140));
-        otherService.setOpaque(true);
+        backBtn.setIcon(new ImageIcon(ClassLoader.getSystemResource("icons/back.png")));
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -50,92 +43,69 @@ public class AddServicePanel extends javax.swing.JPanel {
         orderBtn = new javax.swing.JButton();
         healthClubBtn = new javax.swing.JButton();
         otherService = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(110, 153, 238));
+        setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("ADD SERVICES ");
+        add(jLabel1);
+        jLabel1.setBounds(643, 110, 278, 47);
 
         backBtn.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        backBtn.setText("BACK");
         backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backBtnActionPerformed(evt);
             }
         });
+        add(backBtn);
+        backBtn.setBounds(38, 27, 80, 40);
 
-        eventBtn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        eventBtn.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         eventBtn.setText("BUSINESS EVENTS ");
         eventBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eventBtnActionPerformed(evt);
             }
         });
+        add(eventBtn);
+        eventBtn.setBounds(630, 207, 308, 38);
 
-        orderBtn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        orderBtn.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         orderBtn.setText("PLACE ORDER ");
         orderBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 orderBtnActionPerformed(evt);
             }
         });
+        add(orderBtn);
+        orderBtn.setBounds(630, 298, 308, 42);
 
-        healthClubBtn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        healthClubBtn.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         healthClubBtn.setText("HEALTH CLUB ");
         healthClubBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 healthClubBtnActionPerformed(evt);
             }
         });
+        add(healthClubBtn);
+        healthClubBtn.setBounds(630, 391, 308, 42);
 
-        otherService.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        otherService.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         otherService.setText("OTHER SERVICES");
         otherService.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 otherServiceActionPerformed(evt);
             }
         });
+        add(otherService);
+        otherService.setBounds(630, 492, 308, 38);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(301, 301, 301))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(healthClubBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(eventBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(orderBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(otherService, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(96, 96, 96))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1)
-                .addGap(58, 58, 58)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(orderBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(eventBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(healthClubBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(otherService, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(243, 243, 243))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/CustomerRole/vecteezy_abstract-background-dark-purple-and-triangle-shape_7463701.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2);
+        jLabel2.setBounds(-9, -200, 1981, 1330);
     }// </editor-fold>//GEN-END:initComponents
 
     private void eventBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eventBtnActionPerformed
@@ -164,6 +134,7 @@ public class AddServicePanel extends javax.swing.JPanel {
     private javax.swing.JButton eventBtn;
     private javax.swing.JButton healthClubBtn;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton orderBtn;
     private javax.swing.JButton otherService;
     // End of variables declaration//GEN-END:variables

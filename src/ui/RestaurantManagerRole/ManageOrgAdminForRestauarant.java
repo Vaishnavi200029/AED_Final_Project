@@ -3,12 +3,13 @@ package ui.RestaurantManagerRole;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import ProjectModel.DeliverymanOrg;
-import ProjectModel.ServicesDirectory;
-import ProjectModel.Manager;
-import ProjectModel.Franchise;
-import ProjectModel.Restaurant;
-import ProjectModel.SystemAdmin;
+import ProjModel.DeliverymanOrg;
+import ProjModel.ServicesDirectory;
+import ProjModel.Manager;
+import ProjModel.Franchise;
+import ProjModel.Restaurant;
+import ProjModel.SystemAdmin;
+import javax.swing.ImageIcon;
 import ui.main.Validator;
 
 public class ManageOrgAdminForRestauarant extends javax.swing.JPanel {
@@ -30,15 +31,8 @@ public class ManageOrgAdminForRestauarant extends javax.swing.JPanel {
         networkName.setEditable(false);
 
         populateTable();
-        setBackground(new java.awt.Color(255, 204, 204));
-        deleteBtn.setBackground(new java.awt.Color(244, 120, 140));
-        deleteBtn.setOpaque(true);
-        addButton.setBackground(new java.awt.Color(244, 120, 140));
-        addButton.setOpaque(true);
-        updateButton.setBackground(new java.awt.Color(244, 120, 140));
-        updateButton.setOpaque(true);
-        backBtn.setBackground(new java.awt.Color(244, 120, 140));
         backBtn.setOpaque(true);
+        backBtn.setIcon(new ImageIcon(ClassLoader.getSystemResource("icons/back.png")));
     }
 
 //    public boolean validateName() {
@@ -89,8 +83,11 @@ public class ManageOrgAdminForRestauarant extends javax.swing.JPanel {
         deleteBtn = new javax.swing.JButton();
         updateButton = new javax.swing.JButton();
         networkName = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
 
-        jTable1.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        setLayout(null);
+
+        jTable1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -114,167 +111,128 @@ public class ManageOrgAdminForRestauarant extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        add(jScrollPane1);
+        jScrollPane1.setBounds(160, 330, 1140, 210);
+
         backBtn.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        backBtn.setText("BACK");
         backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backBtnActionPerformed(evt);
             }
         });
+        add(backBtn);
+        backBtn.setBounds(60, 10, 98, 60);
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("FRANCHISE");
+        add(jLabel1);
+        jLabel1.setBounds(380, 580, 103, 24);
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("ORGANIZATION TYPE");
+        add(jLabel2);
+        jLabel2.setBounds(300, 630, 187, 24);
 
         jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("ORGANIZATION NAME");
+        add(jLabel3);
+        jLabel3.setBounds(300, 690, 192, 24);
 
         orgName.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        add(orgName);
+        orgName.setBounds(510, 690, 197, 29);
 
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("NAME");
+        add(jLabel4);
+        jLabel4.setBounds(830, 570, 60, 24);
 
         nameField.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        add(nameField);
+        nameField.setBounds(930, 570, 182, 29);
 
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("USERNAME");
+        add(jLabel5);
+        jLabel5.setBounds(790, 630, 101, 24);
 
         usernameField.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        add(usernameField);
+        usernameField.setBounds(930, 630, 182, 29);
 
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("PASSWORD");
+        add(jLabel6);
+        jLabel6.setBounds(790, 690, 104, 24);
 
         passwordField.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        add(passwordField);
+        passwordField.setBounds(930, 690, 182, 29);
 
-        addButton.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        addButton.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         addButton.setText("ADD");
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addButtonActionPerformed(evt);
             }
         });
+        add(addButton);
+        addButton.setBounds(550, 770, 143, 41);
 
-        jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("MANAGE ORGANIZATION ADMIN FOR RESTAUARNT");
+        add(jLabel7);
+        jLabel7.setBounds(450, 270, 630, 40);
 
-        orgCombo.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        orgCombo.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         orgCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Deliveryman" }));
         orgCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 orgComboActionPerformed(evt);
             }
         });
+        add(orgCombo);
+        orgCombo.setBounds(510, 630, 197, 34);
 
-        deleteBtn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        deleteBtn.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         deleteBtn.setText("DELETE");
         deleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteBtnActionPerformed(evt);
             }
         });
+        add(deleteBtn);
+        deleteBtn.setBounds(1000, 770, 114, 37);
 
-        updateButton.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        updateButton.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         updateButton.setText("UPDATE");
         updateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateButtonActionPerformed(evt);
             }
         });
+        add(updateButton);
+        updateButton.setBounds(790, 770, 113, 41);
 
         networkName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 networkNameActionPerformed(evt);
             }
         });
+        add(networkName);
+        networkName.setBounds(510, 570, 197, 35);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 724, Short.MAX_VALUE)
-                .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
-                .addComponent(updateButton)
-                .addGap(287, 287, 287))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(36, 36, 36)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(orgName, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(orgCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(networkName))
-                                .addGap(106, 106, 106)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel6))
-                                .addGap(39, 39, 39)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(nameField)
-                                    .addComponent(usernameField, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
-                                    .addComponent(passwordField)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 764, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(218, 218, 218)
-                        .addComponent(jLabel7)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
-                .addComponent(jLabel7)
-                .addGap(61, 61, 61)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel4)
-                            .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(networkName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel5)
-                            .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(orgCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(47, 47, 47)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(orgName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel6)
-                        .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(updateButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(addButton, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
-                .addGap(58, 58, 58))
-        );
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/RestaurantManagerRole/stock-photo-assorted-of-different-asian-food-chinese-japanese-and-thai-cuisine-noodles-dumplings-gedza-1900062550-transformed.jpeg"))); // NOI18N
+        add(jLabel8);
+        jLabel8.setBounds(0, 0, 1500, 1162);
     }// </editor-fold>//GEN-END:initComponents
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
@@ -296,7 +254,7 @@ public class ManageOrgAdminForRestauarant extends javax.swing.JPanel {
         }
 
         if (!systemAdmin.userExistsInSystem(username)) {
-            ServicesDirectory enterpriseDirec = network.getServiceDirectory();
+            ServicesDirectory enterpriseDirec = network.getEnterpriseDirectory();
             List<Restaurant> list = enterpriseDirec.getListOfRestaurants();
             for (int i = 0; i < list.size(); i++) {
                 if (list.get(i).findManager(user) != null) {    //if manager found 
@@ -333,7 +291,7 @@ public class ManageOrgAdminForRestauarant extends javax.swing.JPanel {
         String orgType = (String) orgCombo.getSelectedItem();
         orgName.removeAllItems();
 
-        ServicesDirectory enterpriseDirec = network.getServiceDirectory();
+        ServicesDirectory enterpriseDirec = network.getEnterpriseDirectory();
         List<Restaurant> list = enterpriseDirec.getListOfRestaurants();
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).findManager(user) != null) {
@@ -359,7 +317,7 @@ public class ManageOrgAdminForRestauarant extends javax.swing.JPanel {
         String orgType = (String) model.getValueAt(selectedRowIndex, 1);
         String OrgName = (String) model.getValueAt(selectedRowIndex, 2);
         String selectedUser = (String) model.getValueAt(selectedRowIndex, 4);
-        ServicesDirectory enterpriseDirec = network.getServiceDirectory();
+        ServicesDirectory enterpriseDirec = network.getEnterpriseDirectory();
         for (Restaurant res : enterpriseDirec.getListOfRestaurants()) {
             if (res.findManager(user) != null) {
                 if (res.getListOfDeliveryManOrg() != null) {
@@ -413,7 +371,7 @@ public class ManageOrgAdminForRestauarant extends javax.swing.JPanel {
             String userName = usernameField.getText();
             String password = passwordField.getText();
 
-            ServicesDirectory enterpriseDirec = network.getServiceDirectory();
+            ServicesDirectory enterpriseDirec = network.getEnterpriseDirectory();
             for (Restaurant rest : enterpriseDirec.getListOfRestaurants()) {
                 if (orgType.equals("Deliveryman") && rest.getListOfDeliveryManOrg() != null) {
                     for (DeliverymanOrg del : rest.getListOfDeliveryManOrg()) {
@@ -451,6 +409,7 @@ public class ManageOrgAdminForRestauarant extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField nameField;
@@ -467,8 +426,8 @@ public class ManageOrgAdminForRestauarant extends javax.swing.JPanel {
         model.setRowCount(0);
         Object row[] = new Object[10];
         String orgType1 = orgCombo.getSelectedItem().toString();
-        Franchise network1 = systemAdmin.findFranchise(network.getName());
-        ServicesDirectory enterpriseDirec = network.getServiceDirectory();
+        Franchise network1 = systemAdmin.findNetwork(network.getName());
+        ServicesDirectory enterpriseDirec = network.getEnterpriseDirectory();
         if (enterpriseDirec == null) {
             return;
         }

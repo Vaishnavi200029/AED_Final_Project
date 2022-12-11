@@ -4,16 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import ProjectModel.Booking;
-import ProjectModel.Customer;
-import ProjectModel.CustomerDirectory;
-import ProjectModel.DeliverymanOrg;
-import ProjectModel.Organization;
-import ProjectModel.Restaurant;
-import ProjectModel.SystemAdmin;
-import MServices.BusinessEventService;
-import MServices.RestaurantService;
-import MServices.Service;
+import ProjModel.Booking;
+import ProjModel.Customer;
+import ProjModel.CustomerDirectory;
+import ProjModel.DeliverymanOrg;
+import ProjModel.Organization;
+import ProjModel.Restaurant;
+import ProjModel.SystemAdmin;
+import ProjectModel.services.BusinessEventService;
+import ProjectModel.services.RestaurantService;
+import ProjectModel.services.Service;
+import javax.swing.ImageIcon;
 
 public class ViewTaskPanelRestaurant extends javax.swing.JPanel {
 
@@ -32,13 +33,8 @@ public class ViewTaskPanelRestaurant extends javax.swing.JPanel {
         this.restaurant = restaurant;
         populateComboBox();
         populateTable();
-        setBackground(new java.awt.Color(255, 204, 204));
-        acceptBtn.setBackground(new java.awt.Color(244, 120, 140));
-        acceptBtn.setOpaque(true);
-        denyBtn.setBackground(new java.awt.Color(244, 120, 140));
-        denyBtn.setOpaque(true);
-        backBtn.setBackground(new java.awt.Color(244, 120, 140));
         backBtn.setOpaque(true);
+        backBtn.setIcon(new ImageIcon(ClassLoader.getSystemResource("icons/back.png")));
     }
 
     @SuppressWarnings("unchecked")
@@ -53,8 +49,11 @@ public class ViewTaskPanelRestaurant extends javax.swing.JPanel {
         denyBtn = new javax.swing.JButton();
         backBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
-        jTable1.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        setLayout(null);
+
+        jTable1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -73,90 +72,57 @@ public class ViewTaskPanelRestaurant extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        deliveryOrg.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        add(jScrollPane1);
+        jScrollPane1.setBounds(270, 400, 990, 220);
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        deliveryOrg.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        add(deliveryOrg);
+        deliveryOrg.setBounds(850, 670, 261, 34);
+
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("SELECT A ORGANIZATION FOR DELIVERYMAN");
+        add(jLabel1);
+        jLabel1.setBounds(400, 670, 420, 24);
 
-        acceptBtn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        acceptBtn.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         acceptBtn.setText("ACCEPT ORDER");
         acceptBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 acceptBtnActionPerformed(evt);
             }
         });
+        add(acceptBtn);
+        acceptBtn.setBounds(550, 750, 200, 42);
 
-        denyBtn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        denyBtn.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         denyBtn.setText("DENY ORDER");
         denyBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 denyBtnActionPerformed(evt);
             }
         });
+        add(denyBtn);
+        denyBtn.setBounds(830, 750, 176, 42);
 
         backBtn.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        backBtn.setText("BACK");
         backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backBtnActionPerformed(evt);
             }
         });
+        add(backBtn);
+        backBtn.setBounds(22, 22, 108, 60);
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("VIEW ORDER DETAILS FOR RESTAURANT");
+        add(jLabel2);
+        jLabel2.setBounds(460, 320, 511, 32);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(backBtn)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 828, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(226, 226, 226)
-                        .addComponent(deliveryOrg, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(165, 165, 165)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(acceptBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(38, 38, 38)
-                                .addComponent(denyBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(18, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(153, 153, 153))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(backBtn)
-                .addGap(19, 19, 19)
-                .addComponent(jLabel2)
-                .addGap(43, 43, 43)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(deliveryOrg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(acceptBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(denyBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(171, 171, 171))))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/RestaurantManagerRole/stock-photo-assorted-of-different-asian-food-chinese-japanese-and-thai-cuisine-noodles-dumplings-gedza-1900062550-transformed.jpeg"))); // NOI18N
+        add(jLabel3);
+        jLabel3.setBounds(0, 0, 1500, 1162);
     }// </editor-fold>//GEN-END:initComponents
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
@@ -175,7 +141,7 @@ public class ViewTaskPanelRestaurant extends javax.swing.JPanel {
 
         RestaurantService resService = null;
         for (Service service : booking.getServices()) {
-            if (restaurant.getName().equals(service.getServices().getName())) {
+            if (restaurant.getName().equals(service.getEnterprise().getName())) {
                 resService = (RestaurantService) service;
                 break;
             }
@@ -246,6 +212,7 @@ public class ViewTaskPanelRestaurant extends javax.swing.JPanel {
     private javax.swing.JButton denyBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
@@ -260,7 +227,7 @@ public class ViewTaskPanelRestaurant extends javax.swing.JPanel {
         for (Customer customer : customerDirec.getListOfCustomer()) {
             for (Booking booking : customer.getBookingList()) {      //get booking details each customer
                 for (Service service : booking.getServices()) {       //get services under booking
-                    if (service.getServices().getName().equals(restaurant.getName())) {
+                    if (service.getEnterprise().getName().equals(restaurant.getName())) {
                         RestaurantService restaurantService = (RestaurantService) service;
                         row[0] = booking;
                         row[1] = customer;

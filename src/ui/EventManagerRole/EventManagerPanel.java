@@ -1,6 +1,6 @@
 package ui.EventManagerRole;
 
-import ProjectModel.SystemAdmin;
+import ProjModel.SystemAdmin;
 
 public class EventManagerPanel extends javax.swing.JPanel {
 
@@ -15,13 +15,6 @@ public class EventManagerPanel extends javax.swing.JPanel {
         this.callOnCreateMethod1 = callOnCreateMethod1;
         this.callOnCreateMethod2 = callOnCreateMethod2;
         this.callOnCreateMethod3 = callOnCreateMethod3;
-        setBackground(new java.awt.Color(255, 204, 204));
-        viewTask.setBackground(new java.awt.Color(244, 120, 140));
-        viewTask.setOpaque(true);
-        orgBtn.setBackground(new java.awt.Color(244, 120, 140));
-        orgBtn.setOpaque(true);
-        orgadmin.setBackground(new java.awt.Color(244, 120, 140));
-        orgadmin.setOpaque(true);
 
     }
 
@@ -33,64 +26,50 @@ public class EventManagerPanel extends javax.swing.JPanel {
         viewTask = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         orgadmin = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
-        orgBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        setLayout(null);
+
+        orgBtn.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         orgBtn.setText("MANAGE ORGANISATION");
         orgBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 orgBtnActionPerformed(evt);
             }
         });
+        add(orgBtn);
+        orgBtn.setBounds(502, 396, 313, 40);
 
-        viewTask.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        viewTask.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         viewTask.setText("VIEW TASK");
         viewTask.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewTaskActionPerformed(evt);
             }
         });
+        add(viewTask);
+        viewTask.setBounds(502, 284, 313, 39);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("EVENT MANAGER PANEL ");
+        add(jLabel1);
+        jLabel1.setBounds(434, 165, 456, 44);
 
-        orgadmin.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        orgadmin.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         orgadmin.setText("MANAGE ORGANISATION ADMIN");
         orgadmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 orgadminActionPerformed(evt);
             }
         });
+        add(orgadmin);
+        orgadmin.setBounds(502, 501, 313, 41);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(338, 338, 338)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(orgadmin, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(orgBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(viewTask, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(270, 270, 270)
-                        .addComponent(jLabel1)))
-                .addContainerGap(330, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addComponent(jLabel1)
-                .addGap(75, 75, 75)
-                .addComponent(viewTask, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addComponent(orgBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
-                .addComponent(orgadmin, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(391, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/EventManagerRole/vector-jan-2021-19_generated.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2);
+        jLabel2.setBounds(0, 0, 1620, 1010);
     }// </editor-fold>//GEN-END:initComponents
 
     private void orgBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orgBtnActionPerformed
@@ -108,6 +87,7 @@ public class EventManagerPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton orgBtn;
     private javax.swing.JButton orgadmin;
     private javax.swing.JButton viewTask;

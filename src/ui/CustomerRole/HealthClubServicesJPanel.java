@@ -3,10 +3,10 @@ package ui.CustomerRole;
 import java.util.Date;
 import java.util.function.Consumer;
 import javax.swing.JOptionPane;
-import ProjectModel.Booking;
-import ProjectModel.HealthClub;
-import ProjectModel.SystemAdmin;
-import MServices.HealthClubService;
+import ProjModel.Booking;
+import ProjModel.HealthClub;
+import ProjModel.SystemAdmin;
+import ProjectModel.services.HealthClubService;
 import ui.main.DateUtils;
 
 public class HealthClubServicesJPanel extends javax.swing.JPanel {
@@ -23,14 +23,10 @@ public class HealthClubServicesJPanel extends javax.swing.JPanel {
         this.username = username;
         this.booking = booking;
 
-        for (HealthClub healthClub : booking.getFranchise().getServiceDirectory().getListOfHealthClub()) {
+        for (HealthClub healthClub : booking.getNetwork().getEnterpriseDirectory().getListOfHealthClub()) {
             healthClubCombo.addItem(healthClub);
         }
-        setBackground(new java.awt.Color(255, 204, 204));
-        backBtn.setBackground(new java.awt.Color(244, 120, 140));
-        backBtn.setOpaque(true);
-        addServiceBtn.setBackground(new java.awt.Color(244, 120, 140));
-        addServiceBtn.setOpaque(true);
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -50,9 +46,15 @@ public class HealthClubServicesJPanel extends javax.swing.JPanel {
         dateField = new com.toedter.calendar.JDateChooser();
         jLabel4 = new javax.swing.JLabel();
         healthClubCombo = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+
+        setLayout(null);
 
         lblbookservices.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        lblbookservices.setForeground(new java.awt.Color(255, 255, 255));
         lblbookservices.setText("HEALTH CLUB SERVICES");
+        add(lblbookservices);
+        lblbookservices.setBounds(294, 52, 446, 44);
 
         backBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         backBtn.setText("BACK");
@@ -61,30 +63,41 @@ public class HealthClubServicesJPanel extends javax.swing.JPanel {
                 backBtnActionPerformed(evt);
             }
         });
+        add(backBtn);
+        backBtn.setBounds(31, 27, 108, 36);
 
         yogaBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        yogaBtn.setForeground(new java.awt.Color(255, 255, 255));
         yogaBtn.setText("YOGA ($20)");
         yogaBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 yogaBtnActionPerformed(evt);
             }
         });
+        add(yogaBtn);
+        yogaBtn.setBounds(213, 361, 131, 29);
 
         massageBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        massageBtn.setForeground(new java.awt.Color(255, 255, 255));
         massageBtn.setText("MASSAGE AND SPA ($20)");
         massageBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 massageBtnActionPerformed(evt);
             }
         });
+        add(massageBtn);
+        massageBtn.setBounds(213, 442, 241, 29);
 
         medicalServiceBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        medicalServiceBtn.setForeground(new java.awt.Color(255, 255, 255));
         medicalServiceBtn.setText("MEDICAL SERVICE  ($60)");
         medicalServiceBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 medicalServiceBtnActionPerformed(evt);
             }
         });
+        add(medicalServiceBtn);
+        medicalServiceBtn.setBounds(213, 532, 241, 29);
 
         addServiceBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addServiceBtn.setText("ADD SERVICE");
@@ -93,91 +106,48 @@ public class HealthClubServicesJPanel extends javax.swing.JPanel {
                 addServiceBtnActionPerformed(evt);
             }
         });
+        add(addServiceBtn);
+        addServiceBtn.setBounds(380, 662, 157, 43);
 
         jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("(MONDAY-SUNDAY) 7A.M - 9A.M");
+        add(jLabel3);
+        jLabel3.setBounds(540, 367, 210, 19);
 
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("(MONDAY-SUNDAY) 4P.M-5:30P.M ");
+        add(jLabel5);
+        jLabel5.setBounds(540, 448, 226, 19);
 
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("(MONDAY - SUNDAY) 12P.M-4P.M ");
+        add(jLabel6);
+        jLabel6.setBounds(540, 533, 282, 25);
 
         jLabel7.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("SELECT A DATE ");
+        add(jLabel7);
+        jLabel7.setBounds(240, 173, 145, 24);
+        add(dateField);
+        dateField.setBounds(540, 173, 227, 35);
 
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Health Club");
+        add(jLabel4);
+        jLabel4.setBounds(250, 267, 94, 24);
 
         healthClubCombo.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        add(healthClubCombo);
+        healthClubCombo.setBounds(540, 266, 211, 29);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(backBtn)
-                        .addGap(155, 155, 155)
-                        .addComponent(lblbookservices))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(213, 213, 213)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(massageBtn)
-                            .addComponent(medicalServiceBtn)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel4)
-                                .addComponent(yogaBtn))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(27, 27, 27)
-                                .addComponent(jLabel7)))
-                        .addGap(86, 86, 86)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(dateField, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel5)
-                            .addComponent(healthClubCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(380, 380, 380)
-                        .addComponent(addServiceBtn)))
-                .addContainerGap(254, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(lblbookservices)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(dateField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(58, 58, 58)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(healthClubCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(66, 66, 66)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(yogaBtn)
-                    .addComponent(jLabel3))
-                .addGap(52, 52, 52)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(massageBtn))
-                .addGap(61, 61, 61)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(medicalServiceBtn)
-                    .addComponent(jLabel6))
-                .addGap(101, 101, 101)
-                .addComponent(addServiceBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(228, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/CustomerRole/vecteezy_abstract-background-dark-purple-and-triangle-shape_7463701.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        add(jLabel1);
+        jLabel1.setBounds(0, 0, 1981, 1067);
     }// </editor-fold>//GEN-END:initComponents
 
     private void medicalServiceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_medicalServiceBtnActionPerformed
@@ -246,6 +216,7 @@ public class HealthClubServicesJPanel extends javax.swing.JPanel {
     private javax.swing.JButton backBtn;
     private com.toedter.calendar.JDateChooser dateField;
     private javax.swing.JComboBox<HealthClub> healthClubCombo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

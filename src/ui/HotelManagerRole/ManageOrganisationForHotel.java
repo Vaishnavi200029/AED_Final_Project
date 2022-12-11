@@ -3,12 +3,13 @@ package ui.HotelManagerRole;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import ProjectModel.ServicesDirectory;
-import ProjectModel.Hotel;
-import ProjectModel.LaundaryOg;
-import ProjectModel.Franchise;
-import ProjectModel.SystemAdmin;
-import ProjectModel.TransportationOg;
+import ProjModel.ServicesDirectory;
+import ProjModel.Hotel;
+import ProjModel.LaundaryOrg;
+import ProjModel.Franchise;
+import ProjModel.SystemAdmin;
+import ProjModel.TransportationOrg;
+import javax.swing.ImageIcon;
 
 public class ManageOrganisationForHotel extends javax.swing.JPanel {
 
@@ -25,9 +26,10 @@ public class ManageOrganisationForHotel extends javax.swing.JPanel {
         this.user = user;
         this.type = type;
         this.network = network;
-        setBackground(new java.awt.Color(255, 204, 204));
         cityNameTextField.setText(network.getName());
         cityNameTextField.setEditable(false);
+        backButton.setOpaque(true);
+        backButton.setIcon(new ImageIcon(ClassLoader.getSystemResource("icons/back.png")));
         populateTable();
     }
 
@@ -50,8 +52,11 @@ public class ManageOrganisationForHotel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         deleteBtn = new javax.swing.JButton();
         cityNameTextField = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
 
-        jTable1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        setLayout(null);
+
+        jTable1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -75,6 +80,9 @@ public class ManageOrganisationForHotel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        add(jScrollPane1);
+        jScrollPane1.setBounds(290, 290, 876, 173);
+
         orgCombo.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         orgCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select a organisation ", "Laundary", "Transportation" }));
         orgCombo.addActionListener(new java.awt.event.ActionListener() {
@@ -82,142 +90,94 @@ public class ManageOrganisationForHotel extends javax.swing.JPanel {
                 orgComboActionPerformed(evt);
             }
         });
+        add(orgCombo);
+        orgCombo.setBounds(700, 520, 212, 40);
 
-        updateButton.setBackground(new java.awt.Color(102, 255, 255));
-        updateButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        updateButton.setForeground(new java.awt.Color(102, 102, 102));
+        updateButton.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         updateButton.setText("UPDATE");
         updateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateButtonActionPerformed(evt);
             }
         });
+        add(updateButton);
+        updateButton.setBounds(620, 820, 113, 41);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("CONTACT");
+        add(jLabel3);
+        jLabel3.setBounds(440, 660, 102, 30);
+        add(contactField);
+        contactField.setBounds(700, 650, 200, 40);
 
-        addBtn.setBackground(new java.awt.Color(102, 255, 255));
-        addBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        addBtn.setForeground(new java.awt.Color(102, 102, 102));
+        addBtn.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         addBtn.setText("ADD");
         addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addBtnActionPerformed(evt);
             }
         });
+        add(addBtn);
+        addBtn.setBounds(430, 820, 114, 41);
 
         nameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameFieldActionPerformed(evt);
             }
         });
+        add(nameField);
+        nameField.setBounds(700, 590, 200, 40);
 
-        backButton.setBackground(new java.awt.Color(0, 0, 0));
         backButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        backButton.setForeground(new java.awt.Color(255, 255, 255));
-        backButton.setText("BACK");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
+        add(backButton);
+        backButton.setBounds(71, 26, 90, 40);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("NAME");
+        add(jLabel1);
+        jLabel1.setBounds(440, 590, 47, 30);
 
-        lblsysadmin.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblsysadmin.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        lblsysadmin.setForeground(new java.awt.Color(255, 255, 255));
         lblsysadmin.setText("MANAGE ORGANISATION FOR HOTEL");
+        add(lblsysadmin);
+        lblsysadmin.setBounds(400, 130, 682, 44);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("CITY");
+        add(jLabel6);
+        jLabel6.setBounds(440, 730, 39, 30);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("ORGANISATION TYPE ");
+        add(jLabel2);
+        jLabel2.setBounds(440, 530, 200, 30);
 
-        deleteBtn.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        deleteBtn.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         deleteBtn.setText("DELETE");
         deleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteBtnActionPerformed(evt);
             }
         });
+        add(deleteBtn);
+        deleteBtn.setBounds(800, 820, 130, 40);
+        add(cityNameTextField);
+        cityNameTextField.setBounds(700, 720, 200, 40);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(backButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(201, 201, 201)
-                        .addComponent(lblsysadmin))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 876, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel6))
-                                .addGap(57, 57, 57)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(orgCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(71, 71, 71)
-                                        .addComponent(updateButton))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(cityNameTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(contactField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                        .addComponent(nameField, javax.swing.GroupLayout.Alignment.LEADING)))))))
-                .addContainerGap(141, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(deleteBtn)
-                .addGap(165, 165, 165))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(orgCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(backButton)
-                        .addGap(14, 14, 14)
-                        .addComponent(lblsysadmin)
-                        .addGap(55, 55, 55)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47)))
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(contactField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(cityNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(103, Short.MAX_VALUE))
-        );
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/HotelManagerRole/vector-jan-2021-19_generated.jpg"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        add(jLabel4);
+        jLabel4.setBounds(0, -10, 1610, 1030);
     }// </editor-fold>//GEN-END:initComponents
 
     private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
@@ -245,13 +205,13 @@ public class ManageOrganisationForHotel extends javax.swing.JPanel {
         }
 
         String orgType1 = orgCombo.getSelectedItem().toString();      // org-type (physician org)     
-        ServicesDirectory enterpriseDirc = network.getServiceDirectory();
+        ServicesDirectory enterpriseDirc = network.getEnterpriseDirectory();
         List<Hotel> hotel = enterpriseDirc.getListOfHotel();
 
         for (int i = 0; i < hotel.size(); i++) {
             hotel.get(i).findManager(user);      //find healthclub for which manager is working for
             if (orgType1.equals("Laundary")) {
-                hotel.get(i).addLaundaryOg(name, contact, networkName);
+                hotel.get(i).addLaundaryOrg(name, contact, networkName);
                 row[0] = orgType1;
                 row[1] = name;
                 row[2] = contact;
@@ -260,7 +220,7 @@ public class ManageOrganisationForHotel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(this, " Organisation added successfully");
                 return;                               //healthclub found
             } else {
-                hotel.get(i).addTransportationOg(name, contact, networkName);
+                hotel.get(i).addTransportationOrg(name, contact, networkName);
                 row[0] = orgType1;
                 row[1] = name;
                 row[2] = contact;
@@ -281,11 +241,11 @@ public class ManageOrganisationForHotel extends javax.swing.JPanel {
         }
         String OrgType = (String) model.getValueAt(selectedRowIndex, 0);
         String OrgName = (String) model.getValueAt(selectedRowIndex, 1);
-        ServicesDirectory enterpriseDirec = network.getServiceDirectory();
+        ServicesDirectory enterpriseDirec = network.getEnterpriseDirectory();
         for (Hotel hotel : enterpriseDirec.getListOfHotel()) {
             if (hotel.findManager(user) != null) {
-                if (OrgType.equals("Laundary") && hotel.getLaundaryOg() != null) {
-                    for (LaundaryOg laundary : hotel.getLaundaryOg()) {
+                if (OrgType.equals("Laundary") && hotel.getLaundaryOrg() != null) {
+                    for (LaundaryOrg laundary : hotel.getLaundaryOrg()) {
                         if (laundary.getName().equals(OrgName)) {
                             hotel.deleteLaundary(laundary);
 
@@ -293,8 +253,8 @@ public class ManageOrganisationForHotel extends javax.swing.JPanel {
                             populateTable();
                         }
                     }
-                } else if (hotel.getTransportationOgList() != null) {
-                    for (TransportationOg transport : hotel.getTransportationOgList()) {
+                } else if (hotel.getTransportationOrgList() != null) {
+                    for (TransportationOrg transport : hotel.getTransportationOrgList()) {
                         if (transport.getName().equals(OrgName)) {
                             hotel.deleteTransportation(transport);
                             JOptionPane.showMessageDialog(this, "Deleted successfully");
@@ -321,10 +281,10 @@ public class ManageOrganisationForHotel extends javax.swing.JPanel {
         String orgType = orgCombo.getSelectedItem().toString();
         String orgname = model.getValueAt(jTable1.getSelectedRow(), 1).toString();
 
-        ServicesDirectory enterpriseDirec = network.getServiceDirectory();
+        ServicesDirectory enterpriseDirec = network.getEnterpriseDirectory();
         for (Hotel hotel : enterpriseDirec.getListOfHotel()) {
-            if (orgType.equals("Laundary") && hotel.getLaundaryOg() != null) {
-                for (LaundaryOg laundary : hotel.getLaundaryOg()) {
+            if (orgType.equals("Laundary") && hotel.getLaundaryOrg() != null) {
+                for (LaundaryOrg laundary : hotel.getLaundaryOrg()) {
                     if (laundary.getName().equals(orgname)) {
                         laundary.setName(nameField.getText());
                         laundary.setContact(contactField.getText());
@@ -333,8 +293,8 @@ public class ManageOrganisationForHotel extends javax.swing.JPanel {
                         return;
                     }
                 }
-            } else if (orgType.equals("Transportation") && hotel.getTransportationOgList() != null) {
-                for (TransportationOg trans : hotel.getTransportationOgList()) {
+            } else if (orgType.equals("Transportation") && hotel.getTransportationOrgList() != null) {
+                for (TransportationOrg trans : hotel.getTransportationOrgList()) {
                     if (trans.getName().equals(orgname)) {
                         trans.setName(nameField.getText());
                         trans.setContact(contactField.getText());
@@ -376,6 +336,7 @@ public class ManageOrganisationForHotel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
@@ -390,16 +351,16 @@ public class ManageOrganisationForHotel extends javax.swing.JPanel {
         model.setRowCount(0);
         Object row[] = new Object[10];
         String orgType1 = orgCombo.getSelectedItem().toString();
-        Franchise network1 = systemAdmin.findFranchise(network.getName());
-        ServicesDirectory enterpriseDirec = network1.getServiceDirectory();
+        Franchise network1 = systemAdmin.findNetwork(network.getName());
+        ServicesDirectory enterpriseDirec = network1.getEnterpriseDirectory();
         if (enterpriseDirec != null) {
             return;
         }
         for (Hotel hotel : enterpriseDirec.getListOfHotel()) {
             if (hotel.findManager(user) != null) {
-                if (hotel.getLaundaryOg() != null) {
+                if (hotel.getLaundaryOrg() != null) {
                     row[0] = "Laundary";
-                    for (LaundaryOg laundary : hotel.getLaundaryOg()) {
+                    for (LaundaryOrg laundary : hotel.getLaundaryOrg()) {
                         row[0] = "Laundary";
                         row[1] = laundary.getName();
                         row[2] = laundary.getContact();
@@ -407,9 +368,9 @@ public class ManageOrganisationForHotel extends javax.swing.JPanel {
                         model.addRow(row);
                     }
                 }
-                if (hotel.getTransportationOgList() != null) {
+                if (hotel.getTransportationOrgList() != null) {
                     row[0] = "Transportation";
-                    for (TransportationOg transportation : hotel.getTransportationOgList()) {
+                    for (TransportationOrg transportation : hotel.getTransportationOrgList()) {
                         row[0] = "Transportation";
                         row[1] = transportation.getName();
                         row[2] = transportation.getContact();

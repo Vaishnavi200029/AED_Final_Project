@@ -1,7 +1,7 @@
 package ui.SystemAdministration;
 
 import java.awt.Color;
-import ProjectModel.SystemAdmin;
+import ProjModel.SystemAdmin;
 
 public class SystemAdministrationJPanel extends javax.swing.JPanel {
 
@@ -11,112 +11,88 @@ public class SystemAdministrationJPanel extends javax.swing.JPanel {
     private Runnable callOnCreateMethod3;
     private Runnable callOnCreateMethod4;
 
-    public SystemAdministrationJPanel(SystemAdmin systems,Runnable callOnCreateMethod1,Runnable callOnCreateMethod2,Runnable callOnCreateMethod3,Runnable callOnCreateMethod4) {
+    public SystemAdministrationJPanel(SystemAdmin systems, Runnable callOnCreateMethod1, Runnable callOnCreateMethod2, Runnable callOnCreateMethod3, Runnable callOnCreateMethod4) {
         initComponents();
         this.systems = systems;
         this.callOnCreateMethod1 = callOnCreateMethod1;
         this.callOnCreateMethod2 = callOnCreateMethod2;
         this.callOnCreateMethod3 = callOnCreateMethod3;
         this.callOnCreateMethod4 = callOnCreateMethod4;
-
-        franchisesBtn.setBackground(new java.awt.Color(244, 120, 140));
-        franchisesBtn.setOpaque(true);
-        btnmanagecustomers.setBackground(new java.awt.Color(244, 120, 140));
-        btnmanagecustomers.setOpaque(true);
-        btnmanagemanagers.setBackground(new java.awt.Color(244, 120, 140));
-        btnmanagemanagers.setOpaque(true);
-        servicesBtn.setBackground(new java.awt.Color(244, 120, 140));
-        servicesBtn.setOpaque(true);
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        franchisesBtn = new javax.swing.JButton();
-        servicesBtn = new javax.swing.JButton();
+        btnmanageFranchise = new javax.swing.JButton();
+        enterpriseBtn = new javax.swing.JButton();
         btnmanagecustomers = new javax.swing.JButton();
         lblsysadmin = new javax.swing.JLabel();
         btnmanagemanagers = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
-        franchisesBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        franchisesBtn.setText("MANAGE FRANCHISES");
-        franchisesBtn.addActionListener(new java.awt.event.ActionListener() {
+        setLayout(null);
+
+        btnmanageFranchise.setBackground(new java.awt.Color(247, 247, 247));
+        btnmanageFranchise.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        btnmanageFranchise.setForeground(new java.awt.Color(20, 20, 64));
+        btnmanageFranchise.setText("MANAGE FRANCHISE");
+        btnmanageFranchise.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                franchisesBtnActionPerformed(evt);
+                btnmanageFranchiseActionPerformed(evt);
             }
         });
+        add(btnmanageFranchise);
+        btnmanageFranchise.setBounds(430, 390, 219, 117);
 
-        servicesBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        servicesBtn.setText("MANAGE SERVICES");
-        servicesBtn.addActionListener(new java.awt.event.ActionListener() {
+        enterpriseBtn.setBackground(new java.awt.Color(247, 247, 247));
+        enterpriseBtn.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        enterpriseBtn.setForeground(new java.awt.Color(20, 20, 64));
+        enterpriseBtn.setText("MANAGE SERVICES");
+        enterpriseBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                servicesBtnActionPerformed(evt);
+                enterpriseBtnActionPerformed(evt);
             }
         });
+        add(enterpriseBtn);
+        enterpriseBtn.setBounds(840, 390, 219, 117);
 
-        btnmanagecustomers.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnmanagecustomers.setBackground(new java.awt.Color(247, 247, 247));
+        btnmanagecustomers.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        btnmanagecustomers.setForeground(new java.awt.Color(20, 20, 64));
         btnmanagecustomers.setText("MANAGE CUSTOMERS");
         btnmanagecustomers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnmanagecustomersActionPerformed(evt);
             }
         });
+        add(btnmanagecustomers);
+        btnmanagecustomers.setBounds(840, 590, 219, 118);
 
         lblsysadmin.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        lblsysadmin.setForeground(new java.awt.Color(255, 255, 255));
         lblsysadmin.setText("SYSTEM ADMINISTRATOR");
+        add(lblsysadmin);
+        lblsysadmin.setBounds(510, 280, 475, 44);
 
-        btnmanagemanagers.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnmanagemanagers.setBackground(new java.awt.Color(247, 247, 247));
+        btnmanagemanagers.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        btnmanagemanagers.setForeground(new java.awt.Color(20, 20, 64));
         btnmanagemanagers.setText("MANAGE MANAGERS");
         btnmanagemanagers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnmanagemanagersActionPerformed(evt);
             }
         });
+        add(btnmanagemanagers);
+        btnmanagemanagers.setBounds(430, 600, 219, 110);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(242, 242, 242)
-                        .addComponent(lblsysadmin, javax.swing.GroupLayout.PREFERRED_SIZE, 499, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(381, 381, 381)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(servicesBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
-                            .addComponent(franchisesBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
-                            .addComponent(btnmanagemanagers, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
-                            .addComponent(btnmanagecustomers, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(303, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addComponent(lblsysadmin)
-                .addGap(76, 76, 76)
-                .addComponent(franchisesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(servicesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addComponent(btnmanagemanagers, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(btnmanagecustomers, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(269, Short.MAX_VALUE))
-        );
+        jLabel1.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/SystemAdministration/vector-OCT-2020-116_generated.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        add(jLabel1);
+        jLabel1.setBounds(0, -10, 1620, 1130);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void servicesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_servicesBtnActionPerformed
-        callOnCreateMethod2.run();
-
-    }//GEN-LAST:event_servicesBtnActionPerformed
-
-    private void franchisesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_franchisesBtnActionPerformed
-        callOnCreateMethod1.run();
-    }//GEN-LAST:event_franchisesBtnActionPerformed
 
     private void btnmanagecustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmanagecustomersActionPerformed
         callOnCreateMethod4.run();
@@ -126,12 +102,20 @@ public class SystemAdministrationJPanel extends javax.swing.JPanel {
         callOnCreateMethod3.run();
     }//GEN-LAST:event_btnmanagemanagersActionPerformed
 
+    private void btnmanageFranchiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmanageFranchiseActionPerformed
+        callOnCreateMethod1.run();
+    }//GEN-LAST:event_btnmanageFranchiseActionPerformed
+
+    private void enterpriseBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterpriseBtnActionPerformed
+        callOnCreateMethod2.run();
+    }//GEN-LAST:event_enterpriseBtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnmanageFranchise;
     private javax.swing.JButton btnmanagecustomers;
     private javax.swing.JButton btnmanagemanagers;
-    private javax.swing.JButton franchisesBtn;
+    private javax.swing.JButton enterpriseBtn;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblsysadmin;
-    private javax.swing.JButton servicesBtn;
     // End of variables declaration//GEN-END:variables
 }

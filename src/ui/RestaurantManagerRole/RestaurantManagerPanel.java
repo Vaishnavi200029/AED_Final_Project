@@ -1,6 +1,6 @@
 package ui.RestaurantManagerRole;
 
-import ProjectModel.SystemAdmin;
+import ProjModel.SystemAdmin;
 
 public class RestaurantManagerPanel extends javax.swing.JPanel {
 
@@ -16,16 +16,6 @@ public class RestaurantManagerPanel extends javax.swing.JPanel {
         this.callOnCreateMethod2 = callOnCreateMethod2;
         this.callOnCreateMethod3 = callOnCreateMethod3;
         this.callOnCreateMethod4 = callOnCreateMethod4;
-        setBackground(new java.awt.Color(255, 204, 204));
-
-        viewTask.setBackground(new java.awt.Color(244, 120, 140));
-        viewTask.setOpaque(true);
-        orgButton.setBackground(new java.awt.Color(244, 120, 140));
-        orgButton.setOpaque(true);
-        orgAdminBtn.setBackground(new java.awt.Color(244, 120, 140));
-        orgAdminBtn.setOpaque(true);
-        addMenu.setBackground(new java.awt.Color(244, 120, 140));
-        addMenu.setOpaque(true);
     }
 
     @SuppressWarnings("unchecked")
@@ -37,72 +27,59 @@ public class RestaurantManagerPanel extends javax.swing.JPanel {
         orgAdminBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         addMenu = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
-        viewTask.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        setLayout(null);
+
+        viewTask.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         viewTask.setText("VIEW ORDERS");
         viewTask.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewTaskActionPerformed(evt);
             }
         });
+        add(viewTask);
+        viewTask.setBounds(340, 430, 290, 110);
 
-        orgButton.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        orgButton.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         orgButton.setText("MANAGE ORGANIZATION");
         orgButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 orgButtonActionPerformed(evt);
             }
         });
+        add(orgButton);
+        orgButton.setBounds(790, 430, 340, 110);
 
-        orgAdminBtn.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        orgAdminBtn.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         orgAdminBtn.setText("MANAGE ORGANIZATION ADMIN");
         orgAdminBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 orgAdminBtnActionPerformed(evt);
             }
         });
+        add(orgAdminBtn);
+        orgAdminBtn.setBounds(790, 620, 340, 110);
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jLabel1.setText("RESTAURANT MANAGER PANEL");
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("RESTAURANT MANAGER");
+        add(jLabel1);
+        jLabel1.setBounds(510, 340, 450, 47);
 
-        addMenu.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        addMenu.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         addMenu.setText("ADD MENU ");
         addMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addMenuActionPerformed(evt);
             }
         });
+        add(addMenu);
+        addMenu.setBounds(340, 620, 290, 110);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(285, 285, 285)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(viewTask, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(orgButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(orgAdminBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(238, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jLabel1)
-                .addGap(110, 110, 110)
-                .addComponent(viewTask)
-                .addGap(46, 46, 46)
-                .addComponent(orgButton)
-                .addGap(47, 47, 47)
-                .addComponent(orgAdminBtn)
-                .addGap(43, 43, 43)
-                .addComponent(addMenu)
-                .addContainerGap(304, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/RestaurantManagerRole/stock-photo-assorted-of-different-asian-food-chinese-japanese-and-thai-cuisine-noodles-dumplings-gedza-1900062550-transformed.jpeg"))); // NOI18N
+        add(jLabel2);
+        jLabel2.setBounds(0, 0, 1500, 1162);
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewTaskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewTaskActionPerformed
@@ -125,6 +102,7 @@ public class RestaurantManagerPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addMenu;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton orgAdminBtn;
     private javax.swing.JButton orgButton;
     private javax.swing.JButton viewTask;
