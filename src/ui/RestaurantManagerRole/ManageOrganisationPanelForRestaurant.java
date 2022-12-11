@@ -3,11 +3,12 @@ package ui.RestaurantManagerRole;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import ProjectModel.DeliverymanOrg;
-import ProjectModel.ServicesDirectory;
-import ProjectModel.Franchise;
-import ProjectModel.Restaurant;
-import ProjectModel.SystemAdmin;
+import ProjModel.DeliverymanOrg;
+import ProjModel.ServicesDirectory;
+import ProjModel.Franchise;
+import ProjModel.Restaurant;
+import ProjModel.SystemAdmin;
+import javax.swing.ImageIcon;
 import ui.main.Validator;
 
 public class ManageOrganisationPanelForRestaurant extends javax.swing.JPanel {
@@ -25,18 +26,10 @@ public class ManageOrganisationPanelForRestaurant extends javax.swing.JPanel {
         this.user = user;
         this.type = type;
         this.network = network;
-        setBackground(new java.awt.Color(255, 204, 204));
         cityNameTextField.setText(network.getName());
         cityNameTextField.setEditable(false);
-
-        deleteBtn.setBackground(new java.awt.Color(244, 120, 140));
-        deleteBtn.setOpaque(true);
-        addButton.setBackground(new java.awt.Color(244, 120, 140));
-        addButton.setOpaque(true);
-        updateButton.setBackground(new java.awt.Color(244, 120, 140));
-        updateButton.setOpaque(true);
-        backButton.setBackground(new java.awt.Color(244, 120, 140));
         backButton.setOpaque(true);
+        backButton.setIcon(new ImageIcon(ClassLoader.getSystemResource("icons/back.png")));
 
         populateTable();
     }
@@ -60,6 +53,9 @@ public class ManageOrganisationPanelForRestaurant extends javax.swing.JPanel {
         cityNameTextField = new javax.swing.JTextField();
         deleteBtn = new javax.swing.JButton();
         updateButton = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+
+        setLayout(null);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -84,139 +80,96 @@ public class ManageOrganisationPanelForRestaurant extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
-        jLabel1.setText("ORGANIZATION TYPE");
+        add(jScrollPane1);
+        jScrollPane1.setBounds(220, 360, 970, 220);
 
-        orgCombo.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("ORGANIZATION TYPE");
+        add(jLabel1);
+        jLabel1.setBounds(230, 630, 210, 34);
+
+        orgCombo.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         orgCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select a organisation", "Deliveryman" }));
+        add(orgCombo);
+        orgCombo.setBounds(460, 630, 232, 34);
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("NAME");
+        add(jLabel2);
+        jLabel2.setBounds(370, 700, 60, 24);
 
         nameField.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        add(nameField);
+        nameField.setBounds(460, 700, 232, 29);
 
         jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("CONTACT");
+        add(jLabel3);
+        jLabel3.setBounds(760, 630, 91, 24);
 
         contactField.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        add(contactField);
+        contactField.setBounds(890, 630, 232, 29);
 
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("CITY");
+        add(jLabel4);
+        jLabel4.setBounds(800, 700, 50, 24);
 
         backButton.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        backButton.setText("BACK");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
+        add(backButton);
+        backButton.setBounds(25, 23, 92, 50);
 
-        addButton.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        addButton.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         addButton.setText("ADD");
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addButtonActionPerformed(evt);
             }
         });
+        add(addButton);
+        addButton.setBounds(460, 780, 102, 39);
 
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
-        jLabel5.setText("MANAGE RESTAURANT ORGANISATION");
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("MANAGE ORGANIZATION FOR RESTAURANT");
+        add(jLabel5);
+        jLabel5.setBounds(420, 290, 540, 40);
+        add(cityNameTextField);
+        cityNameTextField.setBounds(890, 690, 232, 35);
 
-        deleteBtn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        deleteBtn.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         deleteBtn.setText("DELETE");
         deleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteBtnActionPerformed(evt);
             }
         });
+        add(deleteBtn);
+        deleteBtn.setBounds(1010, 780, 109, 39);
 
-        updateButton.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        updateButton.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         updateButton.setText("UPDATE");
         updateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateButtonActionPerformed(evt);
             }
         });
+        add(updateButton);
+        updateButton.setBounds(730, 780, 113, 39);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                                .addComponent(orgCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(contactField, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
-                                    .addComponent(cityNameTextField)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(253, 253, 253)
-                        .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(75, 75, 75)
-                        .addComponent(updateButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 810, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(156, 156, 156))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(deleteBtn)
-                        .addGap(25, 25, 25))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(backButton)
-                .addGap(9, 9, 9)
-                .addComponent(jLabel5)
-                .addGap(38, 38, 38)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(orgCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3)
-                    .addComponent(contactField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4)
-                    .addComponent(cityNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(58, Short.MAX_VALUE))
-        );
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/RestaurantManagerRole/stock-photo-assorted-of-different-asian-food-chinese-japanese-and-thai-cuisine-noodles-dumplings-gedza-1900062550-transformed.jpeg"))); // NOI18N
+        add(jLabel6);
+        jLabel6.setBounds(0, 0, 1500, 1162);
     }// </editor-fold>//GEN-END:initComponents
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
@@ -230,7 +183,7 @@ public class ManageOrganisationPanelForRestaurant extends javax.swing.JPanel {
         String contact = contactField.getText();
         String networkName = network.getName();
         String orgType1 = orgCombo.getSelectedItem().toString();      // org-type (delivery org)    
-        ServicesDirectory enterpriseDirc = network.getServiceDirectory();
+        ServicesDirectory enterpriseDirc = network.getEnterpriseDirectory();
 
         if (name == null || name.length() < 2) {
             JOptionPane.showMessageDialog(this, "Organization name should be at least 2 characters long.");
@@ -261,7 +214,7 @@ public class ManageOrganisationPanelForRestaurant extends javax.swing.JPanel {
         }
         String OrgType = (String) model.getValueAt(selectedRowIndex, 0);
         String OrgName = (String) model.getValueAt(selectedRowIndex, 1);
-        ServicesDirectory enterpriseDirec = network.getServiceDirectory();
+        ServicesDirectory enterpriseDirec = network.getEnterpriseDirectory();
         for (Restaurant res : enterpriseDirec.getListOfRestaurants()) {
             if (res.findManager(user) != null) {
                 if (res.getListOfDeliveryManOrg() != null) {
@@ -287,7 +240,7 @@ public class ManageOrganisationPanelForRestaurant extends javax.swing.JPanel {
         String orgType = orgCombo.getSelectedItem().toString();
         String orgname = model.getValueAt(jTable1.getSelectedRow(), 1).toString();
 
-        ServicesDirectory enterpriseDirec = network.getServiceDirectory();
+        ServicesDirectory enterpriseDirec = network.getEnterpriseDirectory();
         for (Restaurant res : enterpriseDirec.getListOfRestaurants()) {
             if (orgType.equals("Deliveryman") && res.getListOfDeliveryManOrg() != null) {
                 for (DeliverymanOrg del : res.getListOfDeliveryManOrg()) {
@@ -334,6 +287,7 @@ public class ManageOrganisationPanelForRestaurant extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField nameField;
@@ -346,8 +300,8 @@ public class ManageOrganisationPanelForRestaurant extends javax.swing.JPanel {
         model.setRowCount(0);
         Object row[] = new Object[10];
         String orgType1 = orgCombo.getSelectedItem().toString();
-        Franchise network1 = systemAdmin.findFranchise(network.getName());
-        ServicesDirectory enterpriseDirec = network1.getServiceDirectory();
+        Franchise network1 = systemAdmin.findNetwork(network.getName());
+        ServicesDirectory enterpriseDirec = network1.getEnterpriseDirectory();
         for (Restaurant restaurant : enterpriseDirec.getListOfRestaurants()) {
             if (restaurant.findManager(user) != null) {
                 if (restaurant.getListOfDeliveryManOrg() != null) {

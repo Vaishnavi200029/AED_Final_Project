@@ -3,12 +3,13 @@ package ui.RestaurantManagerRole;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import ProjectModel.ServicesDirectory;
-import ProjectModel.Manager;
-import ProjectModel.MenuItem;
-import ProjectModel.Franchise;
-import ProjectModel.Restaurant;
-import ProjectModel.SystemAdmin;
+import ProjModel.ServicesDirectory;
+import ProjModel.Manager;
+import ProjModel.MenuItem;
+import ProjModel.Franchise;
+import ProjModel.Restaurant;
+import ProjModel.SystemAdmin;
+import javax.swing.ImageIcon;
 
 public class AddOrderPanel extends javax.swing.JPanel {
 
@@ -18,19 +19,16 @@ public class AddOrderPanel extends javax.swing.JPanel {
     private String user;
     private Franchise network;
 
-    public AddOrderPanel(SystemAdmin systemAdmin, Runnable callOnCreateMethod, String user, String type, Franchise franchise) {
+    public AddOrderPanel(SystemAdmin systemAdmin, Runnable callOnCreateMethod, String user, String type, Franchise network) {
         initComponents();
         this.systemAdmin = systemAdmin;
         this.callOnCreateMethod = callOnCreateMethod;
         this.user = user;
         this.type = type;
         this.network = network;
-        setBackground(new java.awt.Color(255, 204, 204));
         populateMenu();
-        addBtn.setBackground(new java.awt.Color(244, 120, 140));
-        addBtn.setOpaque(true);
-        backButton.setBackground(new java.awt.Color(244, 120, 140));
         backButton.setOpaque(true);
+        backButton.setIcon(new ImageIcon(ClassLoader.getSystemResource("icons/back.png")));
 
     }
 
@@ -65,6 +63,9 @@ public class AddOrderPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         priceField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+
+        setLayout(null);
 
         jTable1.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -85,89 +86,68 @@ public class AddOrderPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        add(jScrollPane1);
+        jScrollPane1.setBounds(343, 380, 720, 240);
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("ADD AN ITEM ");
+        add(jLabel1);
+        jLabel1.setBounds(480, 670, 140, 30);
 
         menuField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        menuField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuFieldActionPerformed(evt);
+            }
+        });
+        add(menuField);
+        menuField.setBounds(630, 660, 177, 40);
 
-        addBtn.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        addBtn.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         addBtn.setText("ADD");
         addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addBtnActionPerformed(evt);
             }
         });
+        add(addBtn);
+        addBtn.setBounds(660, 790, 112, 31);
 
         backButton.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        backButton.setText("BACK");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
+        add(backButton);
+        backButton.setBounds(48, 18, 93, 60);
 
         jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("PRICE ");
+        add(jLabel3);
+        jLabel3.setBounds(540, 730, 70, 30);
 
+        priceField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                priceFieldActionPerformed(evt);
+            }
+        });
+        add(priceField);
+        priceField.setBounds(630, 730, 177, 35);
+
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("MENU ITEM LIST");
+        add(jLabel4);
+        jLabel4.setBounds(580, 312, 230, 40);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(56, 56, 56)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(priceField, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(27, 27, 27)
-                                        .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(menuField, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(158, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(266, 266, 266))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(backButton)
-                .addGap(16, 16, 16)
-                .addComponent(jLabel4)
-                .addGap(73, 73, 73)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(menuField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(addBtn)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3)
-                        .addComponent(priceField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(241, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/RestaurantManagerRole/stock-photo-assorted-of-different-asian-food-chinese-japanese-and-thai-cuisine-noodles-dumplings-gedza-1900062550-transformed.jpeg"))); // NOI18N
+        add(jLabel2);
+        jLabel2.setBounds(0, 0, 1500, 1162);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        callOnCreateMethod.run();
-    }//GEN-LAST:event_backButtonActionPerformed
 
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
@@ -175,7 +155,7 @@ public class AddOrderPanel extends javax.swing.JPanel {
         String item = menuField.getText();
         int price = Integer.parseInt(priceField.getText().trim());
 
-        ServicesDirectory enterpriseDirec = network.getServiceDirectory();
+        ServicesDirectory enterpriseDirec = network.getEnterpriseDirectory();
         List<Restaurant> resList = enterpriseDirec.getListOfRestaurants();                // get all restaurants
         for (Restaurant res : resList) {
             List<Manager> managers = res.getListOfManager();
@@ -191,11 +171,24 @@ public class AddOrderPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_addBtnActionPerformed
 
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        callOnCreateMethod.run();
+    }//GEN-LAST:event_backButtonActionPerformed
+
+    private void priceFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priceFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_priceFieldActionPerformed
+
+    private void menuFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuFieldActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBtn;
     private javax.swing.JButton backButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
@@ -208,7 +201,7 @@ public class AddOrderPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0);
         
-        ServicesDirectory enterpriseDirec = network.getServiceDirectory();
+        ServicesDirectory enterpriseDirec = network.getEnterpriseDirectory();
         for (Restaurant restaurant : enterpriseDirec.getListOfRestaurants()) {
             if (restaurant.findManager(user) != null) {
                 Object row[] = new Object[10];

@@ -5,7 +5,7 @@ import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
 import com.db4o.config.EmbeddedConfiguration;
 
-import ProjectModel.SystemAdmin;
+import ProjModel.SystemAdmin;
 
 public class DbUtils {
 
@@ -28,7 +28,7 @@ public class DbUtils {
         config.common().objectClass(SystemAdmin.class).updateDepth(Integer.MAX_VALUE);
         config.common().objectClass(SystemAdmin.class).cascadeOnUpdate(true);
 
-        ObjectContainer db = Db4oEmbedded.openFile(config, "database/happyhospitality.db4o");
+        ObjectContainer db = Db4oEmbedded.openFile(config, "database/happyHosp.db4o");
         return db;
     }
 

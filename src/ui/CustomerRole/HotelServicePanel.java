@@ -3,9 +3,10 @@ package ui.CustomerRole;
 import java.util.Date;
 import java.util.function.Consumer;
 import javax.swing.JOptionPane;
-import ProjectModel.Booking;
-import ProjectModel.SystemAdmin;
-import MServices.HotelService;
+import ProjModel.Booking;
+import ProjModel.SystemAdmin;
+import ProjectModel.services.HotelService;
+import javax.swing.ImageIcon;
 import ui.main.DateUtils;
 
 public class HotelServicePanel extends javax.swing.JPanel {
@@ -21,11 +22,8 @@ public class HotelServicePanel extends javax.swing.JPanel {
         this.callOnCreateMethod1 = callOnCreateMethod1;
         this.username = username;
         this.booking = booking;
-        setBackground(new java.awt.Color(255, 204, 204));
-        backBtn.setBackground(new java.awt.Color(244, 120, 140));
         backBtn.setOpaque(true);
-        placeRequest.setBackground(new java.awt.Color(244, 120, 140));
-        placeRequest.setOpaque(true);
+        backBtn.setIcon(new ImageIcon(ClassLoader.getSystemResource("icons/back.png")));
     }
 
     @SuppressWarnings("unchecked")
@@ -39,23 +37,36 @@ public class HotelServicePanel extends javax.swing.JPanel {
         placeRequest = new javax.swing.JButton();
         dateField = new com.toedter.calendar.JDateChooser();
         jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+
+        setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("HOTEL SERVICE PANEL");
+        add(jLabel1);
+        jLabel1.setBounds(226, 77, 421, 47);
 
-        backBtn.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        backBtn.setText("BACK");
+        backBtn.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backBtnActionPerformed(evt);
             }
         });
+        add(backBtn);
+        backBtn.setBounds(32, 16, 100, 40);
 
-        laundaryBtn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        laundaryBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        laundaryBtn.setForeground(new java.awt.Color(255, 255, 255));
         laundaryBtn.setText("LAUNDARY SERVICE ($10)");
+        add(laundaryBtn);
+        laundaryBtn.setBounds(312, 301, 317, 29);
 
-        transportationBtn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        transportationBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        transportationBtn.setForeground(new java.awt.Color(255, 255, 255));
         transportationBtn.setText("TRANSPORTATION SERVICE ($20)");
+        add(transportationBtn);
+        transportationBtn.setBounds(312, 392, 344, 29);
 
         placeRequest.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         placeRequest.setText("PLACE REQUEST");
@@ -64,58 +75,21 @@ public class HotelServicePanel extends javax.swing.JPanel {
                 placeRequestActionPerformed(evt);
             }
         });
+        add(placeRequest);
+        placeRequest.setBounds(310, 490, 231, 47);
+        add(dateField);
+        dateField.setBounds(312, 190, 223, 39);
 
         jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("DATE");
+        add(jLabel3);
+        jLabel3.setBounds(182, 199, 75, 24);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(196, 196, 196))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(182, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(transportationBtn)
-                    .addComponent(laundaryBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dateField, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(201, 201, 201))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(backBtn))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(261, 261, 261)
-                        .addComponent(placeRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(backBtn)
-                .addGap(27, 27, 27)
-                .addComponent(jLabel1)
-                .addGap(66, 66, 66)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(dateField, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabel3)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
-                .addComponent(laundaryBtn)
-                .addGap(61, 61, 61)
-                .addComponent(transportationBtn)
-                .addGap(68, 68, 68)
-                .addComponent(placeRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(224, 224, 224))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/CustomerRole/vecteezy_abstract-background-dark-purple-and-triangle-shape_7463701.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2);
+        jLabel2.setBounds(0, 0, 1981, 1067);
     }// </editor-fold>//GEN-END:initComponents
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
@@ -152,6 +126,7 @@ public class HotelServicePanel extends javax.swing.JPanel {
     private javax.swing.JButton backBtn;
     private com.toedter.calendar.JDateChooser dateField;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JRadioButton laundaryBtn;
     private javax.swing.JButton placeRequest;

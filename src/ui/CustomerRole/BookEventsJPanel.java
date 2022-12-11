@@ -3,13 +3,14 @@ package ui.CustomerRole;
 import java.util.Date;
 import java.util.function.Consumer;
 import javax.swing.JOptionPane;
-import ProjectModel.Booking;
-import ProjectModel.BusinessEvent;
-import ProjectModel.CateringService.CateringType;
-import ProjectModel.DecorationServices.DecorType;
-import ProjectModel.PhotographyService.PhotographyType;
-import ProjectModel.SystemAdmin;
-import MServices.BusinessEventService;
+import ProjModel.Booking;
+import ProjModel.BusinessEvent;
+import ProjModel.CateringService.CateringType;
+import ProjModel.DecorServices.DecorType;
+import ProjModel.PhotographyService.PhotographyType;
+import ProjModel.SystemAdmin;
+import ProjectModel.services.BusinessEventService;
+import javax.swing.ImageIcon;
 import ui.main.DateUtils;
 
 public class BookEventsJPanel extends javax.swing.JPanel {
@@ -27,16 +28,11 @@ public class BookEventsJPanel extends javax.swing.JPanel {
         this.booking = booking;
 
         orgComboBox.addItem(null);
-        for (BusinessEvent eventOrg : booking.getFranchise().getServiceDirectory().getListOfEvents()) {
+        for (BusinessEvent eventOrg : booking.getNetwork().getEnterpriseDirectory().getListOfEvents()) {
             orgComboBox.addItem(eventOrg);
         }
-        setBackground(new java.awt.Color(255, 204, 204));
-        backBtn.setBackground(new java.awt.Color(244, 120, 140));
         backBtn.setOpaque(true);
-        totalPrice.setBackground(new java.awt.Color(244, 120, 140));
-        totalPrice.setOpaque(true);
-        bookEventBtn.setBackground(new java.awt.Color(244, 120, 140));
-        bookEventBtn.setOpaque(true);
+        backBtn.setIcon(new ImageIcon(ClassLoader.getSystemResource("icons/back.png")));
     }
 
     @SuppressWarnings("unchecked")
@@ -62,54 +58,79 @@ public class BookEventsJPanel extends javax.swing.JPanel {
         orgComboBox = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         totalPrice = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         jRadioButtonMenuItem1.setSelected(true);
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
 
+        setLayout(null);
+
         backBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        backBtn.setText("BACK");
         backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backBtnActionPerformed(evt);
             }
         });
+        add(backBtn);
+        backBtn.setBounds(33, 21, 80, 50);
 
         lblbookservices.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        lblbookservices.setForeground(new java.awt.Color(255, 255, 255));
         lblbookservices.setText("BOOK EVENTS");
+        add(lblbookservices);
+        lblbookservices.setBounds(241, 71, 258, 44);
 
         photoRadioBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        photoRadioBtn.setForeground(new java.awt.Color(255, 255, 255));
         photoRadioBtn.setText("PHOTOGRAPHY");
         photoRadioBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 photoRadioBtnActionPerformed(evt);
             }
         });
+        add(photoRadioBtn);
+        photoRadioBtn.setBounds(193, 329, 160, 29);
 
         cateringRadioBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        cateringRadioBtn.setForeground(new java.awt.Color(255, 255, 255));
         cateringRadioBtn.setText("CATERING");
         cateringRadioBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cateringRadioBtnActionPerformed(evt);
             }
         });
+        add(cateringRadioBtn);
+        cateringRadioBtn.setBounds(193, 426, 120, 29);
 
-        bookEventBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        bookEventBtn.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         bookEventBtn.setText("BOOK EVENT");
         bookEventBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bookEventBtnActionPerformed(evt);
             }
         });
+        add(bookEventBtn);
+        bookEventBtn.setBounds(344, 761, 154, 38);
 
         decorCombo.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        add(decorCombo);
+        decorCombo.setBounds(453, 581, 440, 50);
 
         photgraphyCombo.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        add(photgraphyCombo);
+        photgraphyCombo.setBounds(453, 359, 445, 40);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("TYPE OF PACKAGE ");
+        add(jLabel5);
+        jLabel5.setBounds(193, 372, 157, 22);
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("TYPE OF PACKAGE");
+        add(jLabel1);
+        jLabel1.setBounds(193, 474, 168, 24);
 
         cateringCombo.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         cateringCombo.addActionListener(new java.awt.event.ActionListener() {
@@ -117,119 +138,59 @@ public class BookEventsJPanel extends javax.swing.JPanel {
                 cateringComboActionPerformed(evt);
             }
         });
+        add(cateringCombo);
+        cateringCombo.setBounds(453, 462, 445, 40);
 
         decorRadioBtn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        decorRadioBtn.setForeground(new java.awt.Color(255, 255, 255));
         decorRadioBtn.setText("DECOR SERVICE ");
         decorRadioBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 decorRadioBtnActionPerformed(evt);
             }
         });
+        add(decorRadioBtn);
+        decorRadioBtn.setBounds(193, 545, 187, 30);
 
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("TYPE OF PACKAGE");
+        add(jLabel6);
+        jLabel6.setBounds(214, 603, 166, 25);
+        add(priceField);
+        priceField.setBounds(453, 683, 120, 32);
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("DATE ");
+        add(jLabel2);
+        jLabel2.setBounds(200, 176, 98, 24);
+        add(dateField);
+        dateField.setBounds(453, 176, 210, 35);
+
+        add(orgComboBox);
+        orgComboBox.setBounds(453, 261, 210, 35);
 
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("BUSINESS EVENTS ");
+        add(jLabel4);
+        jLabel4.setBounds(200, 267, 172, 24);
 
-        totalPrice.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        totalPrice.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         totalPrice.setText("TOTAL PRICE");
         totalPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 totalPriceActionPerformed(evt);
             }
         });
+        add(totalPrice);
+        totalPrice.setBounds(206, 687, 160, 31);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(193, 193, 193)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(decorRadioBtn)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel5)
-                            .addComponent(cateringRadioBtn)
-                            .addComponent(photoRadioBtn)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(totalPrice)
-                                .addGap(110, 110, 110))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(200, 200, 200)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(81, 81, 81)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(orgComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dateField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(photgraphyCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cateringCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(decorCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(priceField, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(backBtn))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(344, 344, 344)
-                        .addComponent(bookEventBtn))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(241, 241, 241)
-                        .addComponent(lblbookservices)))
-                .addContainerGap(41, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(backBtn)
-                .addGap(18, 18, 18)
-                .addComponent(lblbookservices)
-                .addGap(61, 61, 61)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(dateField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(orgComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addComponent(photoRadioBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(photgraphyCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addComponent(cateringRadioBtn)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(cateringCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
-                .addComponent(decorRadioBtn)
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(decorCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(52, 52, 52)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(priceField, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(totalPrice))
-                .addGap(45, 45, 45)
-                .addComponent(bookEventBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/CustomerRole/vecteezy_abstract-background-dark-purple-and-triangle-shape_7463701.jpg"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        add(jLabel3);
+        jLabel3.setBounds(0, 0, 1981, 1040);
     }// </editor-fold>//GEN-END:initComponents
 
     private void photoRadioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_photoRadioBtnActionPerformed
@@ -369,6 +330,7 @@ public class BookEventsJPanel extends javax.swing.JPanel {
     private javax.swing.JRadioButton decorRadioBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

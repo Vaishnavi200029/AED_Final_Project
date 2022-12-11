@@ -4,9 +4,11 @@
  */
 package ui.ManagerRole;
 
+import javax.swing.ImageIcon;
+
 /**
  *
- * @author pawankumarkrishnan
+ * @author jaahn
  */
 public class RestaurantMainJPanel extends javax.swing.JPanel {
 
@@ -15,6 +17,8 @@ public class RestaurantMainJPanel extends javax.swing.JPanel {
      */
     public RestaurantMainJPanel() {
         initComponents();
+        jButton2.setOpaque(true);
+        jButton2.setIcon(new ImageIcon(ClassLoader.getSystemResource("icons/back.png")));
     }
 
     /**
@@ -31,68 +35,49 @@ public class RestaurantMainJPanel extends javax.swing.JPanel {
         lblsysadmin = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        setLayout(null);
+
+        jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jButton1.setText("MANAGE EMPLOYEES");
+        add(jButton1);
+        jButton1.setBounds(660, 400, 300, 90);
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton2.setText("BACK");
+        add(jButton2);
+        jButton2.setBounds(88, 38, 108, 50);
 
         lblsysadmin.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        lblsysadmin.setForeground(new java.awt.Color(255, 255, 255));
         lblsysadmin.setText("RESTAURANT MANAGER");
+        add(lblsysadmin);
+        lblsysadmin.setBounds(570, 130, 442, 44);
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jButton3.setText("CONFIRM BOOKINGS & ASSIGN ");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
+        add(jButton3);
+        jButton3.setBounds(660, 570, 299, 100);
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jButton4.setText("MANAGE MENU");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
+        add(jButton4);
+        jButton4.setBounds(660, 240, 297, 90);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(88, 88, 88)
-                .addComponent(jButton2)
-                .addGap(354, 876, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblsysadmin)
-                        .addGap(274, 274, 274))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3))
-                        .addGap(332, 332, 332))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jButton2)
-                .addGap(37, 37, 37)
-                .addComponent(lblsysadmin)
-                .addGap(63, 63, 63)
-                .addComponent(jButton4)
-                .addGap(38, 38, 38)
-                .addComponent(jButton1)
-                .addGap(36, 36, 36)
-                .addComponent(jButton3)
-                .addContainerGap(419, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/ManagerRole/vecteezy_vector-abstract-futuristic-circuit-board-illustration-high_6115516.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        add(jLabel1);
+        jLabel1.setBounds(0, 0, 1981, 1280);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -109,6 +94,7 @@ public class RestaurantMainJPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblsysadmin;
     // End of variables declaration//GEN-END:variables
 }
