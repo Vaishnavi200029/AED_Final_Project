@@ -67,7 +67,7 @@ public class ManageFranchisePanel extends javax.swing.JPanel {
         lblsysadmin.setForeground(new java.awt.Color(255, 255, 255));
         lblsysadmin.setText("MANAGE FRANCHISES");
         add(lblsysadmin);
-        lblsysadmin.setBounds(510, 110, 407, 44);
+        lblsysadmin.setBounds(510, 100, 407, 44);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -87,12 +87,12 @@ public class ManageFranchisePanel extends javax.swing.JPanel {
             }
         });
         add(backButton);
-        backButton.setBounds(40, 23, 108, 50);
+        backButton.setBounds(40, 23, 72, 50);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/SystemAdministration/vector-OCT-2020-116_generated.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
         add(jLabel2);
-        jLabel2.setBounds(0, -10, 1981, 1358);
+        jLabel2.setBounds(0, -10, 1961, 1358);
     }// </editor-fold>//GEN-END:initComponents
     public boolean validateName() {
         if (nameField.getText().matches("[a-zA-Z]{2,19}")) {

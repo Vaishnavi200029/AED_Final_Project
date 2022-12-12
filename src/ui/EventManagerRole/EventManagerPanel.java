@@ -26,6 +26,7 @@ public class EventManagerPanel extends javax.swing.JPanel {
         viewTask = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         orgadmin = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setLayout(null);
@@ -38,7 +39,7 @@ public class EventManagerPanel extends javax.swing.JPanel {
             }
         });
         add(orgBtn);
-        orgBtn.setBounds(502, 396, 313, 40);
+        orgBtn.setBounds(760, 220, 313, 40);
 
         viewTask.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         viewTask.setText("VIEW TASK");
@@ -48,13 +49,13 @@ public class EventManagerPanel extends javax.swing.JPanel {
             }
         });
         add(viewTask);
-        viewTask.setBounds(502, 284, 313, 39);
+        viewTask.setBounds(150, 230, 313, 39);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("EVENT MANAGER PANEL ");
         add(jLabel1);
-        jLabel1.setBounds(434, 165, 456, 44);
+        jLabel1.setBounds(390, 110, 456, 44);
 
         orgadmin.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         orgadmin.setText("MANAGE ORGANISATION ADMIN");
@@ -64,7 +65,12 @@ public class EventManagerPanel extends javax.swing.JPanel {
             }
         });
         add(orgadmin);
-        orgadmin.setBounds(502, 501, 313, 41);
+        orgadmin.setBounds(460, 310, 313, 41);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/EventManagerRole/gif1.gif"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        add(jLabel3);
+        jLabel3.setBounds(190, 440, 920, 530);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/EventManagerRole/vector-jan-2021-19_generated.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -88,6 +94,7 @@ public class EventManagerPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JButton orgBtn;
     private javax.swing.JButton orgadmin;
     private javax.swing.JButton viewTask;

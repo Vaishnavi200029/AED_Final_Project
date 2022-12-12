@@ -112,7 +112,7 @@ public class AddOrderPanel extends javax.swing.JPanel {
             }
         });
         add(addBtn);
-        addBtn.setBounds(660, 790, 112, 31);
+        addBtn.setBounds(660, 790, 112, 28);
 
         backButton.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -135,14 +135,14 @@ public class AddOrderPanel extends javax.swing.JPanel {
             }
         });
         add(priceField);
-        priceField.setBounds(630, 730, 177, 35);
+        priceField.setBounds(630, 730, 177, 22);
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("MENU ITEM LIST");
         add(jLabel4);
-        jLabel4.setBounds(580, 312, 230, 40);
+        jLabel4.setBounds(580, 310, 230, 40);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/RestaurantManagerRole/stock-photo-assorted-of-different-asian-food-chinese-japanese-and-thai-cuisine-noodles-dumplings-gedza-1900062550-transformed.jpeg"))); // NOI18N
         add(jLabel2);

@@ -56,6 +56,7 @@ public class BookRoomServicesJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         roomtypeComboBox = new javax.swing.JComboBox<>();
         priceBtn = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setLayout(null);
@@ -109,13 +110,13 @@ public class BookRoomServicesJPanel extends javax.swing.JPanel {
             }
         });
         add(bookRoomBtn);
-        bookRoomBtn.setBounds(500, 710, 151, 45);
+        bookRoomBtn.setBounds(500, 710, 135, 45);
 
         lblbookservices.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblbookservices.setForeground(new java.awt.Color(255, 255, 255));
         lblbookservices.setText("BOOK ROOMS AND SERVICES");
         add(lblbookservices);
-        lblbookservices.setBounds(350, 60, 353, 29);
+        lblbookservices.setBounds(350, 60, 380, 29);
 
         peopleField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,18 +124,18 @@ public class BookRoomServicesJPanel extends javax.swing.JPanel {
             }
         });
         add(peopleField);
-        peopleField.setBounds(498, 348, 342, 35);
+        peopleField.setBounds(498, 348, 342, 22);
         add(roomField);
-        roomField.setBounds(502, 488, 334, 35);
+        roomField.setBounds(502, 488, 334, 22);
         add(checkin);
-        checkin.setBounds(502, 134, 171, 35);
+        checkin.setBounds(502, 134, 171, 22);
 
         hotelCombo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         hotelCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select a hotel" }));
         add(hotelCombo);
-        hotelCombo.setBounds(498, 269, 346, 32);
+        hotelCombo.setBounds(498, 269, 346, 28);
         add(checkout);
-        checkout.setBounds(703, 134, 153, 35);
+        checkout.setBounds(703, 134, 153, 22);
 
         cityCombo.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         cityCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select city" }));
@@ -144,7 +145,7 @@ public class BookRoomServicesJPanel extends javax.swing.JPanel {
             }
         });
         add(cityCombo);
-        cityCombo.setBounds(498, 194, 346, 31);
+        cityCombo.setBounds(498, 194, 346, 27);
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -158,7 +159,7 @@ public class BookRoomServicesJPanel extends javax.swing.JPanel {
             }
         });
         add(roomtypeComboBox);
-        roomtypeComboBox.setBounds(498, 419, 334, 35);
+        roomtypeComboBox.setBounds(498, 419, 334, 22);
 
         priceBtn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         priceBtn.setText("TOTAL PRICE");
@@ -168,13 +169,17 @@ public class BookRoomServicesJPanel extends javax.swing.JPanel {
             }
         });
         add(priceBtn);
-        priceBtn.setBounds(231, 597, 164, 34);
+        priceBtn.setBounds(231, 597, 148, 31);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/CustomerRole/gif4.gif"))); // NOI18N
+        add(jLabel3);
+        jLabel3.setBounds(990, 110, 490, 540);
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/CustomerRole/vecteezy_abstract-background-dark-purple-and-triangle-shape_7463701.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
         add(jLabel2);
-        jLabel2.setBounds(0, 0, 1981, 1067);
+        jLabel2.setBounds(0, 0, 1961, 1067);
     }// </editor-fold>//GEN-END:initComponents
 
     private void bookRoomBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookRoomBtnActionPerformed
@@ -262,6 +267,7 @@ public class BookRoomServicesJPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> hotelCombo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lblbookservices;
     private javax.swing.JLabel lblcity;
     private javax.swing.JLabel lbldate;

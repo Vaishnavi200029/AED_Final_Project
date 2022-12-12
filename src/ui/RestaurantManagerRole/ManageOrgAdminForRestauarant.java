@@ -143,7 +143,7 @@ public class ManageOrgAdminForRestauarant extends javax.swing.JPanel {
 
         orgName.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         add(orgName);
-        orgName.setBounds(510, 690, 197, 29);
+        orgName.setBounds(510, 690, 197, 25);
 
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -153,7 +153,7 @@ public class ManageOrgAdminForRestauarant extends javax.swing.JPanel {
 
         nameField.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         add(nameField);
-        nameField.setBounds(930, 570, 182, 29);
+        nameField.setBounds(930, 570, 182, 25);
 
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -163,7 +163,7 @@ public class ManageOrgAdminForRestauarant extends javax.swing.JPanel {
 
         usernameField.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         add(usernameField);
-        usernameField.setBounds(930, 630, 182, 29);
+        usernameField.setBounds(930, 630, 182, 25);
 
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -173,7 +173,7 @@ public class ManageOrgAdminForRestauarant extends javax.swing.JPanel {
 
         passwordField.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         add(passwordField);
-        passwordField.setBounds(930, 690, 182, 29);
+        passwordField.setBounds(930, 690, 182, 25);
 
         addButton.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         addButton.setText("ADD");
@@ -190,7 +190,7 @@ public class ManageOrgAdminForRestauarant extends javax.swing.JPanel {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("MANAGE ORGANIZATION ADMIN FOR RESTAUARNT");
         add(jLabel7);
-        jLabel7.setBounds(450, 270, 630, 40);
+        jLabel7.setBounds(440, 270, 630, 40);
 
         orgCombo.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         orgCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Deliveryman" }));
@@ -200,7 +200,7 @@ public class ManageOrgAdminForRestauarant extends javax.swing.JPanel {
             }
         });
         add(orgCombo);
-        orgCombo.setBounds(510, 630, 197, 34);
+        orgCombo.setBounds(510, 630, 197, 30);
 
         deleteBtn.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         deleteBtn.setText("DELETE");
@@ -220,7 +220,7 @@ public class ManageOrgAdminForRestauarant extends javax.swing.JPanel {
             }
         });
         add(updateButton);
-        updateButton.setBounds(790, 770, 113, 41);
+        updateButton.setBounds(790, 770, 97, 41);
 
         networkName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -228,7 +228,7 @@ public class ManageOrgAdminForRestauarant extends javax.swing.JPanel {
             }
         });
         add(networkName);
-        networkName.setBounds(510, 570, 197, 35);
+        networkName.setBounds(510, 570, 197, 22);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/RestaurantManagerRole/stock-photo-assorted-of-different-asian-food-chinese-japanese-and-thai-cuisine-noodles-dumplings-gedza-1900062550-transformed.jpeg"))); // NOI18N
         add(jLabel8);

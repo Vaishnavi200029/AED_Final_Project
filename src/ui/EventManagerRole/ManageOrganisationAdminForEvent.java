@@ -87,9 +87,9 @@ public class ManageOrganisationAdminForEvent extends javax.swing.JPanel {
         add(jLabel6);
         jLabel6.setBounds(830, 423, 78, 22);
         add(usernameField);
-        usernameField.setBounds(955, 483, 176, 35);
+        usernameField.setBounds(955, 483, 176, 22);
         add(nameField);
-        nameField.setBounds(955, 416, 176, 35);
+        nameField.setBounds(955, 416, 176, 22);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -103,7 +103,7 @@ public class ManageOrganisationAdminForEvent extends javax.swing.JPanel {
         add(jLabel7);
         jLabel7.setBounds(162, 423, 119, 22);
         add(passwordField);
-        passwordField.setBounds(955, 546, 176, 35);
+        passwordField.setBounds(955, 546, 176, 22);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -131,7 +131,7 @@ public class ManageOrganisationAdminForEvent extends javax.swing.JPanel {
             }
         });
         add(deleteBtn);
-        deleteBtn.setBounds(1431, 334, 108, 36);
+        deleteBtn.setBounds(1431, 334, 92, 36);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -183,7 +183,7 @@ public class ManageOrganisationAdminForEvent extends javax.swing.JPanel {
             }
         });
         add(orgCombo);
-        orgCombo.setBounds(389, 488, 208, 34);
+        orgCombo.setBounds(389, 488, 208, 30);
 
         addBtn.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         addBtn.setText("ADD");
@@ -203,14 +203,14 @@ public class ManageOrganisationAdminForEvent extends javax.swing.JPanel {
             }
         });
         add(updateBtn);
-        updateBtn.setBounds(690, 680, 113, 39);
+        updateBtn.setBounds(690, 680, 97, 39);
 
         orgName.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         orgName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select organisation Name" }));
         add(orgName);
-        orgName.setBounds(389, 551, 257, 34);
+        orgName.setBounds(389, 551, 247, 30);
         add(networkName);
-        networkName.setBounds(389, 416, 216, 35);
+        networkName.setBounds(389, 416, 216, 22);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/EventManagerRole/vector-jan-2021-19_generated.jpg"))); // NOI18N
         jLabel8.setText("jLabel8");

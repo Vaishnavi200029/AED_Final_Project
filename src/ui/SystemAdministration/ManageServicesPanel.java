@@ -81,7 +81,7 @@ public class ManageServicesPanel extends javax.swing.JPanel {
         lblsysadmin.setForeground(new java.awt.Color(255, 255, 255));
         lblsysadmin.setText("MANAGE SERVICES");
         add(lblsysadmin);
-        lblsysadmin.setBounds(560, 70, 370, 60);
+        lblsysadmin.setBounds(520, 70, 370, 60);
 
         updateBtn.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         updateBtn.setText("UPDATE");
@@ -142,7 +142,7 @@ public class ManageServicesPanel extends javax.swing.JPanel {
 
         nameField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         add(nameField);
-        nameField.setBounds(720, 650, 180, 32);
+        nameField.setBounds(720, 650, 180, 28);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -164,7 +164,7 @@ public class ManageServicesPanel extends javax.swing.JPanel {
             }
         });
         add(networkType);
-        networkType.setBounds(720, 510, 180, 32);
+        networkType.setBounds(720, 510, 180, 28);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -180,7 +180,7 @@ public class ManageServicesPanel extends javax.swing.JPanel {
             }
         });
         add(enterpriseType);
-        enterpriseType.setBounds(720, 580, 180, 32);
+        enterpriseType.setBounds(720, 580, 180, 28);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -190,7 +190,7 @@ public class ManageServicesPanel extends javax.swing.JPanel {
 
         contactField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         add(contactField);
-        contactField.setBounds(720, 720, 180, 32);
+        contactField.setBounds(720, 720, 180, 28);
 
         networkCombo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         networkCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select any one " }));
@@ -211,7 +211,7 @@ public class ManageServicesPanel extends javax.swing.JPanel {
             }
         });
         add(viewBtn);
-        viewBtn.setBounds(780, 180, 108, 30);
+        viewBtn.setBounds(780, 180, 72, 30);
 
         backButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         backButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -221,7 +221,7 @@ public class ManageServicesPanel extends javax.swing.JPanel {
             }
         });
         add(backButton);
-        backButton.setBounds(43, 25, 108, 50);
+        backButton.setBounds(43, 25, 72, 50);
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/SystemAdministration/vector-OCT-2020-116_generated.jpg"))); // NOI18N

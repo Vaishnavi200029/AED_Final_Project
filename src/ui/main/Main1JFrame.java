@@ -88,6 +88,8 @@ public class Main1JFrame extends javax.swing.JFrame {
         passwordField = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         WorkArea = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -100,13 +102,13 @@ public class Main1JFrame extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("USERNAME");
         ControlPanel.add(jLabel1);
-        jLabel1.setBounds(6, 165, 101, 22);
+        jLabel1.setBounds(6, 165, 103, 22);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("PASSWORD");
         ControlPanel.add(jLabel2);
-        jLabel2.setBounds(6, 273, 106, 22);
+        jLabel2.setBounds(6, 273, 107, 22);
 
         usernameField.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         ControlPanel.add(usernameField);
@@ -120,7 +122,7 @@ public class Main1JFrame extends javax.swing.JFrame {
             }
         });
         ControlPanel.add(loginBtn);
-        loginBtn.setBounds(6, 379, 108, 43);
+        loginBtn.setBounds(6, 379, 77, 43);
 
         logoutBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         logoutBtn.setText("LOGOUT");
@@ -130,7 +132,7 @@ public class Main1JFrame extends javax.swing.JFrame {
             }
         });
         ControlPanel.add(logoutBtn);
-        logoutBtn.setBounds(6, 462, 108, 43);
+        logoutBtn.setBounds(6, 462, 89, 43);
 
         passwordField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         ControlPanel.add(passwordField);
@@ -139,12 +141,23 @@ public class Main1JFrame extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/main/f.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
         ControlPanel.add(jLabel3);
-        jLabel3.setBounds(0, 0, 810, 1358);
+        jLabel3.setBounds(0, 0, 790, 1358);
 
         jSplitPane.setLeftComponent(ControlPanel);
 
         WorkArea.setBackground(new java.awt.Color(0, 0, 0));
         WorkArea.setLayout(null);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/main/gif2.gif"))); // NOI18N
+        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        WorkArea.add(jLabel5);
+        jLabel5.setBounds(300, 330, 800, 450);
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("HAPPY HOSPITALITY WELCOME YOU!");
+        WorkArea.add(jLabel6);
+        jLabel6.setBounds(320, 160, 730, 70);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/main/vector-OCT-2020-116_generated.jpg"))); // NOI18N
         jLabel4.setText("jLabel4");
@@ -294,6 +307,8 @@ public class Main1JFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JSplitPane jSplitPane;
     private javax.swing.JButton loginBtn;
     private javax.swing.JButton logoutBtn;

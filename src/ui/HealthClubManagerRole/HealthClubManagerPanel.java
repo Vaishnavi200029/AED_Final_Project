@@ -25,6 +25,7 @@ public class HealthClubManagerPanel extends javax.swing.JPanel {
         viewTask = new javax.swing.JButton();
         orgBtn = new javax.swing.JButton();
         orgAdminBtn = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setLayout(null);
@@ -32,7 +33,7 @@ public class HealthClubManagerPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jLabel1.setText("HEALTH CLUB MANAGER PANEL ");
         add(jLabel1);
-        jLabel1.setBounds(540, 130, 400, 50);
+        jLabel1.setBounds(560, 90, 400, 50);
 
         viewTask.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         viewTask.setText("VIEW TASK");
@@ -42,7 +43,7 @@ public class HealthClubManagerPanel extends javax.swing.JPanel {
             }
         });
         add(viewTask);
-        viewTask.setBounds(590, 240, 340, 70);
+        viewTask.setBounds(580, 180, 340, 70);
 
         orgBtn.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         orgBtn.setText("MANAGE ORGANIZATION");
@@ -52,7 +53,7 @@ public class HealthClubManagerPanel extends javax.swing.JPanel {
             }
         });
         add(orgBtn);
-        orgBtn.setBounds(590, 350, 340, 80);
+        orgBtn.setBounds(580, 300, 340, 80);
 
         orgAdminBtn.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         orgAdminBtn.setText("MANAGE ORGANISATION ADMIN");
@@ -62,7 +63,11 @@ public class HealthClubManagerPanel extends javax.swing.JPanel {
             }
         });
         add(orgAdminBtn);
-        orgAdminBtn.setBounds(590, 460, 350, 80);
+        orgAdminBtn.setBounds(580, 420, 350, 80);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/HealthClubManagerRole/health'.gif"))); // NOI18N
+        add(jLabel3);
+        jLabel3.setBounds(400, 550, 970, 530);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/HealthClubManagerRole/VECTOR_BACKGROUND_1_cleanup.jpg"))); // NOI18N
         add(jLabel2);
@@ -85,6 +90,7 @@ public class HealthClubManagerPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JButton orgAdminBtn;
     private javax.swing.JButton orgBtn;
     private javax.swing.JButton viewTask;

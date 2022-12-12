@@ -77,7 +77,7 @@ public class ViewTaskPanelRestaurant extends javax.swing.JPanel {
 
         deliveryOrg.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         add(deliveryOrg);
-        deliveryOrg.setBounds(850, 670, 261, 34);
+        deliveryOrg.setBounds(850, 670, 261, 30);
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -112,7 +112,7 @@ public class ViewTaskPanelRestaurant extends javax.swing.JPanel {
             }
         });
         add(backBtn);
-        backBtn.setBounds(22, 22, 108, 60);
+        backBtn.setBounds(22, 22, 72, 60);
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
