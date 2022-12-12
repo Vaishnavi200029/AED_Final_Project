@@ -89,7 +89,7 @@ public class BookEventsJPanel extends javax.swing.JPanel {
             }
         });
         add(photoRadioBtn);
-        photoRadioBtn.setBounds(193, 329, 160, 29);
+        photoRadioBtn.setBounds(193, 329, 148, 27);
 
         cateringRadioBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         cateringRadioBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -100,7 +100,7 @@ public class BookEventsJPanel extends javax.swing.JPanel {
             }
         });
         add(cateringRadioBtn);
-        cateringRadioBtn.setBounds(193, 426, 120, 29);
+        cateringRadioBtn.setBounds(193, 426, 108, 27);
 
         bookEventBtn.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         bookEventBtn.setText("BOOK EVENT");
@@ -110,7 +110,7 @@ public class BookEventsJPanel extends javax.swing.JPanel {
             }
         });
         add(bookEventBtn);
-        bookEventBtn.setBounds(344, 761, 154, 38);
+        bookEventBtn.setBounds(344, 761, 138, 38);
 
         decorCombo.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         add(decorCombo);
@@ -150,13 +150,19 @@ public class BookEventsJPanel extends javax.swing.JPanel {
             }
         });
         add(decorRadioBtn);
-        decorRadioBtn.setBounds(193, 545, 187, 30);
+        decorRadioBtn.setBounds(193, 545, 175, 29);
 
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("TYPE OF PACKAGE");
         add(jLabel6);
         jLabel6.setBounds(214, 603, 166, 25);
+
+        priceField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                priceFieldActionPerformed(evt);
+            }
+        });
         add(priceField);
         priceField.setBounds(453, 683, 120, 32);
 
@@ -166,10 +172,10 @@ public class BookEventsJPanel extends javax.swing.JPanel {
         add(jLabel2);
         jLabel2.setBounds(200, 176, 98, 24);
         add(dateField);
-        dateField.setBounds(453, 176, 210, 35);
+        dateField.setBounds(453, 176, 210, 22);
 
         add(orgComboBox);
-        orgComboBox.setBounds(453, 261, 210, 35);
+        orgComboBox.setBounds(453, 261, 210, 22);
 
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -185,12 +191,12 @@ public class BookEventsJPanel extends javax.swing.JPanel {
             }
         });
         add(totalPrice);
-        totalPrice.setBounds(206, 687, 160, 31);
+        totalPrice.setBounds(206, 687, 160, 28);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/CustomerRole/vecteezy_abstract-background-dark-purple-and-triangle-shape_7463701.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
         add(jLabel3);
-        jLabel3.setBounds(0, 0, 1981, 1040);
+        jLabel3.setBounds(0, 0, 1961, 1040);
     }// </editor-fold>//GEN-END:initComponents
 
     private void photoRadioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_photoRadioBtnActionPerformed
@@ -318,6 +324,10 @@ public class BookEventsJPanel extends javax.swing.JPanel {
 
         priceField.setText(String.valueOf(price));
     }//GEN-LAST:event_totalPriceActionPerformed
+
+    private void priceFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priceFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_priceFieldActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -87,15 +87,15 @@ public class ViewTaskPanel extends javax.swing.JPanel {
 
         therapistOrg.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         add(therapistOrg);
-        therapistOrg.setBounds(283, 502, 252, 32);
+        therapistOrg.setBounds(283, 502, 252, 28);
 
         physicianOrg.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         add(physicianOrg);
-        physicianOrg.setBounds(937, 502, 246, 32);
+        physicianOrg.setBounds(937, 502, 246, 28);
 
         trainerOrg.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         add(trainerOrg);
-        trainerOrg.setBounds(614, 502, 238, 32);
+        trainerOrg.setBounds(614, 502, 238, 28);
 
         assignWork.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         assignWork.setText("ASSIGN AND CONFIRM TASK");
@@ -105,7 +105,7 @@ public class ViewTaskPanel extends javax.swing.JPanel {
             }
         });
         add(assignWork);
-        assignWork.setBounds(610, 610, 272, 44);
+        assignWork.setBounds(610, 610, 256, 44);
 
         backButton.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +114,7 @@ public class ViewTaskPanel extends javax.swing.JPanel {
             }
         });
         add(backButton);
-        backButton.setBounds(119, 17, 108, 41);
+        backButton.setBounds(119, 17, 72, 41);
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel2.setText("SELECT A THERAPIST ORG");

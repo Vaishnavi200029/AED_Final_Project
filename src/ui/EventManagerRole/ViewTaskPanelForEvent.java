@@ -98,26 +98,26 @@ public class ViewTaskPanelForEvent extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("SELECT A CATERING ORG");
         add(jLabel2);
-        jLabel2.setBounds(310, 468, 212, 25);
+        jLabel2.setBounds(310, 468, 212, 16);
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("SELECT A DECOR ORG");
         add(jLabel3);
-        jLabel3.setBounds(584, 471, 207, 25);
+        jLabel3.setBounds(584, 471, 207, 16);
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("SELECT A PHOTOGRAPHY ORG");
         add(jLabel4);
-        jLabel4.setBounds(879, 468, 248, 25);
+        jLabel4.setBounds(879, 468, 165, 16);
 
         add(cateringOrg);
-        cateringOrg.setBounds(310, 514, 202, 35);
+        cateringOrg.setBounds(310, 514, 202, 22);
 
         add(decorOrg);
-        decorOrg.setBounds(584, 514, 196, 35);
+        decorOrg.setBounds(584, 514, 196, 22);
 
         add(photographyOrg);
-        photographyOrg.setBounds(879, 514, 193, 35);
+        photographyOrg.setBounds(879, 514, 193, 22);
 
         confirmBtn.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         confirmBtn.setText("CONFIRM REQUEST");
@@ -137,7 +137,7 @@ public class ViewTaskPanelForEvent extends javax.swing.JPanel {
             }
         });
         add(denyButton);
-        denyButton.setBounds(438, 779, 189, 41);
+        denyButton.setBounds(438, 779, 173, 41);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/EventManagerRole/vector-jan-2021-19_generated.jpg"))); // NOI18N
         jLabel5.setText("jLabel5");

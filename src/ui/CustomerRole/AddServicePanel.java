@@ -43,6 +43,7 @@ public class AddServicePanel extends javax.swing.JPanel {
         orderBtn = new javax.swing.JButton();
         healthClubBtn = new javax.swing.JButton();
         otherService = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setLayout(null);
@@ -70,7 +71,7 @@ public class AddServicePanel extends javax.swing.JPanel {
             }
         });
         add(eventBtn);
-        eventBtn.setBounds(630, 207, 308, 38);
+        eventBtn.setBounds(290, 200, 308, 38);
 
         orderBtn.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         orderBtn.setText("PLACE ORDER ");
@@ -80,7 +81,7 @@ public class AddServicePanel extends javax.swing.JPanel {
             }
         });
         add(orderBtn);
-        orderBtn.setBounds(630, 298, 308, 42);
+        orderBtn.setBounds(890, 200, 308, 42);
 
         healthClubBtn.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         healthClubBtn.setText("HEALTH CLUB ");
@@ -90,7 +91,7 @@ public class AddServicePanel extends javax.swing.JPanel {
             }
         });
         add(healthClubBtn);
-        healthClubBtn.setBounds(630, 391, 308, 42);
+        healthClubBtn.setBounds(290, 290, 308, 42);
 
         otherService.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         otherService.setText("OTHER SERVICES");
@@ -100,12 +101,16 @@ public class AddServicePanel extends javax.swing.JPanel {
             }
         });
         add(otherService);
-        otherService.setBounds(630, 492, 308, 38);
+        otherService.setBounds(900, 280, 308, 38);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/CustomerRole/services.gif"))); // NOI18N
+        add(jLabel3);
+        jLabel3.setBounds(340, 440, 840, 460);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/CustomerRole/vecteezy_abstract-background-dark-purple-and-triangle-shape_7463701.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
         add(jLabel2);
-        jLabel2.setBounds(-9, -200, 1981, 1330);
+        jLabel2.setBounds(-9, -200, 1961, 1330);
     }// </editor-fold>//GEN-END:initComponents
 
     private void eventBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eventBtnActionPerformed
@@ -135,6 +140,7 @@ public class AddServicePanel extends javax.swing.JPanel {
     private javax.swing.JButton healthClubBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JButton orderBtn;
     private javax.swing.JButton otherService;
     // End of variables declaration//GEN-END:variables

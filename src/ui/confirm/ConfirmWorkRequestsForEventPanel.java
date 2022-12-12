@@ -42,7 +42,7 @@ public class ConfirmWorkRequestsForEventPanel extends javax.swing.JPanel {
         add(lblbookservices);
         lblbookservices.setBounds(298, 142, 883, 44);
 
-        jTable1.setBackground(new java.awt.Color(204, 255, 255));
+        jTable1.setBackground(new java.awt.Color(234, 234, 249));
         jTable1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

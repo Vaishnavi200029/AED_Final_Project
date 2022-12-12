@@ -59,14 +59,14 @@ public class ManageRestaurantJPanel extends javax.swing.JPanel {
         add(jLabel4);
         jLabel4.setBounds(410, 640, 102, 22);
         add(jTextField9);
-        jTextField9.setBounds(640, 630, 125, 35);
+        jTextField9.setBounds(640, 630, 125, 22);
         add(jTextField4);
-        jTextField4.setBounds(640, 580, 125, 35);
+        jTextField4.setBounds(640, 580, 125, 22);
 
         jButton3.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jButton3.setText("UPDATE");
         add(jButton3);
-        jButton3.setBounds(520, 780, 120, 31);
+        jButton3.setBounds(520, 780, 120, 28);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -83,7 +83,7 @@ public class ManageRestaurantJPanel extends javax.swing.JPanel {
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(jComboBox1);
-        jComboBox1.setBounds(640, 410, 125, 32);
+        jComboBox1.setBounds(640, 410, 125, 28);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -99,9 +99,9 @@ public class ManageRestaurantJPanel extends javax.swing.JPanel {
             }
         });
         add(jButton4);
-        jButton4.setBounds(700, 780, 130, 31);
+        jButton4.setBounds(700, 780, 130, 28);
         add(jTextField2);
-        jTextField2.setBounds(640, 470, 125, 35);
+        jTextField2.setBounds(640, 470, 125, 22);
 
         jTable1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -136,7 +136,7 @@ public class ManageRestaurantJPanel extends javax.swing.JPanel {
         add(jScrollPane1);
         jScrollPane1.setBounds(140, 190, 1027, 191);
         add(jTextField3);
-        jTextField3.setBounds(640, 520, 125, 35);
+        jTextField3.setBounds(640, 520, 125, 22);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -146,12 +146,12 @@ public class ManageRestaurantJPanel extends javax.swing.JPanel {
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         add(jButton2);
-        jButton2.setBounds(51, 18, 108, 50);
+        jButton2.setBounds(51, 18, 72, 50);
 
         jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jButton1.setText("ADD");
         add(jButton1);
-        jButton1.setBounds(350, 780, 108, 31);
+        jButton1.setBounds(350, 780, 72, 28);
 
         lblsysadmin.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         lblsysadmin.setForeground(new java.awt.Color(255, 255, 255));
@@ -165,7 +165,7 @@ public class ManageRestaurantJPanel extends javax.swing.JPanel {
         add(jLabel1);
         jLabel1.setBounds(410, 480, 145, 22);
         add(jTextField8);
-        jTextField8.setBounds(640, 690, 125, 35);
+        jTextField8.setBounds(640, 690, 125, 22);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/ManagerRole/vecteezy_vector-abstract-futuristic-circuit-board-illustration-high_6115516.jpg"))); // NOI18N
         jLabel7.setText("jLabel7");

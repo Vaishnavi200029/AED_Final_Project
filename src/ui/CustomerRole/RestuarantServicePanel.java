@@ -54,7 +54,7 @@ public class RestuarantServicePanel extends javax.swing.JPanel {
             }
         });
         add(menuItem);
-        menuItem.setBounds(402, 332, 336, 29);
+        menuItem.setBounds(402, 332, 336, 25);
 
         backBtn.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         backBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -79,7 +79,7 @@ public class RestuarantServicePanel extends javax.swing.JPanel {
             }
         });
         add(placeOrder);
-        placeOrder.setBounds(286, 418, 177, 43);
+        placeOrder.setBounds(286, 418, 161, 43);
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -100,7 +100,7 @@ public class RestuarantServicePanel extends javax.swing.JPanel {
             }
         });
         add(restaurantCombo);
-        restaurantCombo.setBounds(402, 237, 327, 29);
+        restaurantCombo.setBounds(402, 237, 327, 25);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/CustomerRole/vecteezy_abstract-background-dark-purple-and-triangle-shape_7463701.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");

@@ -70,17 +70,17 @@ public class RestauratAssignJPanel extends javax.swing.JPanel {
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         add(jButton2);
-        jButton2.setBounds(100, 47, 108, 50);
+        jButton2.setBounds(100, 47, 72, 50);
 
         jButton3.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jButton3.setText("CONFIRM ORDER");
         add(jButton3);
-        jButton3.setBounds(789, 389, 184, 43);
+        jButton3.setBounds(789, 389, 168, 43);
 
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(jComboBox1);
-        jComboBox1.setBounds(703, 488, 108, 32);
+        jComboBox1.setBounds(703, 488, 93, 28);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -96,7 +96,7 @@ public class RestauratAssignJPanel extends javax.swing.JPanel {
             }
         });
         add(jButton4);
-        jButton4.setBounds(695, 538, 108, 42);
+        jButton4.setBounds(695, 538, 88, 42);
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/ManagerRole/vecteezy_vector-abstract-futuristic-circuit-board-illustration-high_6115516.jpg"))); // NOI18N

@@ -67,13 +67,13 @@ public class SystemAdministrationJPanel extends javax.swing.JPanel {
             }
         });
         add(btnmanagecustomers);
-        btnmanagecustomers.setBounds(840, 590, 219, 118);
+        btnmanagecustomers.setBounds(840, 590, 203, 118);
 
         lblsysadmin.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         lblsysadmin.setForeground(new java.awt.Color(255, 255, 255));
         lblsysadmin.setText("SYSTEM ADMINISTRATOR");
         add(lblsysadmin);
-        lblsysadmin.setBounds(510, 280, 475, 44);
+        lblsysadmin.setBounds(510, 270, 475, 44);
 
         btnmanagemanagers.setBackground(new java.awt.Color(247, 247, 247));
         btnmanagemanagers.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N

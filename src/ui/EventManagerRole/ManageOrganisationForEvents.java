@@ -93,7 +93,7 @@ public class ManageOrganisationForEvents extends javax.swing.JPanel {
             }
         });
         add(backButton);
-        backButton.setBounds(31, 19, 108, 40);
+        backButton.setBounds(31, 19, 72, 40);
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -109,7 +109,7 @@ public class ManageOrganisationForEvents extends javax.swing.JPanel {
 
         orgCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select a organisation", "Decor", "Catering", "Photography" }));
         add(orgCombo);
-        orgCombo.setBounds(830, 610, 210, 35);
+        orgCombo.setBounds(830, 610, 210, 22);
 
         jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -117,7 +117,7 @@ public class ManageOrganisationForEvents extends javax.swing.JPanel {
         add(jLabel3);
         jLabel3.setBounds(590, 680, 119, 24);
         add(nameField);
-        nameField.setBounds(830, 680, 210, 35);
+        nameField.setBounds(830, 680, 210, 22);
 
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -125,7 +125,7 @@ public class ManageOrganisationForEvents extends javax.swing.JPanel {
         add(jLabel4);
         jLabel4.setBounds(590, 750, 119, 24);
         add(contactField);
-        contactField.setBounds(830, 750, 210, 35);
+        contactField.setBounds(830, 750, 210, 22);
 
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -151,7 +151,7 @@ public class ManageOrganisationForEvents extends javax.swing.JPanel {
             }
         });
         add(deleteBtn);
-        deleteBtn.setBounds(920, 910, 117, 39);
+        deleteBtn.setBounds(920, 910, 101, 39);
 
         updateBtn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         updateBtn.setText("UPDATE");
@@ -161,7 +161,7 @@ public class ManageOrganisationForEvents extends javax.swing.JPanel {
             }
         });
         add(updateBtn);
-        updateBtn.setBounds(750, 910, 119, 37);
+        updateBtn.setBounds(750, 910, 103, 37);
 
         cityNameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -169,7 +169,7 @@ public class ManageOrganisationForEvents extends javax.swing.JPanel {
             }
         });
         add(cityNameTextField);
-        cityNameTextField.setBounds(830, 810, 210, 35);
+        cityNameTextField.setBounds(830, 810, 210, 22);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/EventManagerRole/vector-jan-2021-19_generated.jpg"))); // NOI18N
         jLabel6.setText("jLabel6");

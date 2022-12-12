@@ -83,13 +83,13 @@ public class ManageManagersPanel extends javax.swing.JPanel {
             }
         });
         add(backButton);
-        backButton.setBounds(44, 13, 108, 40);
+        backButton.setBounds(44, 13, 72, 40);
 
         lblsysadmin.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblsysadmin.setForeground(new java.awt.Color(255, 255, 255));
         lblsysadmin.setText("MANAGE SERVICE MANAGERS");
         add(lblsysadmin);
-        lblsysadmin.setBounds(560, 110, 362, 29);
+        lblsysadmin.setBounds(560, 100, 400, 29);
 
         deleteBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         deleteBtn.setText("DELETE");
@@ -99,7 +99,7 @@ public class ManageManagersPanel extends javax.swing.JPanel {
             }
         });
         add(deleteBtn);
-        deleteBtn.setBounds(870, 770, 108, 39);
+        deleteBtn.setBounds(870, 770, 92, 39);
 
         jTable1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -145,7 +145,7 @@ public class ManageManagersPanel extends javax.swing.JPanel {
             }
         });
         add(nameField);
-        nameField.setBounds(730, 590, 194, 29);
+        nameField.setBounds(730, 590, 194, 25);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -167,7 +167,7 @@ public class ManageManagersPanel extends javax.swing.JPanel {
             }
         });
         add(networkType);
-        networkType.setBounds(730, 440, 194, 34);
+        networkType.setBounds(730, 440, 194, 30);
 
         updateBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         updateBtn.setText("UPDATE");
@@ -177,7 +177,7 @@ public class ManageManagersPanel extends javax.swing.JPanel {
             }
         });
         add(updateBtn);
-        updateBtn.setBounds(670, 770, 112, 38);
+        updateBtn.setBounds(670, 770, 96, 38);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -187,7 +187,7 @@ public class ManageManagersPanel extends javax.swing.JPanel {
 
         usernameField.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         add(usernameField);
-        usernameField.setBounds(730, 640, 194, 29);
+        usernameField.setBounds(730, 640, 194, 25);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -203,7 +203,7 @@ public class ManageManagersPanel extends javax.swing.JPanel {
 
         passwordField.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         add(passwordField);
-        passwordField.setBounds(730, 690, 194, 29);
+        passwordField.setBounds(730, 690, 194, 25);
 
         enterpriseType.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         enterpriseType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select a service", "Health Club", "Restaurant", "Hotel", "Business Event" }));
@@ -213,7 +213,7 @@ public class ManageManagersPanel extends javax.swing.JPanel {
             }
         });
         add(enterpriseType);
-        enterpriseType.setBounds(730, 490, 194, 34);
+        enterpriseType.setBounds(730, 490, 194, 30);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -224,7 +224,7 @@ public class ManageManagersPanel extends javax.swing.JPanel {
         enterpriseName.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         enterpriseName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecte name of service" }));
         add(enterpriseName);
-        enterpriseName.setBounds(730, 540, 194, 34);
+        enterpriseName.setBounds(730, 540, 194, 30);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/SystemAdministration/vector-OCT-2020-116_generated.jpg"))); // NOI18N
         add(jLabel6);

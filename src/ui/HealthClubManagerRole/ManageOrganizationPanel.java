@@ -69,6 +69,7 @@ public class ManageOrganizationPanel extends javax.swing.JPanel {
         cityNameTextField1 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
 
         setLayout(null);
 
@@ -106,7 +107,7 @@ public class ManageOrganizationPanel extends javax.swing.JPanel {
 
         nameField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         add(nameField);
-        nameField.setBounds(620, 614, 218, 27);
+        nameField.setBounds(620, 614, 218, 23);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("CONTACT");
@@ -121,7 +122,7 @@ public class ManageOrganizationPanel extends javax.swing.JPanel {
             }
         });
         add(orgCombo);
-        orgCombo.setBounds(620, 552, 218, 27);
+        orgCombo.setBounds(620, 552, 218, 23);
 
         deleteBtn.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         deleteBtn.setText("DELETE");
@@ -131,7 +132,7 @@ public class ManageOrganizationPanel extends javax.swing.JPanel {
             }
         });
         add(deleteBtn);
-        deleteBtn.setBounds(1373, 310, 109, 31);
+        deleteBtn.setBounds(810, 810, 110, 40);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel6.setText("CITY");
@@ -146,7 +147,7 @@ public class ManageOrganizationPanel extends javax.swing.JPanel {
             }
         });
         add(addButton);
-        addButton.setBounds(393, 811, 128, 40);
+        addButton.setBounds(411, 811, 110, 40);
 
         updateButton.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         updateButton.setText("UPDATE");
@@ -156,7 +157,7 @@ public class ManageOrganizationPanel extends javax.swing.JPanel {
             }
         });
         add(updateButton);
-        updateButton.setBounds(620, 811, 113, 40);
+        updateButton.setBounds(620, 811, 110, 40);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("MANAGE ORGANIZATION FOR HEALTH CLUB");
@@ -170,7 +171,7 @@ public class ManageOrganizationPanel extends javax.swing.JPanel {
             }
         });
         add(contactField);
-        contactField.setBounds(620, 671, 218, 27);
+        contactField.setBounds(620, 671, 218, 23);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel7.setText("ORGANIZATION TYPE ");
@@ -184,9 +185,9 @@ public class ManageOrganizationPanel extends javax.swing.JPanel {
             }
         });
         add(backButton);
-        backButton.setBounds(35, 19, 108, 36);
+        backButton.setBounds(35, 19, 72, 36);
         add(cityNameTextField);
-        cityNameTextField.setBounds(620, 724, 218, 35);
+        cityNameTextField.setBounds(620, 724, 218, 22);
 
         jPanel1.setLayout(null);
 
@@ -224,7 +225,7 @@ public class ManageOrganizationPanel extends javax.swing.JPanel {
 
         nameField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel1.add(nameField1);
-        nameField1.setBounds(620, 614, 218, 27);
+        nameField1.setBounds(620, 614, 218, 23);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("CONTACT");
@@ -239,7 +240,7 @@ public class ManageOrganizationPanel extends javax.swing.JPanel {
             }
         });
         jPanel1.add(orgCombo1);
-        orgCombo1.setBounds(620, 552, 218, 32);
+        orgCombo1.setBounds(620, 552, 218, 28);
 
         deleteBtn1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         deleteBtn1.setText("DELETE");
@@ -249,7 +250,7 @@ public class ManageOrganizationPanel extends javax.swing.JPanel {
             }
         });
         jPanel1.add(deleteBtn1);
-        deleteBtn1.setBounds(830, 820, 109, 31);
+        deleteBtn1.setBounds(830, 820, 93, 28);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel8.setText("CITY");
@@ -274,7 +275,7 @@ public class ManageOrganizationPanel extends javax.swing.JPanel {
             }
         });
         jPanel1.add(updateButton1);
-        updateButton1.setBounds(620, 811, 113, 40);
+        updateButton1.setBounds(620, 811, 97, 40);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel9.setText("MANAGE ORGANIZATION FOR HEALTH CLUB");
@@ -288,7 +289,7 @@ public class ManageOrganizationPanel extends javax.swing.JPanel {
             }
         });
         jPanel1.add(contactField1);
-        contactField1.setBounds(620, 671, 218, 27);
+        contactField1.setBounds(620, 671, 218, 23);
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel10.setText("ORGANIZATION TYPE ");
@@ -304,11 +305,11 @@ public class ManageOrganizationPanel extends javax.swing.JPanel {
         jPanel1.add(backButton1);
         backButton1.setBounds(35, 19, 100, 50);
         jPanel1.add(cityNameTextField1);
-        cityNameTextField1.setBounds(620, 724, 218, 35);
+        cityNameTextField1.setBounds(620, 724, 218, 22);
 
         jLabel11.setText("jLabel11");
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(767, 487, 65, 25);
+        jLabel11.setBounds(767, 487, 43, 16);
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/HealthClubManagerRole/VECTOR_BACKGROUND_1_cleanup.jpg"))); // NOI18N
         jLabel12.setText("jLabel12");
@@ -316,7 +317,12 @@ public class ManageOrganizationPanel extends javax.swing.JPanel {
         jLabel12.setBounds(0, 0, 1610, 1010);
 
         add(jPanel1);
-        jPanel1.setBounds(0, 0, 1600, 1000);
+        jPanel1.setBounds(0, 0, 0, 0);
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/HealthClubManagerRole/VECTOR_BACKGROUND_1_cleanup.jpg"))); // NOI18N
+        jLabel13.setText("jLabel13");
+        add(jLabel13);
+        jLabel13.setBounds(0, 0, 1630, 1020);
     }// </editor-fold>//GEN-END:initComponents
 
     private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
@@ -514,6 +520,7 @@ public class ManageOrganizationPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -62,7 +62,7 @@ public class HotelAssignJPanel extends javax.swing.JPanel {
             }
         });
         add(jButton3);
-        jButton3.setBounds(1170, 460, 204, 31);
+        jButton3.setBounds(1170, 460, 188, 28);
 
         tblviewdetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -87,12 +87,12 @@ public class HotelAssignJPanel extends javax.swing.JPanel {
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(jComboBox1);
-        jComboBox1.setBounds(650, 530, 108, 32);
+        jComboBox1.setBounds(650, 530, 93, 28);
 
         jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(jComboBox2);
-        jComboBox2.setBounds(1000, 530, 108, 32);
+        jComboBox2.setBounds(1000, 530, 93, 28);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -114,7 +114,7 @@ public class HotelAssignJPanel extends javax.swing.JPanel {
             }
         });
         add(jButton4);
-        jButton4.setBounds(790, 640, 108, 42);
+        jButton4.setBounds(790, 640, 88, 42);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/ManagerRole/vecteezy_vector-abstract-futuristic-circuit-board-illustration-high_6115516.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
