@@ -102,13 +102,13 @@ public class Main1JFrame extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("USERNAME");
         ControlPanel.add(jLabel1);
-        jLabel1.setBounds(6, 165, 103, 22);
+        jLabel1.setBounds(6, 165, 101, 22);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("PASSWORD");
         ControlPanel.add(jLabel2);
-        jLabel2.setBounds(6, 273, 107, 22);
+        jLabel2.setBounds(6, 273, 106, 22);
 
         usernameField.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         ControlPanel.add(usernameField);
@@ -122,7 +122,7 @@ public class Main1JFrame extends javax.swing.JFrame {
             }
         });
         ControlPanel.add(loginBtn);
-        loginBtn.setBounds(6, 379, 77, 43);
+        loginBtn.setBounds(6, 379, 108, 43);
 
         logoutBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         logoutBtn.setText("LOGOUT");
@@ -132,7 +132,7 @@ public class Main1JFrame extends javax.swing.JFrame {
             }
         });
         ControlPanel.add(logoutBtn);
-        logoutBtn.setBounds(6, 462, 89, 43);
+        logoutBtn.setBounds(6, 462, 108, 43);
 
         passwordField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         ControlPanel.add(passwordField);
@@ -141,7 +141,7 @@ public class Main1JFrame extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/main/f.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
         ControlPanel.add(jLabel3);
-        jLabel3.setBounds(0, 0, 790, 1358);
+        jLabel3.setBounds(0, 0, 803, 1358);
 
         jSplitPane.setLeftComponent(ControlPanel);
 

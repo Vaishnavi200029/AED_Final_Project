@@ -91,7 +91,7 @@ public class ManageRoomPanel extends javax.swing.JPanel {
 
         roomTypeComboBox.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         add(roomTypeComboBox);
-        roomTypeComboBox.setBounds(430, 560, 203, 29);
+        roomTypeComboBox.setBounds(413, 560, 220, 40);
 
         backButton.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +116,7 @@ public class ManageRoomPanel extends javax.swing.JPanel {
             }
         });
         add(addButton);
-        addButton.setBounds(660, 560, 108, 31);
+        addButton.setBounds(660, 560, 120, 40);
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/HotelManagerRole/vector-jan-2021-19_generated.jpg"))); // NOI18N

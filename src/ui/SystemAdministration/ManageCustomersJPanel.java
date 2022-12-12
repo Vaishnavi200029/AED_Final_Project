@@ -246,9 +246,10 @@ public class ManageCustomersJPanel extends javax.swing.JPanel {
         String address = addressField.getText();
         String username = usernameField.getText();
         String password = passwordField.getText();
+        String phone = contactField.getText();
 
         if (!Validator.validateName(this, name) || !Validator.validateUserName(this, username)
-                || !Validator.validatePassword(this, password)) {
+                || !Validator.validatePassword(this, password) || !Validator.validatePhone(this, phone)) {
             return;
         }
 
