@@ -17,7 +17,14 @@ Conventional HMS’ that cater to large chains only focus on the in-house servic
 Our HMS focuses to cater  for SMEs that do not have inhouse services/employees. Unlike conventional hotels, our system will help property owners to outsource services like restaurants, laundry in the city. Our HMS allows service providers to make profits from the many small and medium hotels that make up 80% of the hotel industry.This is a win-win situation for the hotel and the services.
 
 
+Libraries used :
+Jcalender
+javax.mail
+db40
 
+Link for UML : https://github.com/Vaishnavi200029/AED_Final_Project/blob/main/UML.png
+
+Link for class diagram : https://github.com/Vaishnavi200029/AED_Final_Project/blob/main/Class%20Diagram.png
 
 
 
