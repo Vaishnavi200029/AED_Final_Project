@@ -1,4 +1,4 @@
-                                                                 HAPPY HOSPITALITY
+                                                           HAPPY HOSPITALITY
 
 A hotel management system(HMS) brings together all the elements of running a successful hotel from booking and check-in, to room assignment and billing, to a plethora of other hospitality functions. PMS has never been as important as it is today. This is because of the technological transformation our world has been going through the past several years. Now, the world is smaller than ever before. This in turn means guests have different demands and expectations than previous generations.
 
