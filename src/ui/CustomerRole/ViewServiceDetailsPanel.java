@@ -3,8 +3,10 @@ package ui.CustomerRole;
 import java.util.Date;
 import java.util.function.Consumer;
 import ProjModel.Booking;
+import ProjModel.Email;
 import ProjModel.SystemAdmin;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class ViewServiceDetailsPanel extends javax.swing.JPanel {
 
@@ -35,6 +37,8 @@ public class ViewServiceDetailsPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         checkout = new javax.swing.JTextField();
+        jTextField1 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         backBtn = new javax.swing.JButton();
         checkin = new javax.swing.JTextField();
@@ -44,6 +48,7 @@ public class ViewServiceDetailsPanel extends javax.swing.JPanel {
 
         bookingDetails.setBackground(new java.awt.Color(204, 255, 255));
         bookingDetails.setColumns(20);
+        bookingDetails.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         bookingDetails.setRows(5);
         jScrollPane1.setViewportView(bookingDetails);
 
@@ -65,6 +70,18 @@ public class ViewServiceDetailsPanel extends javax.swing.JPanel {
         checkout.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         add(checkout);
         checkout.setBounds(610, 154, 249, 29);
+        add(jTextField1);
+        jTextField1.setBounds(340, 830, 330, 40);
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton1.setText("EMAIL STATEMENT");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1);
+        jButton1.setBounds(720, 830, 260, 40);
 
         jLabel3.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -91,9 +108,9 @@ public class ViewServiceDetailsPanel extends javax.swing.JPanel {
         checkin.setBounds(610, 107, 249, 29);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/CustomerRole/vecteezy_abstract-background-dark-purple-and-triangle-shape_7463701.jpg"))); // NOI18N
-        jLabel4.setText("jLabel4");
+        jLabel4.setText("EMAIL STATEMENT");
         add(jLabel4);
-        jLabel4.setBounds(0, -3, 1981, 1070);
+        jLabel4.setBounds(0, -3, 2054, 1070);
     }// </editor-fold>//GEN-END:initComponents
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
@@ -104,17 +121,27 @@ public class ViewServiceDetailsPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_checkinActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+           System.out.println(jTextField1.getText());
+           Email email = new Email();
+           email.sendMail(booking.prettyPrint(),jTextField1.getText());
+           JOptionPane.showMessageDialog(null, "Email sent successfully!");
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBtn;
     private javax.swing.JTextArea bookingDetails;
     private javax.swing.JTextField checkin;
     private javax.swing.JTextField checkout;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 
     private void populatePanel() {
