@@ -55,7 +55,7 @@ public class SystemAdministrationJPanel extends javax.swing.JPanel {
             }
         });
         add(enterpriseBtn);
-        enterpriseBtn.setBounds(840, 390, 219, 117);
+        enterpriseBtn.setBounds(840, 390, 230, 117);
 
         btnmanagecustomers.setBackground(new java.awt.Color(247, 247, 247));
         btnmanagecustomers.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
@@ -67,7 +67,7 @@ public class SystemAdministrationJPanel extends javax.swing.JPanel {
             }
         });
         add(btnmanagecustomers);
-        btnmanagecustomers.setBounds(840, 590, 203, 118);
+        btnmanagecustomers.setBounds(840, 600, 230, 118);
 
         lblsysadmin.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         lblsysadmin.setForeground(new java.awt.Color(255, 255, 255));

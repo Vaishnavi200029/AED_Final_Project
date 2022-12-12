@@ -5,6 +5,7 @@
 package ui.ManagerRole;
 
 import javax.swing.ImageIcon;
+import ui.main.Validator;
 
 /**
  *
@@ -53,9 +54,9 @@ public class ManagingHealthClubJPanel extends javax.swing.JPanel {
 
         setLayout(null);
         add(jTextField8);
-        jTextField8.setBounds(620, 640, 125, 35);
+        jTextField8.setBounds(620, 640, 125, 31);
         add(jTextField9);
-        jTextField9.setBounds(620, 580, 125, 35);
+        jTextField9.setBounds(620, 580, 125, 31);
 
         jButton3.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jButton3.setText("UPDATE");
@@ -79,9 +80,9 @@ public class ManagingHealthClubJPanel extends javax.swing.JPanel {
         add(jLabel3);
         jLabel3.setBounds(430, 480, 145, 22);
         add(jTextField2);
-        jTextField2.setBounds(620, 430, 125, 35);
+        jTextField2.setBounds(620, 430, 125, 31);
         add(jTextField3);
-        jTextField3.setBounds(620, 480, 125, 35);
+        jTextField3.setBounds(620, 480, 125, 31);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -91,6 +92,11 @@ public class ManagingHealthClubJPanel extends javax.swing.JPanel {
 
         jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jButton1.setText("ADD");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         add(jButton1);
         jButton1.setBounds(290, 730, 130, 31);
 
@@ -106,7 +112,7 @@ public class ManagingHealthClubJPanel extends javax.swing.JPanel {
         add(jLabel4);
         jLabel4.setBounds(430, 590, 102, 22);
         add(jTextField4);
-        jTextField4.setBounds(620, 530, 125, 35);
+        jTextField4.setBounds(620, 530, 125, 31);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -170,12 +176,20 @@ public class ManagingHealthClubJPanel extends javax.swing.JPanel {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/ManagerRole/vecteezy_vector-abstract-futuristic-circuit-board-illustration-high_6115516.jpg"))); // NOI18N
         jLabel7.setText("jLabel7");
         add(jLabel7);
-        jLabel7.setBounds(0, 0, 1981, 1280);
+        jLabel7.setBounds(0, 0, 1974, 1280);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        String contact = jTextField4.getText();;
+        if (!Validator.validatePhone(this, contact)){
+            return;
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

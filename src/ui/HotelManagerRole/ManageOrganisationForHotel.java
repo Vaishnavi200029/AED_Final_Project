@@ -10,6 +10,7 @@ import ProjModel.Franchise;
 import ProjModel.SystemAdmin;
 import ProjModel.TransportationOrg;
 import javax.swing.ImageIcon;
+import ui.main.Validator;
 
 public class ManageOrganisationForHotel extends javax.swing.JPanel {
 
@@ -193,6 +194,7 @@ public class ManageOrganisationForHotel extends javax.swing.JPanel {
     }//GEN-LAST:event_orgComboActionPerformed
 
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
+
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         Object row[] = new Object[20];
         String networkName = network.getName(); //find the network from city-combobox
@@ -201,6 +203,8 @@ public class ManageOrganisationForHotel extends javax.swing.JPanel {
 
         if (name == null || name.length() < 2) {
             JOptionPane.showMessageDialog(this, "Organization name should be at least 2 characters long.");
+            return;
+        } else if (!Validator.validatePhone(this, contact)){
             return;
         }
 
@@ -229,7 +233,7 @@ public class ManageOrganisationForHotel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(this, "Organisation added successfully");
                 return;
             }
-        }
+        }    
     }//GEN-LAST:event_addBtnActionPerformed
 
     private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed

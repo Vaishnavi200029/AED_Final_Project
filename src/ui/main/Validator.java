@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Validator {
+ public class Validator {
 
     private Validator() {
 
@@ -25,6 +25,15 @@ public class Validator {
             return true;
         } else {
             JOptionPane.showMessageDialog(obj, "Invalid input : password should contain 3 or more characters.");
+            return false;
+        }
+    }
+    
+    public static boolean validatePhone(JPanel obj, String phone) {
+        if (phone != null && phone.matches("^(\\+\\d{1,3}( )?)?(\\d{3}[ ]?){2}\\d{4}$")) {
+            return true;
+        } else {
+            JOptionPane.showMessageDialog(obj, "Please enter valid phone number.");
             return false;
         }
     }
@@ -72,11 +81,6 @@ public class Validator {
         return MatchPattern(PATTERN, value);
     }
     
-    public boolean ValidateLevel(String value) {
-        String PATTERN = "^[0-9]{1,2}$";
-        return MatchPattern(PATTERN, value);
-    }
-    
     public boolean ValidateInt(String value) {
         String PATTERN = "^[0-9]{1,3}$";
         return MatchPattern(PATTERN, value);
@@ -91,10 +95,7 @@ public class Validator {
         return !value.isEmpty();
     }
     
-    public boolean ValidateBloodPressure(String value) {
-        String PATTERN = "[+-]?((\\d+\\.?\\d*)|(\\.\\d+))";
-        return MatchPattern(PATTERN, value);
-    }
+   
     
     private boolean MatchPattern(String pattern, String value) {
         Pattern patt = Pattern.compile(pattern);

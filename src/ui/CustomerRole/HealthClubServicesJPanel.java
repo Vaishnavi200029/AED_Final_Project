@@ -7,6 +7,7 @@ import ProjModel.Booking;
 import ProjModel.HealthClub;
 import ProjModel.SystemAdmin;
 import ProjectModel.services.HealthClubService;
+import javax.swing.ImageIcon;
 import ui.main.DateUtils;
 
 public class HealthClubServicesJPanel extends javax.swing.JPanel {
@@ -22,7 +23,8 @@ public class HealthClubServicesJPanel extends javax.swing.JPanel {
         this.callOnCreateMethod1 = callOnCreateMethod1;
         this.username = username;
         this.booking = booking;
-
+        backBtn.setOpaque(true);
+        backBtn.setIcon(new ImageIcon(ClassLoader.getSystemResource("icons/back.png")));
         for (HealthClub healthClub : booking.getNetwork().getEnterpriseDirectory().getListOfHealthClub()) {
             healthClubCombo.addItem(healthClub);
         }
@@ -57,7 +59,6 @@ public class HealthClubServicesJPanel extends javax.swing.JPanel {
         lblbookservices.setBounds(294, 52, 446, 44);
 
         backBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        backBtn.setText("BACK");
         backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backBtnActionPerformed(evt);
@@ -66,6 +67,7 @@ public class HealthClubServicesJPanel extends javax.swing.JPanel {
         add(backBtn);
         backBtn.setBounds(31, 27, 108, 36);
 
+        yogaBtn.setBackground(new java.awt.Color(102, 0, 153));
         yogaBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         yogaBtn.setForeground(new java.awt.Color(255, 255, 255));
         yogaBtn.setText("YOGA ($20)");
@@ -77,6 +79,7 @@ public class HealthClubServicesJPanel extends javax.swing.JPanel {
         add(yogaBtn);
         yogaBtn.setBounds(213, 361, 131, 29);
 
+        massageBtn.setBackground(new java.awt.Color(102, 0, 153));
         massageBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         massageBtn.setForeground(new java.awt.Color(255, 255, 255));
         massageBtn.setText("MASSAGE AND SPA ($20)");
@@ -88,6 +91,7 @@ public class HealthClubServicesJPanel extends javax.swing.JPanel {
         add(massageBtn);
         massageBtn.setBounds(213, 442, 241, 29);
 
+        medicalServiceBtn.setBackground(new java.awt.Color(102, 0, 153));
         medicalServiceBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         medicalServiceBtn.setForeground(new java.awt.Color(255, 255, 255));
         medicalServiceBtn.setText("MEDICAL SERVICE  ($60)");
@@ -109,22 +113,23 @@ public class HealthClubServicesJPanel extends javax.swing.JPanel {
         add(addServiceBtn);
         addServiceBtn.setBounds(380, 662, 157, 43);
 
-        jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("(MONDAY-SUNDAY) 7A.M - 9A.M");
         add(jLabel3);
-        jLabel3.setBounds(540, 367, 210, 19);
+        jLabel3.setBounds(540, 367, 265, 22);
 
-        jLabel5.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("(MONDAY-SUNDAY) 4P.M-5:30P.M ");
         add(jLabel5);
-        jLabel5.setBounds(540, 448, 226, 19);
+        jLabel5.setBounds(540, 448, 283, 22);
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("(MONDAY - SUNDAY) 12P.M-4P.M ");
         add(jLabel6);
-        jLabel6.setBounds(540, 533, 282, 25);
+        jLabel6.setBounds(540, 533, 279, 22);
 
         jLabel7.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -132,22 +137,22 @@ public class HealthClubServicesJPanel extends javax.swing.JPanel {
         add(jLabel7);
         jLabel7.setBounds(240, 173, 145, 24);
         add(dateField);
-        dateField.setBounds(540, 173, 227, 35);
+        dateField.setBounds(540, 173, 227, 31);
 
-        jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Health Club");
+        jLabel4.setText("HEALTH CLUB");
         add(jLabel4);
-        jLabel4.setBounds(250, 267, 94, 24);
+        jLabel4.setBounds(250, 267, 130, 22);
 
         healthClubCombo.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         add(healthClubCombo);
-        healthClubCombo.setBounds(540, 266, 211, 29);
+        healthClubCombo.setBounds(540, 266, 230, 29);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/CustomerRole/vecteezy_abstract-background-dark-purple-and-triangle-shape_7463701.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         add(jLabel1);
-        jLabel1.setBounds(0, 0, 1981, 1067);
+        jLabel1.setBounds(0, 0, 1974, 1067);
     }// </editor-fold>//GEN-END:initComponents
 
     private void medicalServiceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_medicalServiceBtnActionPerformed

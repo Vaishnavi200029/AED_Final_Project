@@ -12,6 +12,7 @@ import ProjModel.Franchise;
 import ProjModel.Restaurant;
 import ProjModel.SystemAdmin;
 import javax.swing.ImageIcon;
+import ui.main.Validator;
 
 public class ManageServicesPanel extends javax.swing.JPanel {
 
@@ -142,7 +143,7 @@ public class ManageServicesPanel extends javax.swing.JPanel {
 
         nameField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         add(nameField);
-        nameField.setBounds(720, 650, 180, 28);
+        nameField.setBounds(720, 650, 180, 32);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -164,7 +165,7 @@ public class ManageServicesPanel extends javax.swing.JPanel {
             }
         });
         add(networkType);
-        networkType.setBounds(720, 510, 180, 28);
+        networkType.setBounds(720, 510, 180, 32);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -180,7 +181,7 @@ public class ManageServicesPanel extends javax.swing.JPanel {
             }
         });
         add(enterpriseType);
-        enterpriseType.setBounds(720, 580, 180, 28);
+        enterpriseType.setBounds(720, 580, 180, 32);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -190,7 +191,7 @@ public class ManageServicesPanel extends javax.swing.JPanel {
 
         contactField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         add(contactField);
-        contactField.setBounds(720, 720, 180, 28);
+        contactField.setBounds(720, 720, 180, 32);
 
         networkCombo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         networkCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select any one " }));
@@ -211,7 +212,7 @@ public class ManageServicesPanel extends javax.swing.JPanel {
             }
         });
         add(viewBtn);
-        viewBtn.setBounds(780, 180, 72, 30);
+        viewBtn.setBounds(780, 180, 108, 30);
 
         backButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         backButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -221,7 +222,7 @@ public class ManageServicesPanel extends javax.swing.JPanel {
             }
         });
         add(backButton);
-        backButton.setBounds(43, 25, 72, 50);
+        backButton.setBounds(43, 25, 108, 50);
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/SystemAdministration/vector-OCT-2020-116_generated.jpg"))); // NOI18N
@@ -294,6 +295,10 @@ public class ManageServicesPanel extends javax.swing.JPanel {
         String networkName = networkType.getSelectedItem().toString();
         String enterpriseType1 = enterpriseType.getSelectedItem().toString();
         Franchise network = systemAdmin.findNetwork(networkName);
+       
+        if (!Validator.validatePhone(this, contact)){
+            return;
+        }
 
         if (name == null || name.length() < 2) {
             JOptionPane.showMessageDialog(this, "Invalid input: Enterprise name should be atleast 2 characters long.");

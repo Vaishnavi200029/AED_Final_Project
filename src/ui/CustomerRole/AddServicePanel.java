@@ -101,7 +101,7 @@ public class AddServicePanel extends javax.swing.JPanel {
             }
         });
         add(otherService);
-        otherService.setBounds(900, 280, 308, 38);
+        otherService.setBounds(890, 290, 308, 38);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/CustomerRole/services.gif"))); // NOI18N
         add(jLabel3);
@@ -110,7 +110,7 @@ public class AddServicePanel extends javax.swing.JPanel {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/CustomerRole/vecteezy_abstract-background-dark-purple-and-triangle-shape_7463701.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
         add(jLabel2);
-        jLabel2.setBounds(-9, -200, 1961, 1330);
+        jLabel2.setBounds(-9, -200, 1974, 1330);
     }// </editor-fold>//GEN-END:initComponents
 
     private void eventBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eventBtnActionPerformed

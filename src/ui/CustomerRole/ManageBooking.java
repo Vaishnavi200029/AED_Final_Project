@@ -49,7 +49,7 @@ public class ManageBooking extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("BOOKING DETAILS");
         add(jLabel1);
-        jLabel1.setBounds(330, 130, 357, 35);
+        jLabel1.setBounds(410, 130, 357, 35);
 
         backBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         backBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -60,7 +60,7 @@ public class ManageBooking extends javax.swing.JPanel {
         add(backBtn);
         backBtn.setBounds(34, 27, 100, 60);
 
-        jTable1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTable1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -80,7 +80,7 @@ public class ManageBooking extends javax.swing.JPanel {
         jScrollPane2.setViewportView(jTable1);
 
         add(jScrollPane2);
-        jScrollPane2.setBounds(110, 210, 877, 213);
+        jScrollPane2.setBounds(110, 210, 1080, 390);
 
         addServiceBtn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         addServiceBtn.setText("ADD SERVICES");
@@ -90,7 +90,7 @@ public class ManageBooking extends javax.swing.JPanel {
             }
         });
         add(addServiceBtn);
-        addServiceBtn.setBounds(190, 490, 205, 53);
+        addServiceBtn.setBounds(330, 650, 205, 53);
 
         viewOrder.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         viewOrder.setText("VIEW SERVICE DETAILS");
@@ -100,13 +100,13 @@ public class ManageBooking extends javax.swing.JPanel {
             }
         });
         add(viewOrder);
-        viewOrder.setBounds(530, 490, 290, 53);
+        viewOrder.setBounds(690, 650, 290, 53);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/CustomerRole/vecteezy_abstract-background-dark-purple-and-triangle-shape_7463701.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
         add(jLabel2);
-        jLabel2.setBounds(0, 0, 1981, 1067);
+        jLabel2.setBounds(0, 0, 1974, 1067);
     }// </editor-fold>//GEN-END:initComponents
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed

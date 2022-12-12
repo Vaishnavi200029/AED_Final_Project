@@ -56,19 +56,21 @@ public class HotelServicePanel extends javax.swing.JPanel {
         add(backBtn);
         backBtn.setBounds(32, 16, 100, 40);
 
+        laundaryBtn.setBackground(new java.awt.Color(153, 0, 153));
         laundaryBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         laundaryBtn.setForeground(new java.awt.Color(255, 255, 255));
         laundaryBtn.setText("LAUNDARY SERVICE ($10)");
         add(laundaryBtn);
         laundaryBtn.setBounds(312, 301, 317, 29);
 
+        transportationBtn.setBackground(new java.awt.Color(153, 0, 153));
         transportationBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         transportationBtn.setForeground(new java.awt.Color(255, 255, 255));
         transportationBtn.setText("TRANSPORTATION SERVICE ($20)");
         add(transportationBtn);
         transportationBtn.setBounds(312, 392, 344, 29);
 
-        placeRequest.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        placeRequest.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         placeRequest.setText("PLACE REQUEST");
         placeRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,7 +91,7 @@ public class HotelServicePanel extends javax.swing.JPanel {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/CustomerRole/vecteezy_abstract-background-dark-purple-and-triangle-shape_7463701.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
         add(jLabel2);
-        jLabel2.setBounds(0, 0, 1981, 1067);
+        jLabel2.setBounds(0, 0, 1974, 1067);
     }// </editor-fold>//GEN-END:initComponents
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
